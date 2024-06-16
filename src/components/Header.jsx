@@ -4,6 +4,10 @@ import { links } from '../data/data'
 import { Link } from 'react-router-dom'
 // img
 import logo from '../img/logo.svg'
+import search from '../img/search.svg'
+import reyting from '../img/reyting.svg'
+import shop from '../img/shopsvg'
+
 const Header = () => {
   return (
     <header className='py-8 bg-black '>
@@ -26,7 +30,17 @@ const Header = () => {
          }
         </ul>
         {/* right */}
-        
+        <div>
+          <Link>
+            <img src={search} alt="search" />
+          </Link>
+          <Link>
+            <img src={reyting} alt="reyting" />
+          </Link>
+          <Link>
+            <img src={shop} alt="shop" />
+          </Link>
+        </div>
       </div>
     </header>
   )
