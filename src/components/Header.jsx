@@ -1,4 +1,11 @@
 import React, { useState } from "react";
+import {
+  Drawer,
+  Button,
+  Typography,
+  IconButton,
+} from "@material-tailwind/react";
+
 // data
 import { links } from "../data/data";
 import { Link } from "react-router-dom";
@@ -15,7 +22,14 @@ const Header = () => {
   const onSearch = () => {
     setShowSearchInput(!showSearchInput);
   };
+  const [openLeft, setOpenLeft] = React.useState(false);
 
+  const openDrawerLeft = () => setOpenLeft(true);
+  const closeDrawerLeft = () => setOpenLeft(false);
+
+  const Closedraw =()=>{
+    setOpenLeft(false)
+  }
   return (
     <header className="py-10 bg-black">
       <div className="containerb flex items-center justify-between">
@@ -25,7 +39,7 @@ const Header = () => {
             <img src={logo} alt="logo" />
           </Link>
 
-          <button className="inline-block md:hidden">
+          <button onClick={openDrawerLeft} className="inline-block sm:hidden">
             <img src={linkmenyu} alt="menyu" />
           </button>
         </div>
@@ -35,7 +49,7 @@ const Header = () => {
           {showSearchInput ? (
             <input
               type="serach"
-              className=" border-2 py-2  md:py-4 md:pr-80  lg:pr-[524px]  pl-7 xl:pr-[624px] hidden sm:block rounded-full text-white bg-transparent"
+              className=" border-2 py-2  md:py-4 hidden sm:block sm:pr-40 md:pr-80  lg:pr-[524px]  pl-7 xl:pr-[624px] rounded-full text-white bg-transparent"
               placeholder="Поиск по каталогу товаров..."
             />
           ) : (
@@ -66,6 +80,53 @@ const Header = () => {
           </Link>
         </div>
       </div>
+      <Drawer
+        placement="left"
+        open={openLeft}
+        onClose={closeDrawerLeft}
+        className="fixed top-0 left-0 h-full w-full z-50 pl-4 bg-black text-white"
+        overlayProps={{ className: "bg-black bg-opacity-0" }}
+        transition={{ duration: 0.3 }}
+      >
+        <div className="mb-6 flex items-center justify-between     pr-4 pt-4">
+          <Link to='/'>
+            <img onClick={closeDrawerLeft} className='w-10' src={logo} alt="" />
+          </Link>
+          <IconButton
+          className="right-0"
+            variant="text"
+            color="blue-gray"
+            onClick={Closedraw}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+              className="h-5 w-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </IconButton>
+        </div>
+
+        <div className='flex flex-col space-y-2'>
+          <Link to='/' onClick={closeDrawerLeft}>Главная</Link>
+          <Link to='/Одежда' onClick={closeDrawerLeft}>Одежда</Link>
+          <Link to='/Обувь' onClick={closeDrawerLeft}>Обувь</Link>
+          <Link to='/Аксессуары' onClick={closeDrawerLeft}>Аксессуары</Link>
+          <Link to='/Бренды' onClick={closeDrawerLeft}>Бренды</Link>
+          <Link to='/Расчет стоимости' onClick={closeDrawerLeft}>Расчет стоимости</Link>
+          <Link to='/Информация' onClick={closeDrawerLeft}>Информация</Link>
+
+        </div>
+        
+      </Drawer>
     </header>
   );
 };
