@@ -15,7 +15,7 @@ const Обувь = () => {
         <section className='pt-12'>
             <div className="containerb">
                 {/* top */}
-                <div className='flex justify-between'>
+                <div className='flex justify-between mb-10'>
                     <h2 className='text-3xl font-bold'>Обувь</h2>
                     <Link className='flex items-center'>
                         <p className='mr-2 text-base'>больше товаров</p>
