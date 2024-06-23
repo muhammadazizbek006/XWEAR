@@ -2,11 +2,15 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 // img
 import next from '../../img/next.svg'
-import reyting from '../../img/reyting.svg'
+import reyting from '../../img/reytingb.svg'
 // data
 import { krasofkalar } from '../../data/data'
+
 const Обувь = () => {
-  return (
+
+    const slised = krasofkalar.slice(0, 4)
+
+    return (
     <>
         <section className='pt-12'>
             <div className="containerb">
@@ -21,15 +25,18 @@ const Обувь = () => {
 
                 <ul className='grid grid-cols-4 gap-x-8'>
                     {
-                        krasofkalar.map((e)=>{
+                        slised.map((e)=>{
                             return(
-                                <li className='bg-white'> 
-                                    <Link >
-                                        <img src={reyting} alt={e.brend} />
+                                <li className=''> 
+                                    <Link className='' >
+                                    <div className='bg-white flex flex-col items-end mb-3 '>
+                                        <img className='mr-5  pt-5' src={reyting} alt={e.brend} />
                                         <img src={e.im} alt={e.title} />
+
+                                    </div>
                                         <div>
-                                            <p>{e.title}</p>
-                                            <p> OT {e.narxi} ₽ </p>
+                                            <p className='text-xl'>{e.title}</p>
+                                            <p> от  {e.narxi} ₽ </p>
                                         </div>
                                     </Link>
                                 </li>
