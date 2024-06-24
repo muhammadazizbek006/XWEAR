@@ -6,14 +6,13 @@ import reyting from '../../img/reytingb.svg'
 // data
 import { krasofkalar } from '../../data/data'
 
-const Обувь = () => {
-
+const Kiyimlar = () => {
     const slised = krasofkalar.slice(0, 4)
 
-    return (
+  return (
     <>
         <section className='pt-12'>
-            <div className="containerb">
+            <div className="containerb ">
                 {/* top */}
                 <div className='flex justify-between mb-10'>
                     <h2 className='text-3xl font-bold'>Обувь</h2>
@@ -23,11 +22,11 @@ const Обувь = () => {
                     </Link>
                 </div>
 
-                <ul className='grid grid-cols-4 gap-x-8'>
+                <ul className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 '>
                     {
                         slised.map((e)=>{
                             return(
-                                <li className=''> 
+                                <li className=' w-80 sm:w-full'> 
                                     <Link className='' >
                                     <div className='bg-white flex flex-col items-end mb-3 '>
                                         <img className='mr-5  pt-5' src={reyting} alt={e.brend} />
@@ -50,4 +49,4 @@ const Обувь = () => {
   )
 }
 
-export default Обувь
+export default Kiyimlar

@@ -237,3 +237,153 @@ export const  krasofkalar = [
 
     },
 ]
+
+
+// kiyimlar
+
+export const  kiyimlar = [
+    {
+        id:1,
+        im:o1,
+        title:`Nike Court Zoom Cage 2`,
+        brend:`Nike`,
+        narxi: 4699 ,
+
+    },
+    {
+        id:2,
+        im:o2,
+        title:`Air Force 1 Ultra`,
+        brend:`Nike`,
+        narxi: 4699 ,
+
+    },
+    {
+        id:3,
+        im:o3,
+        title:`Air Force 1 Ultra Flyknit`,
+        brend:`Air`,
+        narxi: 4299 ,
+
+    },
+    {
+        id:4,
+        im:o4,
+        title:`Nike Court Zoom 2`,
+        brend:`Nike`,
+        narxi: 4709 ,
+
+    },
+    {
+        id:5,
+        im:o5,
+        title:`Air Force 2 Ultra`,
+        brend:`Nike`,
+        narxi: 4699 ,
+
+    },
+    {
+        id:6,
+        im:o6,
+        title:`Nike Court Zoom Cage 5`,
+        brend:`gucci`,
+        narxi: 2699 ,
+
+    },
+    {
+        id:7,
+        im:o7,
+        title:`polo Court Zoom Cage 2`,
+        brend:`polo`,
+        narxi: 7699 ,
+
+    },
+    {
+        id:8,
+        im:o8,
+        title:`Nike Court Zoom Cage 2`,
+        brend:`Nike`,
+        narxi: 4399 ,
+
+    },
+    {
+        id:9,
+        im:o9,
+        title:`Nike Court Zoom Cage 2`,
+        brend:`Nike`,
+        narxi: 4699 ,
+
+    },
+    {
+        id:10,
+        im:o10,
+        title:`Nike Court Zoom Cage 2`,
+        brend:`Nike`,
+        narxi: 4699 ,
+
+    },
+    {
+        id:11,
+        im:o11,
+        title:`polo Court Zoom Cage 2`,
+        brend:`polo`,
+        narxi: 4699 ,
+
+    },
+    {
+        id:12,
+        im:o12,
+        title:`polo Court Zoom Cage 2`,
+        brend:`polo`,
+        narxi: 4699 ,
+
+    },
+    {
+        id:13,
+        im:o13,
+        title:`polo Court Zoom Cage 2`,
+        brend:`polo`,
+        narxi: 4699 ,
+
+    },
+    {
+        id:14,
+        im:o14,
+        title:`polo Court Zoom Cage 2`,
+        brend:`polo`,
+        narxi: 4699 ,
+
+    },
+    {
+        id:15,
+        im:o15,
+        title:`Humara Court Zoom Cage 2`,
+        brend:`Humara`,
+        narxi: 4699 ,
+
+    },
+    {
+        id:16,
+        im:o16,
+        title:`Humara Court Zoom Cage 2`,
+        brend:`Humara`,
+        narxi: 4699 ,
+
+    },
+    {
+        id:17,
+        im:o17,
+        title:`Humara Court Zoom Cage 2`,
+        brend:`Humara`,
+        narxi: 4699 ,
+
+    },
+    {
+        id:18,
+        im:o18,
+        title:`Humara Court Zoom Cage 2`,
+        brend:`Humara`,
+        narxi: 4699 ,
+
+    },
+]

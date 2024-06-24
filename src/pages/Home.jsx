@@ -1,11 +1,13 @@
 import React from 'react'
 // import Hero from '../components/home/Hero'
-import Обувь from '../components/home/Обувь'
+import OyoqKiyimlar from '../components/home/OyoqKiyimlar'
+import Kiyimlar from '../components/home/Kiyimlar'
 const Home = () => {
   return (
     <>
       {/* <Hero/> */}
-      <Обувь/>
+      <OyoqKiyimlar/>
+      <Kiyimlar/>
     </>
   )
 }
