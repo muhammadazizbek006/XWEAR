@@ -42,7 +42,7 @@ const NashBlock = () => {
                 spaceBetween: 10,
               },
               640: {
-                slidesPerView: 1,
+                slidesPerView: 1.5,
                 spaceBetween: 20,
               },
               1024: {

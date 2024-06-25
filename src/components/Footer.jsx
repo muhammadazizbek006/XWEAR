@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <>
       <section className='bg-black pt-11 pb-12'>
-        <div className="containerb flex justify-between ">
+        <div className="containerb grid grid-cols-2 sm:grid-cols-3  ">
           {/* katalog */}
           <div className='text-white'>
             <div className=' flex flex-col space-y-2 mb-14'>
@@ -22,7 +22,7 @@ const Footer = () => {
             </div>
             <img src={xwear} alt="" />
           </div>
-
+          
           {/* Информация */}
            <div className='text-white'>
             <div className=' flex flex-col space-y-2 mb-14'>
