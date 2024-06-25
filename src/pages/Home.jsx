@@ -4,6 +4,7 @@ import OyoqKiyimlar from '../components/home/OyoqKiyimlar'
 import Kiyimlar from '../components/home/Kiyimlar'
 import Acsesuar from '../components/home/Acsesuar'
 import Raschitat from '../components/home/Raschitat'
+import NashBlock from '../components/home/NashBlock'
 const Home = () => {
   return (
     <>
@@ -12,6 +13,7 @@ const Home = () => {
       <Kiyimlar/>
       <Acsesuar/>
       <Raschitat/>
+      <NashBlock/>
     </>
   )
 }
