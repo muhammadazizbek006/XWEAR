@@ -240,150 +240,136 @@ export const  krasofkalar = [
 
 
 // kiyimlar
+import kiyim1 from '../img/kiyimlar/kiyim1.png'
+import kiyim2 from '../img/kiyimlar/kiyim2.png'
+import kiyim3 from '../img/kiyimlar/kiyim3.png'
+import kiyim4 from '../img/kiyimlar/kiyim4.png'
 
-export const  kiyimlar = [
+export const kiyimlar = [
     {
-        id:1,
-        im:o1,
-        title:`Nike Court Zoom Cage 2`,
-        brend:`Nike`,
-        narxi: 4699 ,
-
+        id: 1,
+        img: kiyim1,
+        title: "Adidas Ultraboost 21",
+        brend: "Adidas",
+        narxi: 5500,
     },
     {
-        id:2,
-        im:o2,
-        title:`Air Force 1 Ultra`,
-        brend:`Nike`,
-        narxi: 4699 ,
-
+        id: 2,
+        img: kiyim2,
+        title: "Puma RS-X",
+        brend: "Puma",
+        narxi: 4900,
     },
     {
-        id:3,
-        im:o3,
-        title:`Air Force 1 Ultra Flyknit`,
-        brend:`Air`,
-        narxi: 4299 ,
-
+        id: 3,
+        img: kiyim3,
+        title: "Reebok Nano X1",
+        brend: "Reebok",
+        narxi: 4300,
     },
     {
-        id:4,
-        im:o4,
-        title:`Nike Court Zoom 2`,
-        brend:`Nike`,
-        narxi: 4709 ,
-
+        id: 4,
+        img: kiyim4,
+        title: "Nike Air Max 270",
+        brend: "Nike",
+        narxi: 5200,
     },
-    {
-        id:5,
-        im:o5,
-        title:`Air Force 2 Ultra`,
-        brend:`Nike`,
-        narxi: 4699 ,
-
-    },
-    {
-        id:6,
-        im:o6,
-        title:`Nike Court Zoom Cage 5`,
-        brend:`gucci`,
-        narxi: 2699 ,
-
-    },
-    {
-        id:7,
-        im:o7,
-        title:`polo Court Zoom Cage 2`,
-        brend:`polo`,
-        narxi: 7699 ,
-
-    },
-    {
-        id:8,
-        im:o8,
-        title:`Nike Court Zoom Cage 2`,
-        brend:`Nike`,
-        narxi: 4399 ,
-
-    },
-    {
-        id:9,
-        im:o9,
-        title:`Nike Court Zoom Cage 2`,
-        brend:`Nike`,
-        narxi: 4699 ,
-
-    },
-    {
-        id:10,
-        im:o10,
-        title:`Nike Court Zoom Cage 2`,
-        brend:`Nike`,
-        narxi: 4699 ,
-
-    },
-    {
-        id:11,
-        im:o11,
-        title:`polo Court Zoom Cage 2`,
-        brend:`polo`,
-        narxi: 4699 ,
-
-    },
-    {
-        id:12,
-        im:o12,
-        title:`polo Court Zoom Cage 2`,
-        brend:`polo`,
-        narxi: 4699 ,
-
-    },
-    {
-        id:13,
-        im:o13,
-        title:`polo Court Zoom Cage 2`,
-        brend:`polo`,
-        narxi: 4699 ,
-
-    },
-    {
-        id:14,
-        im:o14,
-        title:`polo Court Zoom Cage 2`,
-        brend:`polo`,
-        narxi: 4699 ,
-
-    },
-    {
-        id:15,
-        im:o15,
-        title:`Humara Court Zoom Cage 2`,
-        brend:`Humara`,
-        narxi: 4699 ,
-
-    },
-    {
-        id:16,
-        im:o16,
-        title:`Humara Court Zoom Cage 2`,
-        brend:`Humara`,
-        narxi: 4699 ,
-
-    },
-    {
-        id:17,
-        im:o17,
-        title:`Humara Court Zoom Cage 2`,
-        brend:`Humara`,
-        narxi: 4699 ,
-
-    },
-    {
-        id:18,
-        im:o18,
-        title:`Humara Court Zoom Cage 2`,
-        brend:`Humara`,
-        narxi: 4699 ,
-
-    },
-]
+    // {
+    //     id: 5,
+    //     img: "kiyim5",
+    //     title: "New Balance 990v5",
+    //     brend: "New Balance",
+    //     narxi: 6000,
+    // },
+    // {
+    //     id: 6,
+    //     img: "kiyim6",
+    //     title: "Gucci Rhyton",
+    //     brend: "Gucci",
+    //     narxi: 12000,
+    // },
+    // {
+    //     id: 7,
+    //     img: "kiyim7",
+    //     title: "Polo Ralph Lauren Vaughn",
+    //     brend: "Polo Ralph Lauren",
+    //     narxi: 7500,
+    // },
+    // {
+    //     id: 8,
+    //     img: "kiyim8",
+    //     title: "Nike Air Zoom Pegasus 38",
+    //     brend: "Nike",
+    //     narxi: 4700,
+    // },
+    // {
+    //     id: 9,
+    //     img: "kiyim9",
+    //     title: "Nike Air Force 1",
+    //     brend: "Nike",
+    //     narxi: 4500,
+    // },
+    // {
+    //     id: 10,
+    //     img: "kiyim10",
+    //     title: "Nike React Infinity Run",
+    //     brend: "Nike",
+    //     narxi: 5300,
+    // },
+    // {
+    //     id: 11,
+    //     img: "kiyim11",
+    //     title: "Polo Ralph Lauren Keaton",
+    //     brend: "Polo Ralph Lauren",
+    //     narxi: 4800,
+    // },
+    // {
+    //     id: 12,
+    //     img: "kiyim12",
+    //     title: "Polo Ralph Lauren Hanford",
+    //     brend: "Polo Ralph Lauren",
+    //     narxi: 4600,
+    // },
+    // {
+    //     id: 13,
+    //     img: "kiyim13",
+    //     title: "Vans Old Skool",
+    //     brend: "Vans",
+    //     narxi: 3000,
+    // },
+    // {
+    //     id: 14,
+    //     img: "kiyim14",
+    //     title: "Converse Chuck Taylor",
+    //     brend: "Converse",
+    //     narxi: 3500,
+    // },
+    // {
+    //     id: 15,
+    //     img: "kiyim15",
+    //     title: "Asics Gel-Kayano 27",
+    //     brend: "Asics",
+    //     narxi: 5000,
+    // },
+    // {
+    //     id: 16,
+    //     img: "kiyim16",
+    //     title: "Brooks Ghost 13",
+    //     brend: "Brooks",
+    //     narxi: 5100,
+    // },
+    // {
+    //     id: 17,
+    //     img: "kiyim17",
+    //     title: "Saucony Endorphin Speed",
+    //     brend: "Saucony",
+    //     narxi: 4800,
+    // },
+    // {
+    //     id: 18,
+    //     img: "kiyim18",
+    //     title: "Hoka One One Clifton 7",
+    //     brend: "Hoka One One",
+    //     narxi: 5400,
+    // },
+];

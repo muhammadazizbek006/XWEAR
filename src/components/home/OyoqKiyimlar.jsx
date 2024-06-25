@@ -12,7 +12,7 @@ const OyoqKiyimlar = () => {
 
     return (
     <>
-        <section className='pt-12'>
+        <section className='pt-12 '>
             <div className="containerb ">
                 {/* top */}
                 <div className='flex justify-between mb-10'>
@@ -27,9 +27,9 @@ const OyoqKiyimlar = () => {
                     {
                         slised.map((e)=>{
                             return(
-                                <li className=' w-80 sm:w-full'> 
+                                <li key={e.id} className=' bg-white pl-3 w-80 sm:w-full'> 
                                     <Link className='' >
-                                    <div className='bg-white flex flex-col items-end mb-3 '>
+                                    <div className=' flex flex-col items-end mb-3 '>
                                         <img className='mr-5  pt-5' src={reyting} alt={e.brend} />
                                         <img src={e.im} alt={e.title} />
 
