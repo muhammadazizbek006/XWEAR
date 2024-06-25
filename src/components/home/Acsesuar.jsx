@@ -4,9 +4,11 @@ import { Link } from 'react-router-dom'
 import next from '../../img/next.svg'
 import reyting from '../../img/reytingb.svg'
 // data
-import { kiyimlar } from '../../data/data'
+import { aksessuarlar } from '../../data/data'
+
 const Acsesuar = () => {
-    const slised = kiyimlar.slice(0, 4)
+
+    const slised = aksessuarlar.slice(0, 4)
 
   return (
     <>
@@ -25,7 +27,7 @@ const Acsesuar = () => {
                     {
                         slised.map((e)=>{
                             return(
-                                <li key={e.id} className=' bg-white pl-3 w-80 sm:w-full'> 
+                                <li key={e.id} className=' bg-white px-3  w-80 sm:w-full'> 
                                     <Link className='' >
                                     <div className=' flex flex-col items-end mb-3 '>
                                         <img className='mr-5  pt-5' src={reyting} alt={e.brend} />

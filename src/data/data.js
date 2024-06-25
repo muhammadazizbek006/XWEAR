@@ -376,32 +376,35 @@ export const kiyimlar = [
 
 
 // acsesuarlar
-
+import ac1 from '../img/acsesuar/ac1.png'
+import ac2 from '../img/acsesuar/ac2.png'
+import ac3 from '../img/acsesuar/ac3.png'
+import ac4 from '../img/acsesuar/ac4.png'
 export const aksessuarlar = [
     {
         id: 1,
-        img: accessory1,
+        img: ac1,
         title: "New Era 59FIFTY",
         brend: "New Era",
         narxi: 1500,
     },
     {
         id: 2,
-        img: accessory2,
+        img: ac2,
         title: "Herschel Little America Backpack",
         brend: "Herschel",
         narxi: 4500,
     },
     {
         id: 3,
-        img: accessory3,
+        img: ac3,
         title: "Nike Heritage 86 Cap",
         brend: "Nike",
         narxi: 1200,
     },
     {
         id: 4,
-        img: accessory4,
+        img: ac4,
         title: "Adidas Originals Waist Bag",
         brend: "Adidas",
         narxi: 2300,
