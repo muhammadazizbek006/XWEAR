@@ -3,6 +3,7 @@ import React from 'react'
 import OyoqKiyimlar from '../components/home/OyoqKiyimlar'
 import Kiyimlar from '../components/home/Kiyimlar'
 import Acsesuar from '../components/home/Acsesuar'
+import Raschitat from '../components/home/Raschitat'
 const Home = () => {
   return (
     <>
@@ -10,6 +11,7 @@ const Home = () => {
       <OyoqKiyimlar/>
       <Kiyimlar/>
       <Acsesuar/>
+      <Raschitat/>
     </>
   )
 }

@@ -12,11 +12,11 @@ const Acsesuar = () => {
 
   return (
     <>
-         <section className='pt-12  '>
+         <section className='pt-12 mb-20  '>
             <div className="containerb ">
                 {/* top */}
                 <div className='flex justify-between mb-10'>
-                    <h2 className='text-3xl font-bold'>Одежда</h2>
+                    <h2 className='text-3xl font-bold'>Аксессуары</h2>
                     <Link className='flex items-center'>
                         <p className='mr-2 text-base'>больше товаров</p>
                         <img src={next} alt="next" />
