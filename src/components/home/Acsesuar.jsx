@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom'
 import next from '../../img/next.svg'
 import reyting from '../../img/reytingb.svg'
 // data
-import { aksessuarlar } from '../../data/data'
+import catalog from '../../data/data';
 
 const Acsesuar = () => {
 
-    const slised = aksessuarlar.slice(0, 4)
+    const slised = catalog.aksessuarlar.slice(0, 4)
 
   return (
     <>

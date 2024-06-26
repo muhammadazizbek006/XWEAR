@@ -11,7 +11,7 @@ import { Autoplay } from 'swiper/modules';
 import { Link } from 'react-router-dom';
 // img
 import next from '../../img/next.svg';
-import { nashblock } from '../../data/data';
+import catalog from '../../data/data';
 
 const NashBlock = () => {
   return (
@@ -52,7 +52,7 @@ const NashBlock = () => {
             }}
           >
             {
-              nashblock.map((e) => {
+              catalog.nashblock.map((e) => {
                 return (
                   <SwiperSlide className='max-w-[500px] text-start' key={e.id}>
                     <img className='mb-3 rounded-md w-[500px]' src={e.img} alt={e.title} />

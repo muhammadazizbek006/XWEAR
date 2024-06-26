@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import {
   Drawer,
-  Button,
-  Typography,
   IconButton,
 } from "@material-tailwind/react";
 
 // data
-import { links } from "../data/data";
+import catalog from "../data/data";
 import { Link } from "react-router-dom";
+
 // img
 import logo from "../img/logo.svg";
 import searchIcon from "../img/search.svg"; // search nomi bilan conflict bo'lmasligi uchun o'zgartirdim
@@ -27,9 +26,10 @@ const Header = () => {
   const openDrawerLeft = () => setOpenLeft(true);
   const closeDrawerLeft = () => setOpenLeft(false);
 
-  const Closedraw =()=>{
+  const Closedraw = () => {
     setOpenLeft(false)
   }
+
   return (
     <header className="py-10 bg-black">
       <div className="containerb flex items-center justify-between">
@@ -54,7 +54,7 @@ const Header = () => {
             />
           ) : (
             <ul className="flex   md:space-x-5 lg:space-x-8 xl:space-x-12 items-center">
-              {links.map((e) => {
+              {catalog.links.map((e) => {
                 return (
                   <li
                     className="text-white text-sm hidden md:block  lg:font-semibold flex"
@@ -88,12 +88,12 @@ const Header = () => {
         overlayProps={{ className: "bg-black bg-opacity-0" }}
         transition={{ duration: 0.3 }}
       >
-        <div className="mb-6 flex items-center justify-between     pr-4 pt-4">
+        <div className="mb-6 flex items-center justify-between pr-4 pt-4">
           <Link to='/'>
-            <img onClick={closeDrawerLeft} className='w-10' src={logo} alt="" />
+            <img onClick={closeDrawerLeft} className='w-10' src={logo} alt="logo" />
           </Link>
           <IconButton
-          className="right-0"
+            className="right-0"
             variant="text"
             color="blue-gray"
             onClick={Closedraw}
@@ -117,15 +117,13 @@ const Header = () => {
 
         <div className='flex flex-col space-y-2'>
           <Link to='/' onClick={closeDrawerLeft}>Главная</Link>
-          <Link to='/Одежда' onClick={closeDrawerLeft}>Одежда</Link>
-          <Link to='/Обувь' onClick={closeDrawerLeft}>Обувь</Link>
-          <Link to='/Аксессуары' onClick={closeDrawerLeft}>Аксессуары</Link>
-          <Link to='/Бренды' onClick={closeDrawerLeft}>Бренды</Link>
-          <Link to='/Расчет стоимости' onClick={closeDrawerLeft}>Расчет стоимости</Link>
-          <Link to='/Информация' onClick={closeDrawerLeft}>Информация</Link>
-
+          {catalog.links.map((e) => (
+            <Link key={e.id} to={e.URL} onClick={closeDrawerLeft}>
+              {e.link}
+            </Link>
+          ))}
         </div>
-        
+
       </Drawer>
     </header>
   );
