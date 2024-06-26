@@ -157,3 +157,12 @@ const catalog = {
 };
 
 export default catalog;
+
+
+// export const faq = [
+//     {
+//         id:1,
+//         title:`ОБЩИЕ ВОПРОСЫ`,
+//         savol:1,
+//     },
+// ]

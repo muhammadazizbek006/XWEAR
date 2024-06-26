@@ -31,7 +31,7 @@ const Footer = () => {
                <Link  className='text-base'>Контакты</Link>
                <Link  className='text-base'>Доставка</Link>
                <Link  className='text-base' >Оплата</Link>
-               <Link  className='text-base' >FAQ</Link>
+               <Link to='/faq'  className='text-base' >FAQ</Link>
 
             </div>
 

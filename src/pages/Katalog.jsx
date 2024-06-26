@@ -47,7 +47,7 @@ const Katalog = () => {
             <div>
               <Accordion className="w-[318px] border-2 rounded-md pt-4 px-4 border-gray-500" open={open === 2} icon={<Icon id={2} open={open} />}>
                 <AccordionHeader className="mb-5" onClick={() => handleOpen(2)}>Размеры (EU)</AccordionHeader>
-                <AccordionBody>
+                <AccordionBody className='flex flex-col items-start'>
                   {open === 2 && catalog.categoria.map((e) => (
                     <button className="text-base font-semibold mb-5" key={e.id}>{e.kategoria}</button>
                   ))}
