@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import reyting from "../img/reytingb.svg";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import {
   Accordion,
   AccordionHeader,
   AccordionBody,
 } from "@material-tailwind/react";
-import catalog, { data } from "../data/data";
-import { useParams } from "react-router-dom";
+import { data } from "../data/data";
 
 function Icon({ id, open }) {
   return (
@@ -32,22 +31,25 @@ function Icon({ id, open }) {
 
 const Katalog = () => {
   const [KatalogMahsulotlari, setKatalogMahsulotlari] = useState([]);
-  const [open, setOpen] = React.useState(0);
+  const [open, setOpen] = useState(0);
+  const [categories, setCategories] = useState([]);
   const { type } = useParams();
-  useEffect(() => {
-    const filteredProducts = data.filter((product) => {
-      return product.type === type;
-    });
 
+  useEffect(() => {
+    const filteredProducts = data.filter((product) => product.type === type);
     setKatalogMahsulotlari(filteredProducts ? filteredProducts : []);
-  }, []);
+
+    const uniqueCategories = [
+      ...new Set(filteredProducts.map((product) => product.kategoria)),
+    ];
+    setCategories(uniqueCategories);
+  }, [type]);
+
   const handleOpen = (value) => setOpen(open === value ? 0 : value);
+
   return (
     <>
-     
-
-      {/*  */}
-      <section className="bg-white">
+      <section className="bg-white pt-12">
         <div className="containerb flex">
           {/* left */}
           <div className="mr-7">
@@ -63,12 +65,12 @@ const Katalog = () => {
                 </AccordionHeader>
                 <AccordionBody className="flex flex-col items-start">
                   {open === 1 &&
-                    catalog.categoria.map((e) => (
+                    categories.map((category, index) => (
                       <button
                         className="text-base font-semibold mb-5"
-                        key={e.id}
+                        key={index}
                       >
-                        {e.kategoria}
+                        {category}
                       </button>
                     ))}
                 </AccordionBody>
@@ -86,46 +88,39 @@ const Katalog = () => {
                 </AccordionHeader>
                 <AccordionBody className="flex flex-col items-start">
                   {open === 2 &&
-                    catalog.categoria.map((e) => (
+                    categories.map((category, index) => (
                       <button
                         className="text-base font-semibold mb-5"
-                        key={e.id}
+                        key={index}
                       >
-                        {e.kategoria}
+                        {category}
                       </button>
                     ))}
                 </AccordionBody>
               </Accordion>
             </div>
           </div>
+
           {/* o'rta */}
           <div>
-          {/* maxsulotlar */}
-          <ul className="grid grid-cols-3 gap-x-8 gap-y-12">
-          {KatalogMahsulotlari.map((e, index) => {
-        return (
-          <li key={e.id} className=" bg-white pl-3 w-80 sm:w-full ">
-          <Link className="">
-            <div className=" flex flex-col items-end mb-3 ">
-              <img
-                className="mr-5  pt-5"
-                src={reyting}
-                alt={e.brend}
-              />
-              <img src={e.img} alt={e.title} />
-            </div>
-            <div>
-              <p className="text-xl">{e.title}</p>
-              <p> от {e.narxi} ₽ </p>
-            </div>
-          </Link>
-        </li>
-);
-      })}
-          </ul>
-
+            {/* maxsulotlar */}
+            <ul className="grid grid-cols-3 gap-x-8 gap-y-12">
+              {KatalogMahsulotlari.map((e) => (
+                <li key={e.id} className="bg-white pl-3 w-80 sm:w-full">
+                  <Link className="">
+                    <div className="flex flex-col items-end mb-3">
+                      <img className="mr-5 pt-5" src={reyting} alt={e.brend} />
+                      <img src={e.img} alt={e.title} />
+                    </div>
+                    <div>
+                      <p className="text-xl">{e.title}</p>
+                      <p> от {e.narxi} ₽ </p>
+                    </div>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
-
         </div>
       </section>
     </>

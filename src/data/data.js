@@ -170,6 +170,7 @@ export default catalog;
 // ]
 
 export const data = [
+  // krasofkalar
     {
       id: 1,
       type: "krasofka",
@@ -414,5 +415,10 @@ export const data = [
       rang: ["black", "white", "blue"],
       kategoria: "Футболки",
     },
+    // acsesuarlar
+    { id: 1, img: ac1, title: "New Era 59FIFTY", type:"acsesuar", brend: "New Era", narxi: 1500, razmer: ['S', 'M', 'L'], rang: ['black', 'white', 'red'], kategoria: 'Кепки' },
+    { id: 2, img: ac2, title: "Herschel Little America Backpack",  type:"acsesuar", brend: "Herschel", narxi: 4500, razmer: ['Small', 'Medium', 'Large'], rang: ['black', 'white', 'red'], kategoria: 'Рюкзаки' },
+    { id: 3, img: ac3, title: "Nike Heritage 86 Cap",  type:"acsesuar",  brend: "Nike",  narxi: 1200, razmer: ['S', 'M', 'L'], rang: ['black', 'white', 'red'], kategoria: 'Кепки' },
+    { id: 4, img: ac4, title: "Adidas Originals Waist Bag",  type:"acsesuar", brend: "Adidas", narxi: 2300, razmer: ['Small', 'Medium', 'Large'], rang: ['black', 'white', 'red'], kategoria: 'Сумки' },
   ];
   

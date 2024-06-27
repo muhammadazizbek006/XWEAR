@@ -12,7 +12,7 @@ const Acsesuar = () => {
     useEffect(() => {
       const filteredProducts = data
         .filter((product) => {
-          return product.type === "acsesuarlar";
+          return product.type === "acsesuar";
         })
         .slice(0, 4);
   
@@ -21,16 +21,17 @@ const Acsesuar = () => {
 
   return (
     <>
-         <section className='pt-12 mb-20  '>
+         <section className='pt-12 mb-20'>
             <div className="containerb ">
                 {/* top */}
                 <div className='flex flex-col sm:flex-row items-center justify-between mb-10'>
                     <h2 className='text-3xl font-bold'>Аксессуары</h2>
-                    <Link to='/katalog/' className='flex items-center'>
+                    <Link to='/katalog/acsesuar' className='flex items-center'>
                         <p className='mr-2 text-base'>больше товаров</p>
                         <img src={next} alt="next" />
                     </Link>
                 </div>
+                
                 <div className='flex flex-col items-center sm:items-stretch'>
                 <ul className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-6 gap-x-8 '>
                     {
