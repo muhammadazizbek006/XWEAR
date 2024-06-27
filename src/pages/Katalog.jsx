@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import reyting from "../img/reytingb.svg";
+import { Link } from "react-router-dom";
 import {
   Accordion,
   AccordionHeader,
   AccordionBody,
 } from "@material-tailwind/react";
-import catalog from "../data/data";
+import catalog, { data } from "../data/data";
+import { useParams } from "react-router-dom";
 
 function Icon({ id, open }) {
   return (
@@ -14,51 +17,119 @@ function Icon({ id, open }) {
       viewBox="0 0 24 24"
       strokeWidth={2}
       stroke="currentColor"
-      className={`${id === open ? "rotate-180" : ""} h-5 w-5 transition-transform`}
+      className={`${
+        id === open ? "rotate-180" : ""
+      } h-5 w-5 transition-transform`}
     >
-      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+      />
     </svg>
   );
 }
 
 const Katalog = () => {
+  const [KatalogMahsulotlari, setKatalogMahsulotlari] = useState([]);
   const [open, setOpen] = React.useState(0);
+  const { type } = useParams();
+  useEffect(() => {
+    const filteredProducts = data.filter((product) => {
+      return product.type === type;
+    });
 
+    setKatalogMahsulotlari(filteredProducts ? filteredProducts : []);
+  }, []);
   const handleOpen = (value) => setOpen(open === value ? 0 : value);
-
   return (
     <>
-      <section>
-        <div className="containerb">
+     
+
+      {/*  */}
+      <section className="bg-white">
+        <div className="containerb flex">
           {/* left */}
-          <div>
+          <div className="mr-7">
             {/* kategoria */}
             <div className="mb-12">
-              <Accordion className="w-[318px] border-2 rounded-md pt-4 px-4 border-gray-500" open={open === 1} icon={<Icon id={1} open={open} />}>
-                <AccordionHeader className="mb-5" onClick={() => handleOpen(1)}>Категории</AccordionHeader>
-                <AccordionBody className='flex flex-col items-start'>
-                  {open === 1 && catalog.categoria.map((e) => (
-                    <button className="text-base font-semibold mb-5" key={e.id}>{e.kategoria}</button>
-                  ))}
+              <Accordion
+                className="w-[318px] border-2 rounded-md pt-4 px-4 border-gray-500"
+                open={open === 1}
+                icon={<Icon id={1} open={open} />}
+              >
+                <AccordionHeader className="mb-5" onClick={() => handleOpen(1)}>
+                  Категории
+                </AccordionHeader>
+                <AccordionBody className="flex flex-col items-start">
+                  {open === 1 &&
+                    catalog.categoria.map((e) => (
+                      <button
+                        className="text-base font-semibold mb-5"
+                        key={e.id}
+                      >
+                        {e.kategoria}
+                      </button>
+                    ))}
                 </AccordionBody>
               </Accordion>
             </div>
             {/* razmer */}
             <div>
-              <Accordion className="w-[318px] border-2 rounded-md pt-4 px-4 border-gray-500" open={open === 2} icon={<Icon id={2} open={open} />}>
-                <AccordionHeader className="mb-5" onClick={() => handleOpen(2)}>Размеры (EU)</AccordionHeader>
-                <AccordionBody className='flex flex-col items-start'>
-                  {open === 2 && catalog.categoria.map((e) => (
-                    <button className="text-base font-semibold mb-5" key={e.id}>{e.kategoria}</button>
-                  ))}
+              <Accordion
+                className="w-[318px] border-2 rounded-md pt-4 px-4 border-gray-500"
+                open={open === 2}
+                icon={<Icon id={2} open={open} />}
+              >
+                <AccordionHeader className="mb-5" onClick={() => handleOpen(2)}>
+                  Размеры (EU)
+                </AccordionHeader>
+                <AccordionBody className="flex flex-col items-start">
+                  {open === 2 &&
+                    catalog.categoria.map((e) => (
+                      <button
+                        className="text-base font-semibold mb-5"
+                        key={e.id}
+                      >
+                        {e.kategoria}
+                      </button>
+                    ))}
                 </AccordionBody>
               </Accordion>
             </div>
           </div>
+          {/* o'rta */}
+          <div>
+          {/* maxsulotlar */}
+          <ul className="grid grid-cols-3 gap-x-8 gap-y-12">
+          {KatalogMahsulotlari.map((e, index) => {
+        return (
+          <li key={e.id} className=" bg-white pl-3 w-80 sm:w-full ">
+          <Link className="">
+            <div className=" flex flex-col items-end mb-3 ">
+              <img
+                className="mr-5  pt-5"
+                src={reyting}
+                alt={e.brend}
+              />
+              <img src={e.img} alt={e.title} />
+            </div>
+            <div>
+              <p className="text-xl">{e.title}</p>
+              <p> от {e.narxi} ₽ </p>
+            </div>
+          </Link>
+        </li>
+);
+      })}
+          </ul>
+
+          </div>
+
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
 export default Katalog;

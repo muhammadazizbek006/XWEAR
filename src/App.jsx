@@ -9,7 +9,7 @@ const App = () => {
     createRoutesFromElements(
       <Route path='/' element={<MainLayout/>}>
         <Route index element={<Home/>}/>
-        <Route path='/katalog' element={<Katalog/>}/>
+        <Route path='/katalog/:type' element={<Katalog/>}/>
         <Route path='/faq' element={<Faq/>}/>
       </Route>
     )
