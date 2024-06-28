@@ -58,7 +58,7 @@ const KatalogDetail = () => {
                                                 
                                                 </div>
 
-                                                <button className='text-xs flex  rounded-md font-extrabold text-white  py-6 px-7 bg-black'>
+                                                <button className='text-xs flex items-center  rounded-md font-extrabold text-white  py-6 px-7 bg-black'>
                                                     <p className='mr-6'>Добавить в корзину</p>
                                                     <img src={next} alt="next" />
                                                 </button>
