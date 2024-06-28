@@ -80,10 +80,10 @@ const Katalog = () => {
 
   return (
     <>
-      <section className="bg-white pt-12">
-        <div className="containerb flex">
+      <section className="bg-white py-12">
+        <div className="containerb flex justify-between">
           {/* Chap tomon */}
-          <div className="mr-7">
+          <div className="">
             {/* Kategoriyalar */}
             <div className="mb-12">
               <Accordion
@@ -202,7 +202,7 @@ const Katalog = () => {
                 ))}
               </ul>
             ) : (
-              <div>Bu turdagi mahsulot yo'q</div>
+              <div className="text-4xl ">Bu turdagi mahsulot yo'q</div>
             )}
           </div>
         </div>
