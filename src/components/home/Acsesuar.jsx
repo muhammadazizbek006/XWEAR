@@ -45,8 +45,8 @@ const Acsesuar = () => {
 
                                     </div>
                                         <div>
-                                            <p className='text-xl'>{e.title}</p>
-                                            <p> от  {e.narxi} ₽ </p>
+                                            <p className='text-xl font-semibold mb-4'>{e.title}</p>
+                                            <p className='text-xl '> от  {e.narxi} ₽ </p>
                                         </div>
                                     </Link>
                                 </li>

@@ -118,11 +118,11 @@ const Katalog = () => {
                 <AccordionHeader className="mb-5" onClick={() => handleOpen(2)}>
                   Размеры (EU)
                 </AccordionHeader>
-                <AccordionBody className="flex flex-col items-start">
+                <AccordionBody className="grid grid-cols-3 gap-3 mb-6  ">
                   {open === 2 &&
                     sizes.map((size, index) => (
                       <button
-                        className="text-base font-semibold mb-5"
+                        className="text-base font-semibold rounded border-2 px-8 py-2"
                         key={index}
                         onClick={() => setSelectedSize(size)}
                       >
