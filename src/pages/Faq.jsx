@@ -27,7 +27,7 @@ const Faq = () => {
             <Accordion key={faq.id} open={open === e}>
               <div className='border-b-2'>
                 <AccordionHeader className='flex justify-between p items-center py-5  ' onClick={() => handleOpen(e)}>
-                  <p className='text-base font-semibold'>{faq.savol}</p>
+                  <p className=' sm:text-base sm:font-semibold'>{faq.savol}</p>
                   <img className='right-0' src={open === e ? minus : plus} alt={faq.savol} />
                 </AccordionHeader>
                 {open === e && (
