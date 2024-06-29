@@ -26,13 +26,13 @@ const Faq = () => {
           {Faqs.map((faq, e) => (
             <Accordion key={faq.id} open={open === e}>
               <div className='border-b-2'>
-                <AccordionHeader className='flex justify-between p items-center py-5  ' onClick={() => handleOpen(e)}>
-                  <p className=' sm:text-base sm:font-semibold'>{faq.savol}</p>
-                  <img className='right-0' src={open === e ? minus : plus} alt={faq.savol} />
+                <AccordionHeader className='flex justify-between p items-start py-5  ' onClick={() => handleOpen(e)}>
+                  <p className=' text-xs sm:text-base sm:font-semibold'>{faq.savol}</p>
+                  <img className='right-0 w-4 sm:w-5' src={open === e ? minus : plus} alt={faq.savol} />
                 </AccordionHeader>
                 {open === e && (
                   <AccordionBody className='flex justify-between pb-5'>
-                    <p className='text-base '>{faq.javob}</p>
+                    <p className=' text-xs sm:text-base '>{faq.javob}</p>
                   </AccordionBody>
                 )}
               </div>
