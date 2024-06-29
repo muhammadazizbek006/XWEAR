@@ -75,7 +75,8 @@ const Header = () => {
           <Link>
             <img src={reyting} alt="reyting" />
           </Link>
-          <Link>
+
+          <Link to='/korzinka'>
             <img src={shop} alt="shop" />
           </Link>
         </div>

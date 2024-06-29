@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import Katalog from './pages/Katalog'
 import Faq from './pages/Faq'
 import KatalogDetail from './pages/KatalogDetail'
+import Korzinka from './pages/Korzinka'
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -13,6 +14,7 @@ const App = () => {
         <Route path='/katalog/:type' element={<Katalog/>}/>
         <Route path='/product/:id' element={<KatalogDetail/>}/>
         <Route path='/faq' element={<Faq/>}/>
+        <Route path='/korzinka' element={<Korzinka/>}/>
       </Route>
     )
   )
