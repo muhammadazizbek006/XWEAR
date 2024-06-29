@@ -190,7 +190,11 @@ const Katalog = () => {
                   <li key={e.id} className="bg-white pl-3 w-80 sm:w-full">
                     <Link to={`/product/${e.id}`} className="block">
                       <div className="flex flex-col items-end mb-3">
-                        <img className="mr-5 pt-5" src={reyting} alt={e.brend} />
+                        <img
+                          className="mr-5 pt-5"
+                          src={reyting}
+                          alt={e.brend}
+                        />
                         <img src={e.img} alt={e.title} />
                       </div>
                       <div>
