@@ -23,9 +23,9 @@ const KatalogDetail = () => {
                                     // maxsulot data map
                                     <li className='flex  ' key={e.id}>
                                         {/* left */}
-                                        <div className='relative mr-12 max-w-[504px]'>
-                                            <img className='right-12 absolute' src={reyting} alt='reyting' />
-                                            <img className='w-[480px]  bg-transparent' src={e.img} alt={e.title} />
+                                        <div className='relative mr-12 max-w-[664px]'>
+                                            <img className='right-12 absolute top-2' src={reyting} alt='reyting' />
+                                            <img className='w-[650px] h-[500px]   bg-transparent object-cover' src={e.img} alt={e.title} />
                                         </div>
                                         {/* right */}
                                         <div className=''>
