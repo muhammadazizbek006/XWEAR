@@ -44,3 +44,8 @@
     background: linear-gradient(267.03deg, #0D99F8 0.94%, #21A0F8 5.36%, #54B5FF 27.35%, #0DBBF8 79%, #0DDBF8 97.53%);
 
   }
+
+  .p span{
+    display: none;
+    
+  }
