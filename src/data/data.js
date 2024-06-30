@@ -42,19 +42,19 @@ const catalog = {
         {
             id: 1,
             link: 'Одежда',
-            URL: '/Одежда',
+            URL: '/katalog/kiyim',
             img: vector,
         },
         {
             id: 2,
             link: 'Обувь',
-            URL: '/Обувь',
+            URL: '/katalog/krasofka',
             img: vector,
         },
         {
             id: 3,
             link: 'Аксессуары',
-            URL: '/Аксессуары',
+            URL: '/katalog/acsesuar',
             img: vector,
         },
         {
@@ -65,8 +65,8 @@ const catalog = {
         },
         {
             id: 5,
-            link: 'Расчет стоимости',
-            URL: '/Расчет',
+            link: 'Контакты',
+            URL: '/kontackt',
             img: '',
         },
         {
