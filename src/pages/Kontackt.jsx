@@ -1,10 +1,63 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 // img
 import week from '../img/kontackt/week.svg'
 import telegram from '../img/kontackt/telegram.svg'
 import whatsapp from '../img/kontackt/whatsapp.svg'
 
 const Kontackt = () => {
+  const [activeTab, setActiveTab] = useState(1);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setphone] = useState("");
+  const [message, setMessage] = useState("");
+
+  
+  const handleName = (event) => {
+    setName(event.target.value);
+  };
+  const handlePhone = (event) => {
+    setphone(event.target.value);
+  };
+  const handleEmail = (event) => {
+    setEmail(event.target.value);
+  };
+  const handleMessage = (event) => {
+    setMessage(event.target.value);
+  };
+
+  const handleSubmitInput = (event) => {
+    event.preventDefault();
+    // setNameSend("");
+    // setEmailSend("");
+    // setMessageSend("");
+    // setcontextSend("");
+    // setSubjectSend("");
+    if (name == "" || email == "" || phone == "" || message == "") {
+      alert("Iltimos malumotni to'ldiring");
+    } else {
+      //   setSubject(false);
+      const telegram_bot_id = "7474706019:AAHwOjFku-IDBC6KcJXtL1XL4gIzRg4eTRk";
+      const chat_id = "6932003276";
+
+      const telegramMessage = `Name: ${name}\nEmail: ${email}\nPhone Number : ${phone}\nMessage: ${message}`;
+
+      axios
+
+        .post(`https://api.telegram.org/bot${telegram_bot_id}/sendMessage`, {
+          chat_id,
+          text: telegramMessage,
+        })
+        .then((response) => {
+          setName("");
+          setEmail("");
+          setphone("");
+          setMessage("");
+        });
+      alert("Malumot yuborildi");
+    }
+  };
   return (
     <>
       <section className="pt-12 pb-28">
@@ -13,16 +66,20 @@ const Kontackt = () => {
           <div className="mr-2">
             <h2 className=" text-xl sm:text-3xl font-black mb-14">Наши контакты</h2>
             <h3 className=" text-base sm:text-2xl font-extrabold mb-5">напишите нам</h3>
-            <form className="flex flex-col items-center" action="">
-              <div className=" flex flex-col items-center xl:flex-row space-y-4 mb-8">
+            <form onSubmit={handleSubmitInput} className="flex flex-col items-center" action="">
+              <div className=" flex flex-col items-center xl:flex-row space-y-4 xl:space-y-0 mb-8">
                 {/* Ваше имя: */}
-                <input className="bg-slate-100 w-[320px] py-4 pl-5 rounded-md md:mr-8" type="text" placeholder="Ваше имя:" />
-                <input className="bg-slate-100 w-[320px] py-4 pl-5 rounded-md"  type="email" placeholder="Ваш email:" />
+                <input onChange={handleName}
+                    value={name} className="bg-slate-100 w-[320px] py-4 pl-5 rounded-md md:mr-8" type="text" placeholder="Ваше имя:" />
+                <input onChange={handleEmail}
+                    value={email} className="bg-slate-100 w-[320px] py-4 pl-5 rounded-md"  type="email" placeholder="Ваш email:" />
               </div>
 
               <div className="flex flex-col mb-8">
-                <input className="bg-slate-100 w-[320px] xl:w-[666px] py-4 pl-5 rounded-md mb-8" type="tel"   placeholder="Номер телефона:"/>
-                <textarea  className="bg-slate-100 w-[320px] xl:w-[666px] py-4 pl-5 rounded-md resize-none" placeholder="Текст сообщения:"></textarea>
+                <input onChange={handlePhone}
+                    value={phone} className="bg-slate-100 w-[320px] xl:w-[666px] py-4 pl-5 rounded-md mb-8" type="tel"   placeholder="Номер телефона:"/>
+                <textarea onChange={handleMessage}
+                    value={message}  className="bg-slate-100 w-[320px] xl:w-[666px] py-4 pl-5 rounded-md resize-none" placeholder="Текст сообщения:"></textarea>
               </div>
               <button className="bg-black mb-5 md:mb-0   text-white py-6 px-12 rounded-md">Задать вопрос</button>
             </form>
