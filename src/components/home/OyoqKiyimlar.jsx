@@ -37,7 +37,7 @@ const OyoqKiyimlar = () => {
               {KatalogMahsulotlari.map((e) => {
                 return (
                   <li key={e.id} className=" bg-white pl-3 w-80 sm:w-full ">
-                    <Link className="">
+                    <Link to={`/product/${e.id}`} className="">
                       <div className=" flex flex-col items-end mb-3 ">
                         <img
                           className="mr-5  pt-5"
