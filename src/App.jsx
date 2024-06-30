@@ -12,11 +12,13 @@ import Faq from "./pages/Faq";
 import KatalogDetail from "./pages/KatalogDetail";
 import Korzinka from "./pages/Korzinka";
 import Kontackt from "./pages/Kontackt";
+import Infarmatsiya from "./pages/Infarmatsiya";
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<MainLayout />}>
         <Route index element={<Home />} />
+        <Route path="/infarmatsiya" element={<Infarmatsiya/>}/>
         <Route path="/katalog/:type" element={<Katalog />} />
         <Route path="/product/:id" element={<KatalogDetail />} />
         <Route path="/faq" element={<Faq />} />

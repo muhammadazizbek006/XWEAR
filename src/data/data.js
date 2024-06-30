@@ -72,7 +72,7 @@ const catalog = {
         {
             id: 6,
             link: 'Информация',
-            URL: '/Информация',
+            URL: '/infarmatsiya',
             img: vector,
         },
     ],
