@@ -96,7 +96,7 @@ const Kontackt = () => {
                   return(
                     <li className="flex max-w-[198px]">
                       <div className="relative mr-5">
-                        <img className="z-50 relative"  src={e.img} alt={e.title} />
+                        <img className="z-50 relative w-6"  src={e.img} alt={e.title} />
                         <img className="absolute z-0 top-1 -right-2" src={kok} alt="" />
                       </div>
                       {/* malumot */}
@@ -113,12 +113,12 @@ const Kontackt = () => {
             </ul>
             <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 ">
              
-              <a className="flex space-x-4 items-center py-3 px-4 lg:px-8 border-2 sm:mr-5 border-blue-500 rounded-md" href="https://t.me/umarov_dev">
+              <a className="flex space-x-4 items-center  lg:px-8 border-2 sm:mr-5 border-blue-500 rounded-md w-72 h-14" href="https://t.me/umarov_dev">
                 <img src={telegram} alt="telegram" />
                 <p className="text-sm font-extrabold">Написать в Telegram</p>
               </a>
              
-              <a className="flex space-x-4 items-center py-3   px-4 lg:px-8 border-2 border-lime-400 rounded-md" href="https://wa.me/+998914750612">
+              <a className="flex space-x-4 items-center  lg:px-8 border-2 border-lime-400 rounded-md  w-72 h-14" href="https://wa.me/+998914750612">
                 <img src={whatsapp} alt="telegram" />
                 <p className="text-sm font-extrabold">Написать в Telegram</p>
               </a>
