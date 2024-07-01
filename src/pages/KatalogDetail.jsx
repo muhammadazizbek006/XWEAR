@@ -79,7 +79,7 @@ const KatalogDetail = () => {
 
                       <button
                         onClick={() => mahsulotniWishlistgaQoshish(e)}
-                        className="text-xs flex items-center  rounded-md font-extrabold text-white  py-6 px-7 bg-black"
+                        className="text-xs flex items-center  rounded-md font-extrabold text-white  py-6 px-7  bg-black"
                       >
                         <span className="mr-6">Добавить в корзину</span>
                         <img src={next} alt="next" />

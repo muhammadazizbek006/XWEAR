@@ -4,6 +4,8 @@ import axios from "axios";
 import week from '../img/kontackt/week.svg'
 import telegram from '../img/kontackt/telegram.svg'
 import whatsapp from '../img/kontackt/whatsapp.svg'
+import { kontackt } from "../data/data";
+import kok from '../img/kontackt/kok.svg'
 
 const Kontackt = () => {
   const [activeTab, setActiveTab] = useState(1);
@@ -66,7 +68,7 @@ const Kontackt = () => {
           <div className="mr-2">
             <h2 className=" text-xl sm:text-3xl font-black mb-14">Наши контакты</h2>
             <h3 className=" text-base sm:text-2xl font-extrabold mb-5">напишите нам</h3>
-            <form onSubmit={handleSubmitInput} className="flex flex-col items-center" action="">
+            <form onSubmit={handleSubmitInput} className="flex flex-col items-center sm:items-start" action="">
               <div className=" flex flex-col items-center xl:flex-row space-y-4 xl:space-y-0 mb-8">
                 {/* Ваше имя: */}
                 <input onChange={handleName}
@@ -81,7 +83,7 @@ const Kontackt = () => {
                 <textarea onChange={handleMessage}
                     value={message}  className="bg-slate-100 w-[320px] xl:w-[666px] py-4 pl-5 rounded-md resize-none" placeholder="Текст сообщения:"></textarea>
               </div>
-              <button className="bg-black mb-5 md:mb-0   text-white py-6 px-12 rounded-md">Задать вопрос</button>
+              <button className="bg-black mb-5 md:mb-0   text-white h-[66px] w-[230px] rounded-md">Задать вопрос</button>
             </form>
           </div>
           {/* Связаться с нами */}
@@ -89,22 +91,25 @@ const Kontackt = () => {
             <h3 className="font-extrabold text-xl xl:text-2xl mb-2">Связаться с нами</h3>
             <p className=" text-sm lg:text-base mb-5">Вы можете связаться с нами любым удобным для вас способом:</p>
             <ul className="grid grid-cols-2 gap-x-16 gap-8 mb-9">
-              <li>
-                <a href="">Телефон: <br /> +7 993 608 38 85</a>
-              </li>
-              <li>
-                <a href="">Email: <br /> info@xwear.info </a>
-              </li>
-              <li>
-                <a href="">График работы: <br /> Пн-Пт с 9:00 до 18:00 <br />
-                Сб-Вс. Выходные</a>
-              </li>
-              <li>
-                <a href="">
-                  <p className="mb-2">Наши соц.сети:</p>
-                  <img src={week} alt="week" />
-                </a>
-              </li>
+              {
+                kontackt.map((e)=>{
+                  return(
+                    <li className="flex max-w-[198px]">
+                      <div className="relative mr-5">
+                        <img className="z-50 relative"  src={e.img} alt={e.title} />
+                        <img className="absolute z-0 top-1 -right-2" src={kok} alt="" />
+                      </div>
+                      {/* malumot */}
+                      <div>
+                        <p className="text-base font-semibold">{e.title}</p>
+                        <a href="">{e.malumot}
+                          
+                        </a>
+                      </div>
+                    </li>
+                  )
+                })
+              }
             </ul>
             <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 ">
              

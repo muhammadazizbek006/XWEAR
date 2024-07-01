@@ -464,3 +464,42 @@ export const Faqs  = [
     javob:`да, если договор не соблюдается`,
   },
 ]
+// korzinka right
+import sms from '../img/kontackt/sms.svg'
+import phone from '../img/kontackt/phone.svg'
+import taqvim from '../img/kontackt/taqvim.svg'
+import internet from '../img/kontackt/internet.svg'
+import week from '../img/kontackt/week.svg'
+
+
+
+export const kontackt = [
+  {
+    id:1,
+    img:sms,
+    title:`Телефон:`,
+    malumot:`+7 993 608 38 85`,
+
+  },
+  {
+    id:2,
+    img:phone,
+    title:`Email:`,
+    malumot:`info@xwear.info`,
+    
+  },
+  {
+    id:3,
+    img:taqvim,
+    title:`График работы:`,
+    malumot:`Пн-Пт с 9:00 до 18:00
+Сб-Вс. Выходные`,
+    
+  },
+  {
+    id:4,
+    img:internet,
+    title:`Наши соц.сети::`,
+    malumot:`Наши соц.сети:`,
+  },
+]
