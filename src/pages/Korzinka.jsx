@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 // img
 import delet from '../img/korzinka/delete.svg'
+import { deleteUserOfferLinkData } from "../store/slice/productsWishlistDataSlice";
 
 const Korzinka = () => {
+  const dispatch = useDispatch()
   const tanlanganMahsulotlar = useSelector(
     (store) => store.tanlanganMahsulotlar.data
   );
@@ -15,8 +17,8 @@ const Korzinka = () => {
     if (count > 0) setCount(count - 1);
   };
   const handleDelete = (id) => {
-    const updatedProducts = tanlanganMahsulotlar.filter(product => product.id !== id);
-    useSelector(updatedProducts);
+    dispatch(deleteUserOfferLinkData(id))
+
   };
   return (
     <>

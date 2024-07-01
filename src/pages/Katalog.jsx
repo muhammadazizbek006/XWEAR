@@ -87,11 +87,11 @@ const Katalog = () => {
             {/* Kategoriyalar */}
             <div className="mb-12">
               <Accordion
-                className="w-[318px] border-2 rounded-md pt-4 px-4 border-gray-500"
+                className="w-[318px] border-2 rounded-md px-4 border-gray-500"
                 open={open === 1}
                 icon={<Icon id={1} open={open} />}
               >
-                <AccordionHeader className="mb-5" onClick={() => handleOpen(1)}>
+                <AccordionHeader className="" onClick={() => handleOpen(1)}>
                   Категории
                 </AccordionHeader>
                 <AccordionBody className="flex flex-col items-start">
@@ -111,11 +111,11 @@ const Katalog = () => {
             {/* Razmerlar */}
             <div className="mb-12">
               <Accordion
-                className="w-[318px] border-2 rounded-md pt-4 px-4 border-gray-500"
+                className="w-[318px] border-2 rounded-md  px-4 border-gray-500"
                 open={open === 2}
                 icon={<Icon id={2} open={open} />}
               >
-                <AccordionHeader className="mb-5" onClick={() => handleOpen(2)}>
+                <AccordionHeader className="" onClick={() => handleOpen(2)}>
                   Размеры (EU)
                 </AccordionHeader>
                 <AccordionBody className="grid grid-cols-3 gap-3 mb-6  ">
@@ -135,11 +135,11 @@ const Katalog = () => {
             {/* Brendlar */}
             <div className="mb-12">
               <Accordion
-                className="w-[318px] border-2 rounded-md pt-4 px-4 border-gray-500"
+                className="w-[318px] border-2 rounded-md  px-4 border-gray-500"
                 open={open === 3}
                 icon={<Icon id={3} open={open} />}
               >
-                <AccordionHeader className="mb-5" onClick={() => handleOpen(3)}>
+                <AccordionHeader className="" onClick={() => handleOpen(3)}>
                   Брэнды
                 </AccordionHeader>
                 <AccordionBody className="flex flex-col items-start">
@@ -159,11 +159,11 @@ const Katalog = () => {
             {/* Ranglar */}
             <div>
               <Accordion
-                className="w-[318px] border-2 rounded-md pt-4 px-4 border-gray-500"
+                className="w-[318px] border-2 rounded-md  px-4 border-gray-500"
                 open={open === 4}
                 icon={<Icon id={4} open={open} />}
               >
-                <AccordionHeader className="mb-5" onClick={() => handleOpen(4)}>
+                <AccordionHeader className="" onClick={() => handleOpen(4)}>
                   Цвета
                 </AccordionHeader>
                 <AccordionBody className="flex flex-col items-start">
