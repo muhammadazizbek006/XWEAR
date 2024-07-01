@@ -97,7 +97,7 @@ const Kontackt = () => {
                     <li className="flex max-w-[198px]">
                       <div className="relative mr-5">
                         <img className="z-50 relative w-6"  src={e.img} alt={e.title} />
-                        <img className="absolute z-0 top-1   -right-2" src={kok} alt="" />
+                        <img className="absolute z-0 top-1 -right-2" src={kok} alt="" />
                       </div>
                       {/* malumot */}
                       <div>
