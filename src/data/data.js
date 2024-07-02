@@ -1,5 +1,8 @@
 // Import images
 import vector from '../img/vector.svg';
+import hero1 from '../img/hero/hero1.png'
+import hero2 from '../img/hero/hero2.png'
+
 import kiyim from '../img/hero/kiyim.png';
 import kepka from '../img/hero/kepka.png';
 import o1 from '../img/Обувь/o1.png';
@@ -81,19 +84,13 @@ const catalog = {
             id: 1,
             title: 'Широкий ассортимент Одежды',
             sharx: 'Одежда от известные брендов у нас в каталоге. Только качественные вещи.',
-            img: kiyim,
+            img:hero1,
         },
         {
-            id: 2,
-            title: 'Обуви ассортимент Одежды',
-            sharx: 'Обуви от известные брендов у нас в каталоге. Только качественные вещи.',
-            img: kiyim,
-        },
-        {
-            id: 3,
+            id:2,
             title: 'Кепка ассортимент Одежды',
             sharx: 'Кепка от известные брендов у нас в каталоге. Только качественные вещи.',
-            img: kepka,
+            img: hero2,
         },
     ],
     krasofkalar: [
@@ -160,15 +157,6 @@ const catalog = {
 };
 
 export default catalog;
-
-
-// export const faq = [
-//     {
-//         id:1,
-//         title:`ОБЩИЕ ВОПРОСЫ`,
-//         savol:1,
-//     },
-// ]
 
 export const data = [
   // krasofkalar
