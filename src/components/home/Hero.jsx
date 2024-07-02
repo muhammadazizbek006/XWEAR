@@ -19,7 +19,7 @@ const Hero = () => {
         <section className='pt-12 hero'>
          <div className="containerb ">
          <Swiper
-        spaceBetween={30}
+        spaceBetween= {30} 
         centeredSlides={true}
         autoplay={{
           delay: 2500,
