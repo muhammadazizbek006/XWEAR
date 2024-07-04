@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import reyting from "../img/reytingb.svg";
 import { Link, useParams } from "react-router-dom";
+
 import {
   Accordion,
   AccordionHeader,
@@ -28,6 +29,9 @@ function Icon({ id, open }) {
     </svg>
   );
 }
+// img
+
+import vector from '../img/vectorblack.svg'
 
 const Katalog = () => {
   const [KatalogMahsulotlari, setKatalogMahsulotlari] = useState([]);
@@ -85,11 +89,11 @@ const Katalog = () => {
           {/* Chap tomon */}
           <div className="mr-5 " >
             {/* filter responsive */}
-            <div className="flex justify-between">
+            <div className="flex justify-between space-x-2 ">
               {/* Kategoriyalar */}
-              <div className="mb-12 ">
+              <div className=" sm:mb-0 md:mb-12 ">
                 <Accordion
-                  className=" md:w-60 xl:w-[318px] border-2 rounded-md px-4 border-gray-500"
+                  className=" w-40 sm:w-80 xl:w-[318px] h-16 border-2 rounded-md px-4 border-gray-500"
                   open={open === 1}
                   icon={<Icon id={1} open={open} />}
                 >
@@ -111,15 +115,11 @@ const Katalog = () => {
                 </Accordion>
               </div>
                 {/* Открыть Фильтры */}
-              <div className="mb-12  block md:hidden">
-                <div
-                  className=" md:w-60 xl:w-[318px] border-2 rounded-md px-4 border-gray-500"
-
-                  
-                >
-
-
-                </div>
+              <div className=" w-80 h-16  block md:hidden  border-2 rounded-md flex items-center justify-between px-2  border-gray-500">
+                
+                  <p className="text-xl font-extrabold">Открыть Фильтры</p>
+                  <img src={vector} alt="btn filter" />
+                
               </div>
             </div>
             {/* Razmerlar */}
