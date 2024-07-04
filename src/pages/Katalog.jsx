@@ -85,15 +85,22 @@ const Katalog = () => {
   return (
     <>
       <section className="bg-white py-12 ">
-        <div className="containerb flex flex-col  justify-between">
+        <div className="containerb flex flex-col md:flex-row  justify-between">
           {/* Chap tomon */}
           <div className="mr-5 " >
             {/* filter responsive */}
-            <div className="flex justify-between space-x-2 ">
+
+                {/* Открыть Фильтры */}
+              <div className=" w-80 h-16  block md:hidden  border-2 rounded-md flex items-center justify-between px-2  border-gray-500">
+                  <p className="text-xl font-extrabold">Открыть Фильтры</p>
+                  <img src={vector} alt="btn filter" />
+                
+              </div>
+           
               {/* Kategoriyalar */}
-              <div className=" sm:mb-0 md:mb-12 ">
+              <div className="mb-12 hidden md:block  ">
                 <Accordion
-                  className=" w-40 sm:w-80 xl:w-[318px] h-16 border-2 rounded-md px-4 border-gray-500"
+                  className=" md:w-60 xl:w-[318px] border-2 rounded-md  px-4 border-gray-500"
                   open={open === 1}
                   icon={<Icon id={1} open={open} />}
                 >
@@ -114,14 +121,7 @@ const Katalog = () => {
                   </AccordionBody>
                 </Accordion>
               </div>
-                {/* Открыть Фильтры */}
-              <div className=" w-80 h-16  block md:hidden  border-2 rounded-md flex items-center justify-between px-2  border-gray-500">
-                
-                  <p className="text-xl font-extrabold">Открыть Фильтры</p>
-                  <img src={vector} alt="btn filter" />
-                
-              </div>
-            </div>
+
             {/* Razmerlar */}
             <div className="mb-12 hidden md:block ">
               <Accordion
@@ -197,7 +197,7 @@ const Katalog = () => {
           </div>
 
           {/* O'rta qism */}
-          <div>
+          <div className="flex flex-col items-center">
             {filteredProducts.length > 0 ? (
               <ul className="grid sm:grid-cols-2  md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12">
                 {filteredProducts.map((e) => (
