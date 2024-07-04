@@ -72,7 +72,7 @@ const Kontackt = () => {
               <div className=" flex flex-col items-center xl:flex-row space-y-4 xl:space-y-0 mb-8">
                 {/* Ваше имя: */}
                 <input onChange={handleName}
-                    value={name} className="bg-slate-100 w-[320px] py-4 pl-5 rounded-md md:mr-8" type="text" placeholder="Ваше имя:" />
+                    value={name} className="bg-slate-100 w-[320px] py-4 pl-5 rounded-md lg:mr-8" type="text" placeholder="Ваше имя:" />
                 <input onChange={handleEmail}
                     value={email} className="bg-slate-100 w-[320px] py-4 pl-5 rounded-md"  type="email" placeholder="Ваш email:" />
               </div>
@@ -111,14 +111,14 @@ const Kontackt = () => {
                 })
               }
             </ul>
-            <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 ">
+            <div className="flex flex-col lg:flex-row space-y-3 lg:space-y-0 ">
              
-              <a className="flex space-x-4 items-center  lg:px-8 border-2 sm:mr-5 border-blue-500 rounded-md w-72 h-14" href="https://t.me/umarov_dev">
-                <img src={telegram} alt="telegram" />
+              <a className="flex pl-3 space-x-4 items-center   lg:px-8 border-2 sm:mr-5 border-blue-500 rounded-md w-72 h-14" href="https://t.me/umarov_dev">
+                <img  src={telegram} alt="telegram" />
                 <p className="text-sm font-extrabold">Написать в Telegram</p>
               </a>
              
-              <a className="flex space-x-4 items-center  lg:px-8 border-2 border-lime-400 rounded-md  w-72 h-14" href="https://wa.me/+998914750612">
+              <a className="flex pl-3 space-x-4 items-center  lg:px-8 border-2 border-lime-400 rounded-md  w-72 h-14" href="https://wa.me/+998914750612">
                 <img src={whatsapp} alt="telegram" />
                 <p className="text-sm font-extrabold">Написать в Telegram</p>
               </a>
