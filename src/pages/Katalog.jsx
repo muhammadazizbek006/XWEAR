@@ -80,38 +80,52 @@ const Katalog = () => {
 
   return (
     <>
-      <section className="bg-white py-12">
-        <div className="containerb flex justify-between">
+      <section className="bg-white py-12 ">
+        <div className="containerb flex flex-col  justify-between">
           {/* Chap tomon */}
-          <div className="">
-            {/* Kategoriyalar */}
-            <div className="mb-12">
-              <Accordion
-                className="w-[318px] border-2 rounded-md px-4 border-gray-500"
-                open={open === 1}
-                icon={<Icon id={1} open={open} />}
-              >
-                <AccordionHeader className="" onClick={() => handleOpen(1)}>
-                  Категории
-                </AccordionHeader>
-                <AccordionBody className="flex flex-col items-start">
-                  {open === 1 &&
-                    categories.map((category, index) => (
-                      <button
-                        className="text-base font-semibold mb-5"
-                        key={index}
-                        onClick={() => setSelectedCategory(category)}
-                      >
-                        {category}
-                      </button>
-                    ))}
-                </AccordionBody>
-              </Accordion>
+          <div className="mr-5 " >
+            {/* filter responsive */}
+            <div className="flex justify-between">
+              {/* Kategoriyalar */}
+              <div className="mb-12 ">
+                <Accordion
+                  className=" md:w-60 xl:w-[318px] border-2 rounded-md px-4 border-gray-500"
+                  open={open === 1}
+                  icon={<Icon id={1} open={open} />}
+                >
+                  <AccordionHeader className="" onClick={() => handleOpen(1)}>
+                    Категории
+                  </AccordionHeader>
+                  <AccordionBody className="flex flex-col items-start">
+                    {open === 1 &&
+                      categories.map((category, index) => (
+                        <button
+                          className="text-base font-semibold mb-5"
+                          key={index}
+                          onClick={() => setSelectedCategory(category)}
+                        >
+                          {category}
+                        </button>
+                      ))}
+                  </AccordionBody>
+                </Accordion>
+              </div>
+                {/* Открыть Фильтры */}
+              <div className="mb-12  block md:hidden">
+                <div
+                  className=" md:w-60 xl:w-[318px] border-2 rounded-md px-4 border-gray-500"
+
+                  
+                >
+
+
+                </div>
+              </div>
             </div>
             {/* Razmerlar */}
-            <div className="mb-12">
+            <div className="mb-12 hidden md:block ">
               <Accordion
-                className="w-[318px] border-2 rounded-md  px-4 border-gray-500"
+                className=" md:w-60 xl:w-[318px] border-2 rounded-md  px-4 border-gray-500"
                 open={open === 2}
                 icon={<Icon id={2} open={open} />}
               >
@@ -133,9 +147,9 @@ const Katalog = () => {
               </Accordion>
             </div>
             {/* Brendlar */}
-            <div className="mb-12">
+            <div className="mb-12 hidden md:block">
               <Accordion
-                className="w-[318px] border-2 rounded-md  px-4 border-gray-500"
+                className=" md:w-60 xl:w-[318px] border-2 rounded-md  px-4 border-gray-500"
                 open={open === 3}
                 icon={<Icon id={3} open={open} />}
               >
@@ -157,9 +171,9 @@ const Katalog = () => {
               </Accordion>
             </div>
             {/* Ranglar */}
-            <div>
+            <div className="mb-12 hidden md:block">
               <Accordion
-                className="w-[318px] border-2 rounded-md  px-4 border-gray-500"
+                className=" md:w-60 xl:w-[318px] border-2 rounded-md  px-4 border-gray-500"
                 open={open === 4}
                 icon={<Icon id={4} open={open} />}
               >
@@ -185,7 +199,7 @@ const Katalog = () => {
           {/* O'rta qism */}
           <div>
             {filteredProducts.length > 0 ? (
-              <ul className="grid grid-cols-3 gap-x-8 gap-y-12">
+              <ul className="grid sm:grid-cols-2  md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12">
                 {filteredProducts.map((e) => (
                   <li key={e.id} className="bg-white pl-3 w-80 sm:w-full">
                     <Link to={`/product/${e.id}`} className="block">
@@ -198,7 +212,7 @@ const Katalog = () => {
                         <img src={e.img} alt={e.title} />
                       </div>
                       <div>
-                        <p className="text-xl">{e.title}</p>
+                        <p className=" text-base lg:text-xl">{e.title}</p>
                         <p> от {e.narxi} ₽ </p>
                       </div>
                     </Link>
