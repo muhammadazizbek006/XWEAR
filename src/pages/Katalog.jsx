@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import reyting from "../img/reytingb.svg";
 import { Link, useParams } from "react-router-dom";
+import {
+  Drawer,
+  IconButton,
+} from "@material-tailwind/react";
 
 import {
   Accordion,
@@ -82,20 +86,141 @@ const Katalog = () => {
     );
   });
 
+  // draw
+  const [openLeft, setOpenLeft] = React.useState(false);
+
+  const openDrawerLeft = () => setOpenLeft(true);
+  const closeDrawerLeft = () => setOpenLeft(false);
+
+  const Closedraw = () => {
+    setOpenLeft(false)
+  }
+
   return (
     <>
       <section className="bg-white py-12 ">
+      <Drawer
+        placement="left"
+        open={openLeft}
+        onClose={closeDrawerLeft}
+        className="fixed top-0 left-0 h-full shadow-lg    z-50 p-4 w-[594px] "
+        overlayProps={{ className: "bg-black bg-opacity-0" }}
+        transition={{ duration: 0.3 }}
+      >
+        <div>
+              {/* Kategoriyalar */}
+              <div className="mb-12   ">
+                <Accordion
+                  className=" md:w-60 xl:w-[318px] border-2 rounded-md  px-4 border-gray-500"
+                  open={open === 1}
+                  icon={<Icon id={1} open={open} />}
+                >
+                  <AccordionHeader className="" onClick={() => handleOpen(1)}>
+                    Категории
+                  </AccordionHeader>
+                  <AccordionBody onClick={closeDrawerLeft} className="flex flex-col items-start">
+                    {open === 1 &&
+                      categories.map((category, index) => (
+                        <button
+                          className="text-base font-semibold mb-5"
+                          key={index}
+                          onClick={() => setSelectedCategory(category)}
+                        >
+                          {category}
+                        </button>
+                      ))}
+                  </AccordionBody>
+                </Accordion>
+              </div>
+      
+            {/* Razmerlar */}
+            <div className="mb-12  ">
+              <Accordion
+                className=" md:w-60 xl:w-[318px] border-2 rounded-md  px-4 border-gray-500"
+                open={open === 2}
+                icon={<Icon id={2} open={open} />}
+              >
+                <AccordionHeader className="" onClick={() => handleOpen(2)}>
+                  Размеры (EU)
+                </AccordionHeader>
+                <AccordionBody onClick={closeDrawerLeft} className="grid grid-cols-3 gap-3 mb-6  ">
+                  {open === 2 &&
+                    sizes.map((size, index) => (
+                      <button
+                        className="text-base font-semibold rounded border-2 px-8 py-2"
+                        key={index}
+                        onClick={() => setSelectedSize(size)}
+                      >
+                        {size}
+                      </button>
+                    ))}
+                </AccordionBody>
+              </Accordion>
+            </div>
+
+            {/* Brendlar */}
+            <div className="mb-12 ">
+              <Accordion
+                className=" md:w-60 xl:w-[318px] border-2 rounded-md  px-4 border-gray-500"
+                open={open === 3}
+                icon={<Icon id={3} open={open} />}
+              >
+                <AccordionHeader className="" onClick={() => handleOpen(3)}>
+                  Брэнды
+                </AccordionHeader>
+                <AccordionBody onClick={closeDrawerLeft} className="flex flex-col items-start">
+                  {open === 3 &&
+                    brands.map((brand, index) => (
+                      <button
+                        className="text-base font-semibold mb-5"
+                        key={index}
+                        onClick={() => setSelectedBrand(brand)}
+                      >
+                        {brand}
+                      </button>
+                    ))}
+                </AccordionBody>
+              </Accordion>
+            </div>
+
+            {/* Ranglar */}
+            <div className="mb-12 ">
+              <Accordion
+                className=" md:w-60 xl:w-[318px] border-2 rounded-md  px-4 border-gray-500"
+                open={open === 4}
+                icon={<Icon id={4} open={open} />}
+              >
+                <AccordionHeader className="" onClick={() => handleOpen(4)}>
+                  Цвета
+                </AccordionHeader>
+                <AccordionBody onClick={closeDrawerLeft} className="flex flex-col items-start">
+                  {open === 4 &&
+                    colors.map((color, index) => (
+                      <button
+                        className="text-base font-semibold mb-5"
+                        key={index}
+                        onClick={() => setSelectedColor(color)}
+                      >
+                        {color}
+                      </button>
+                    ))}
+                </AccordionBody>
+              </Accordion>
+            </div>
+        </div>
+
+      </Drawer>
         <div className="containerb flex flex-col md:flex-row  justify-between">
           {/* Chap tomon */}
           <div className="mr-5 " >
             {/* filter responsive */}
 
                 {/* Открыть Фильтры */}
-              <div className=" w-80 h-16  block md:hidden  border-2 rounded-md flex items-center justify-between px-2  border-gray-500">
+              <button onClick={openDrawerLeft} className=" w-80 h-16  block md:hidden  border-2 rounded-md flex items-center justify-between px-2  border-gray-500">
                   <p className="text-xl font-extrabold">Открыть Фильтры</p>
                   <img src={vector} alt="btn filter" />
                 
-              </div>
+              </button>
            
               {/* Kategoriyalar */}
               <div className="mb-12 hidden md:block  ">
