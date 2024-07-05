@@ -28,9 +28,9 @@ const KatalogDetail = () => {
             {Detail.map((e) => {
               return (
                 // maxsulot data map
-                <li className="flex  " key={e.id}>
+                <li className="flex  flex-col md:flex-row items-center md:items-start justify-between md:justify-around " key={e.id}>
                   {/* left */}
-                  <div className="relative mr-12 max-w-[664px]">
+                  <div className="relative mr-12 max-w-[380px] lg:max-w-[500px] xl:max-w-[664px]">
                     <img
                       className="right-12 absolute top-2"
                       src={reyting}
@@ -42,15 +42,16 @@ const KatalogDetail = () => {
                       alt={e.title}
                     />
                   </div>
+
                   {/* right */}
                   <div className="">
-                    <h3 className="text-3xl mb-5 font-black">{e.title}</h3>
+                    <h3 className=" lg:text-2xl xl:text-3xl mb-5 lg:font-bold xl:font-black">{e.title}</h3>
                     {/* razmer */}
                     <div className="mb-7">
                       <p className="text-base mb-4 font-semibold">
                         EU размеры:
                       </p>
-                      <div className="grid grid-cols-5 gap-6">
+                      <div className="grid grid-cols-3 gap-6">
                         {e.razmer.map((size, index) => (
                           <button
                             key={index}
@@ -79,7 +80,7 @@ const KatalogDetail = () => {
 
                       <button
                         onClick={() => mahsulotniWishlistgaQoshish(e)}
-                        className="text-xs flex items-center  rounded-md font-extrabold text-white  py-6 px-7  bg-black"
+                        className="text-xs flex items-center  rounded-md font-medium lg:font-extrabold text-white  py-3 lg:py-6 px-3 lg:px-7  bg-black"
                       >
                         <span className="mr-6">Добавить в корзину</span>
                         <img src={next} alt="next" />
