@@ -72,7 +72,7 @@ const Header = () => {
           <Link className="hidden sm:block" onClick={onSearch}>
             <img src={searchIcon} alt="search" />
           </Link>
-          <Link>
+          <Link to='/yoqtrilganlar'>
             <img src={reyting} alt="reyting" />
           </Link>
 

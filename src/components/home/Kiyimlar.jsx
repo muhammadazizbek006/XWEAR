@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+
 // img
 import next from '../../img/next.svg'
 import reyting from '../../img/reytingb.svg'
