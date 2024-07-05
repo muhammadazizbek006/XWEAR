@@ -86,7 +86,7 @@ const Korzinka = () => {
               <img className="w-20 h-24 object-cover mb-5" src={maxsulotyoq} alt="" />
               <h3 className="text-2xl font-extrabold mb-4">Ваша корзина на данный момент пуста.</h3>
               <p className="text-base mb-5">Прежде чем приступить к оформлению заказа, вы должны добавить некоторые товары в корзину. На странице "Каталог" вы найдете много интересных товаров.</p>
-              <Link to='/Katalog' className='px-7 py-6 bg-black rounded-md text-white text-sm'>Перейти в каталог</Link>
+              <Link to='/katalog/krasofka' className='px-7 py-6 bg-black rounded-md text-white text-sm'>Перейти в каталог</Link>
             </div>
           </div>
         )}

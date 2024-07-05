@@ -103,7 +103,7 @@ const Katalog = () => {
         placement="left"
         open={openLeft}
         onClose={closeDrawerLeft}
-        className="fixed top-0 left-0 h-full shadow-lg    z-50 p-4 w-[594px] "
+        className="fixed top-0 left-0 h-full shadow-lg     z-50 p-4 w-[594px] "
         overlayProps={{ className: "bg-black bg-opacity-0" }}
         transition={{ duration: 0.3 }}
       >
@@ -210,6 +210,7 @@ const Katalog = () => {
         </div>
 
       </Drawer>
+      
         <div className="containerb flex flex-col md:flex-row  justify-between">
           {/* Chap tomon */}
           <div className="mr-5 " >
