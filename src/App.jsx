@@ -13,6 +13,7 @@ import KatalogDetail from "./pages/KatalogDetail";
 import Korzinka from "./pages/Korzinka";
 import Kontackt from "./pages/Kontackt";
 import Infarmatsiya from "./pages/Infarmatsiya";
+import Yoqtrilganlar from './pages/Yoqtrilganlar'
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/Katalog/:type" element={<Katalog />} />
         <Route path="/product/:id" element={<KatalogDetail />} />
         <Route path="/faq" element={<Faq />} />
+        <Route path="/yoqtrilganlar" element={<Yoqtrilganlar/>}/>
         <Route path="/korzinka" element={<Korzinka />} />
         <Route path="/kontackt" element={<Kontackt />} />
       </Route>

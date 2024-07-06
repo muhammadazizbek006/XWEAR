@@ -16,10 +16,15 @@ export const productsWishlistDataSlice = createSlice({
         (pradakt) => pradakt.id !== actions.payload
       );
     },
+    productliked:(state, action) =>{
+      state.data = state.data.filter(
+        (pradakt) => pradakt.id == action.payload
+      )
+    }
   },
 });
 
-export const { addProductToWishlist, deleteUserOfferLinkData } =
+export const { addProductToWishlist, deleteUserOfferLinkData, productliked } =
   productsWishlistDataSlice.actions;
 
 export default productsWishlistDataSlice.reducer;

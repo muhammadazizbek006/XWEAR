@@ -12,16 +12,35 @@ const Korzinka = () => {
     (store) => store.tanlanganMahsulotlar.data
   );
 
-  const [count, setCount] = useState(1);
+  const initialCounts = tanlanganMahsulotlar.reduce((acc, product) => {
+    acc[product.id] = 1; // Har bir mahsulot uchun boshlang'ich sanash qiymati
+    return acc;
+  }, {});
 
-  const increment = () => setCount(count + 1);
-  const decrement = () => {
-    if (count > 0) setCount(count - 1);
+  const [counts, setCounts] = useState(initialCounts);
+
+  const increment = (id) => {
+    setCounts((prevCounts) => ({
+      ...prevCounts,
+      [id]: prevCounts[id] + 1,
+    }));
   };
+
+  const decrement = (id) => {
+    setCounts((prevCounts) => ({
+      ...prevCounts,
+      [id]: prevCounts[id] > 1 ? prevCounts[id] - 1 : 1,
+    }));
+  };
+
   const handleDelete = (id) => {
     dispatch(deleteUserOfferLinkData(id));
+    setCounts((prevCounts) => {
+      const newCounts = { ...prevCounts };
+      delete newCounts[id];
+      return newCounts;
+    });
   };
-
 
   return (
     <>
@@ -62,14 +81,14 @@ const Korzinka = () => {
                    
                     <div className="flex items-center space-x-4">
                       <button
-                        onClick={decrement}
+                        onClick={() => decrement(e.id)}
                         className="px-6 text-3xl hover:bg-red-500 hover:text-white duration-300 bg-gray-200 text-gray-700 rounded"
                       >
                         - 
                       </button>
-                      <span className="mx-2">{count}</span>
+                      <span className="mx-2">{counts[e.id]}</span>
                       <button
-                        onClick={increment}
+                        onClick={() => increment(e.id)}
                         className="px-6 text-2xl hover:bg-green-500 hover:text-white duration-300 bg-gray-200 text-gray-700 rounded"
                       >
                         +

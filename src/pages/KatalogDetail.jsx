@@ -2,6 +2,7 @@ import { data } from "../data/data";
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import NashBlock from "../components/home/NashBlock";
+
 // img
 import reyting from "../img/reytingb.svg";
 import next from "../img/nextwhite.svg";
@@ -19,6 +20,11 @@ const KatalogDetail = () => {
     dispatch(addProductToWishlist(product));
   };
 
+  const likedwishlist = (proeduct) =>{
+    dispatch(addproductliked(proeduct))
+  }
+
+
   return (
     <>
       <section className="py-16">
@@ -31,11 +37,10 @@ const KatalogDetail = () => {
                 <li className="flex  flex-col md:flex-row items-center md:items-start justify-between md:justify-around " key={e.id}>
                   {/* left */}
                   <div className="relative mr-12 max-w-[380px] lg:max-w-[500px] xl:max-w-[664px]">
-                    <img
-                      className="right-12 absolute top-2"
-                      src={reyting}
-                      alt="reyting"
-                    />
+                    <button onClick={likedwishlist}>
+                      <img className="right-12 absolute top-2" src={reyting}  alt="reyting"/>
+                    </button>
+                   
                     <img
                       className="w-[650px] h-[500px]   bg-transparent object-cover"
                       src={e.img}
