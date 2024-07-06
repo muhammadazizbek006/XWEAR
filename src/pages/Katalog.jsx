@@ -103,13 +103,13 @@ const Katalog = () => {
         placement="left"
         open={openLeft}
         onClose={closeDrawerLeft}
-        className="fixed top-0 left-0 h-full shadow-lg     z-50 p-4 w-[594px] "
-        overlayProps={{ className: "bg-black bg-opacity-0" }}
+        className="fixed top-0 left-0 md:-left-12 h-full shadow-lg     z-50 p-4 w-[594px] "
+        overlayProps={{ className: " bg-black bg-opacity-0" }}
         transition={{ duration: 0.3 }}
       >
         <div>
               {/* Kategoriyalar */}
-              <div className="mb-12   ">
+              <div className="mb-12    ">
                 <Accordion
                   className=" md:w-60 xl:w-[318px] border-2 rounded-md  px-4 border-gray-500"
                   open={open === 1}
