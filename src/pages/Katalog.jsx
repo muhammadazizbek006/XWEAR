@@ -34,7 +34,6 @@ function Icon({ id, open }) {
   );
 }
 // img
-
 import vector from '../img/vectorblack.svg'
 
 const Katalog = () => {
@@ -328,10 +327,10 @@ const Katalog = () => {
               <ul className="grid sm:grid-cols-2  md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12">
                 {filteredProducts.map((e) => (
                   <li key={e.id} className="bg-white pl-3 relative w-80 sm:w-full">
-                    <Link to={`/product/${e.id}`} className="block">
                       <button className="absolute right-3  ">
                         <img   className=""  src={reyting} alt={e.brend} />
                       </button>
+                    <Link to={`/product/${e.id}`} className="block">
                       <div>
                         <img src={e.img} alt={e.title} />
                         <p className=" text-base lg:text-xl">{e.title}</p>
