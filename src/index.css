@@ -2,29 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.product-list {
-  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4;
-}
-
-.product-card {
-  @apply p-4 border rounded shadow hover:shadow-lg transition-shadow duration-200;
-}
-
-.like-button {
-  @apply bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors duration-200;
-}
-
-.liked-products-page {
-  @apply p-4;
-}
-
-.liked-products-list {
-  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4;
-}
-
-.liked-product-card {
-  @apply p-4 border rounded shadow;
-}
 
 @layer utilities {
     .containerb{

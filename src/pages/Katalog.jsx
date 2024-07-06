@@ -103,8 +103,8 @@ const Katalog = () => {
         placement="left"
         open={openLeft}
         onClose={closeDrawerLeft}
-        className="fixed top-0 left-0 md:-left-12 h-full shadow-lg     z-50 p-4 w-[594px] "
-        overlayProps={{ className: " bg-black bg-opacity-0" }}
+        className="fixed top-0 left-0 md:-left-12 h-full shadow-lg     z-50 p-4 w-full  "
+        overlayProps={{ className: " bg-black  bg-opacity-0" }}
         transition={{ duration: 0.3 }}
       >
         <div>
