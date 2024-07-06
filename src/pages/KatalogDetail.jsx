@@ -6,10 +6,11 @@ import NashBlock from "../components/home/NashBlock";
 // img
 import reyting from "../img/reytingb.svg";
 import next from "../img/nextwhite.svg";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addProductToWishlist } from "../store/slice/productsWishlistDataSlice";
 const KatalogDetail = () => {
   const { id } = useParams();
+  const productliked = useSelector((store) => store.tanlanganMahsulotlar.data);
   // id may be a string, convert it to a number if your data ids are numbers
   const [selectedSize, setSelectedSize] = useState(""); // State to track selected size
   const Detail = data.filter((e) => e.id.toString() === id);
@@ -20,10 +21,9 @@ const KatalogDetail = () => {
     dispatch(addProductToWishlist(product));
   };
 
-  const likedwishlist = (proeduct) =>{
-    dispatch(addproductliked(proeduct))
-  }
-
+  const likedwishlist = (proeduct) => {
+    dispatch(addProductToWishlist(proeduct));
+  };
 
   return (
     <>
@@ -32,15 +32,29 @@ const KatalogDetail = () => {
           {/* maxsulot map */}
           <ul>
             {Detail.map((e) => {
+              const findLike = productliked.find((item) =>
+                item.id === e.id ? true : false
+              );
               return (
                 // maxsulot data map
-                <li className="flex  flex-col md:flex-row items-center md:items-start justify-between md:justify-around " key={e.id}>
+                <li
+                  className="flex  flex-col md:flex-row items-center md:items-start justify-between md:justify-around "
+                  key={e.id}
+                >
                   {/* left */}
                   <div className="relative mr-12 max-w-[380px] lg:max-w-[500px] xl:max-w-[664px]">
-                    <button onClick={likedwishlist}>
-                      <img className="right-12 absolute top-2" src={reyting}  alt="reyting"/>
+                    <button onClick={() => likedwishlist(e)}>
+                      {findLike ? (
+                        "dnx"
+                      ) : (
+                        <img
+                          className="right-12 absolute top-2"
+                          src={reyting}
+                          alt="reyting"
+                        />
+                      )}
                     </button>
-                   
+
                     <img
                       className="w-[650px] h-[500px]   bg-transparent object-cover"
                       src={e.img}
@@ -50,7 +64,9 @@ const KatalogDetail = () => {
 
                   {/* right */}
                   <div className="">
-                    <h3 className=" lg:text-2xl xl:text-3xl mb-5 lg:font-bold xl:font-black">{e.title}</h3>
+                    <h3 className=" lg:text-2xl xl:text-3xl mb-5 lg:font-bold xl:font-black">
+                      {e.title}
+                    </h3>
                     {/* razmer */}
                     <div className="mb-7">
                       <p className="text-base mb-4 font-semibold">
@@ -91,6 +107,7 @@ const KatalogDetail = () => {
                         <img src={next} alt="next" />
                       </button>
                     </div>
+
                     {/* malumotlar */}
                     <div className="max-w-[325px] space-y-6 ">
                       {/* kategoria */}
