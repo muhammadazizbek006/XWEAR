@@ -329,9 +329,9 @@ const Katalog = () => {
                 {filteredProducts.map((e) => (
                   <li key={e.id} className="bg-white pl-3 relative w-80 sm:w-full">
                     <Link to={`/product/${e.id}`} className="block">
-                      <div className="absolute right-3  ">
+                      <button className="absolute right-3  ">
                         <img   className=""  src={reyting} alt={e.brend} />
-                      </div>
+                      </button>
                       <div>
                         <img src={e.img} alt={e.title} />
                         <p className=" text-base lg:text-xl">{e.title}</p>
