@@ -327,17 +327,13 @@ const Katalog = () => {
             {filteredProducts.length > 0 ? (
               <ul className="grid sm:grid-cols-2  md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12">
                 {filteredProducts.map((e) => (
-                  <li key={e.id} className="bg-white pl-3 w-80 sm:w-full">
+                  <li key={e.id} className="bg-white pl-3 relative w-80 sm:w-full">
                     <Link to={`/product/${e.id}`} className="block">
-                      <div className="flex flex-col items-end mb-3">
-                        <img
-                          className="mr-5 pt-5"
-                          src={reyting}
-                          alt={e.brend}
-                        />
-                        <img src={e.img} alt={e.title} />
+                      <div className="absolute right-3  ">
+                        <img   className=""  src={reyting} alt={e.brend} />
                       </div>
                       <div>
+                        <img src={e.img} alt={e.title} />
                         <p className=" text-base lg:text-xl">{e.title}</p>
                         <p> от {e.narxi} ₽ </p>
                       </div>
