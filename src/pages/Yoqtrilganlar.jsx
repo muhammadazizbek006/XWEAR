@@ -43,7 +43,7 @@ const Yoqtrilganlar = () => {
                 ))}
               </ul>
             ) : (
-              <div className="text-4xl">Yoqtirilgan mahsulotlar yo'q</div>
+              <div className="text-4xl font-bold">Yoqtirilgan mahsulotlar yo'q</div>
             )}
           </div>
         </div>

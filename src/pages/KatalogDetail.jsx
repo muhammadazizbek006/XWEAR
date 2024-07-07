@@ -5,6 +5,7 @@ import NashBlock from "../components/home/NashBlock";
 
 // img
 import reyting from "../img/reytingb.svg";
+import reytingsariq from '../img/reytingsariq.svg'
 import next from "../img/nextwhite.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { addProductToWishlist } from "../store/slice/productsWishlistDataSlice";
@@ -45,7 +46,7 @@ const KatalogDetail = () => {
                   <div className="relative mr-12 max-w-[380px] lg:max-w-[500px] xl:max-w-[664px]">
                     <button onClick={() => likedwishlist(e)}>
                       {findLike ? (
-                        "dnx"
+                        <img className=" bg-yellow-400" src={reytingsariq} alt="" />
                       ) : (
                         <img
                           className="right-12 absolute top-2"
