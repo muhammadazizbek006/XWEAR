@@ -46,13 +46,13 @@ const Header = () => {
 
         {/* center */}
         <div className="flex space-x-12 items-center">
-          {showSearchInput ? (
+          {/* {showSearchInput ? (
             <input
               type="serach"
               className=" border-2 py-2  md:py-4 hidden sm:block sm:pr-40 md:pr-80  lg:pr-[524px]  pl-7 xl:pr-[624px] rounded-full text-white bg-transparent"
               placeholder="Поиск по каталогу товаров..."
             />
-          ) : (
+          ) : ( */}
             <ul className="flex   md:space-x-5 lg:space-x-8 xl:space-x-12 items-center">
               {catalog.links.map((e) => {
                 return (
@@ -65,7 +65,7 @@ const Header = () => {
                 );
               })}
             </ul>
-          )}
+          {/* )} */}
         </div>
         {/* right */}
         <div className="flex items-center space-x-4 lg:space-x-8">
