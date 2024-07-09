@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import reyting from '../img/reytingb.svg'; // reyting rasmi uchun import
+import like2 from '../img/like.svg' // reyting rasmi uchun import
 import { productliked } from '../store/slice/productsWishlistDataSlice';
 
 const Yoqtrilganlar = () => {
@@ -31,7 +31,7 @@ const Yoqtrilganlar = () => {
                   <li key={product.id} className="bg-white pl-3 w-80 sm:w-full">
                     <Link to={`/product/${product.id}`} className="block">
                       <div className="flex flex-col items-end mb-3">
-                        <img className="mr-5 pt-5" src={reyting} alt={product.brend} />
+                        <img className="mr-5 pt-5" src={like2} alt={product.brend} />
                         <img src={product.img} alt={product.title} />
                       </div>
                       <div>

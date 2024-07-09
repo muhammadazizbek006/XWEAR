@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 // img
 import next from "../../img/next.svg";
-import reyting from "../../img/reytingb.svg";
+import like2 from '../../img/like2.svg'
 
 // data
 import  { data } from "../../data/data";
@@ -41,7 +41,7 @@ const OyoqKiyimlar = () => {
                       <div className=" flex flex-col items-end mb-3 ">
                         <img
                           className="mr-5  pt-5"
-                          src={reyting}
+                          src={like2}
                           alt={e.brend}
                         />
                         <img src={e.img} alt={e.title} />

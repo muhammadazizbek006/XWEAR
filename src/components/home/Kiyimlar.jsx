@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 // img
 import next from '../../img/next.svg'
-import reyting from '../../img/reytingb.svg'
+import like2 from '../../img/like2.svg'
 import  { data } from "../../data/data";
 
 // data
@@ -38,9 +38,12 @@ const Kiyimlar = () => {
                         KatalogMahsulotlari.map((e)=>{
                             return(
                                 <li key={e.id} className=' bg-white pl-3 w-80 rounded-md sm:w-full'> 
+                                    <button>
+                                        <img className='mr-5  pt-5' src={like2} alt={e.brend} />
+
+                                    </button>
                                     <Link to={`/product/${e.id}`} className='' >
                                     <div className=' flex flex-col items-end mb-3 '>
-                                        <img className='mr-5  pt-5' src={reyting} alt={e.brend} />
                                         <img src={e.img} alt={e.title} />
 
                                     </div>

@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 // img
 import logo from "../img/logo.svg";
 import searchIcon from "../img/search.svg"; // search nomi bilan conflict bo'lmasligi uchun o'zgartirdim
-import reyting from "../img/reyting.svg";
+import like from '../img/like.svg'
 import shop from "../img/shop.svg";
 import linkmenyu from "../img/linkmenyu.svg";
 
@@ -73,7 +73,7 @@ const Header = () => {
             <img src={searchIcon} alt="search" />
           </Link>
           <Link to='/yoqtrilganlar'>
-            <img src={reyting} alt="reyting" />
+            <img src={like} alt="reyting" />
           </Link>
 
           <Link to='/korzinka'>

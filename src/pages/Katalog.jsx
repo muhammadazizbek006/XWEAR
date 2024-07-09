@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import reyting from "../img/reytingb.svg";
+import like2 from '../img/like2.svg'
 import { Link, useParams } from "react-router-dom";
 import {
   Drawer,
@@ -328,7 +328,7 @@ const Katalog = () => {
                 {filteredProducts.map((e) => (
                   <li key={e.id} className="bg-white pl-3 relative w-80 sm:w-full">
                       <button className="absolute right-3  ">
-                        <img   className=""  src={reyting} alt={e.brend} />
+                        <img   className=""  src={like2} alt={e.brend} />
                       </button>
                     <Link to={`/product/${e.id}`} className="block">
                       <div>

@@ -4,15 +4,15 @@ import { useParams } from "react-router-dom";
 import NashBlock from "../components/home/NashBlock";
 
 // img
-import reyting from "../img/reytingb.svg";
-import reytingsariq from '../img/reytingsariq.svg'
+import like from "../img/like2.svg";
+import like3 from '../img/like3.svg';
 import next from "../img/nextwhite.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { addProductToWishlist } from "../store/slice/productsWishlistDataSlice";
+
 const KatalogDetail = () => {
   const { id } = useParams();
   const productliked = useSelector((store) => store.tanlanganMahsulotlar.data);
-  // id may be a string, convert it to a number if your data ids are numbers
   const [selectedSize, setSelectedSize] = useState(""); // State to track selected size
   const Detail = data.filter((e) => e.id.toString() === id);
 
@@ -22,8 +22,17 @@ const KatalogDetail = () => {
     dispatch(addProductToWishlist(product));
   };
 
-  const likedwishlist = (proeduct) => {
-    dispatch(addProductToWishlist(proeduct));
+  const [likedProducts, setLikedProducts] = useState(
+    productliked.reduce((acc, product) => {
+      acc[product.id] = true;
+      return acc;
+    }, {})
+  );
+
+  const toggleLike = (product) => {
+    const updatedLikedProducts = { ...likedProducts, [product.id]: !likedProducts[product.id] };
+    setLikedProducts(updatedLikedProducts);
+    dispatch(addProductToWishlist(product));
   };
 
   return (
@@ -33,31 +42,24 @@ const KatalogDetail = () => {
           {/* maxsulot map */}
           <ul>
             {Detail.map((e) => {
-              const findLike = productliked.find((item) =>
-                item.id === e.id ? true : false
-              );
+              const isLiked = likedProducts[e.id];
               return (
                 // maxsulot data map
                 <li
-                  className="flex  flex-col md:flex-row items-center md:items-start justify-between md:justify-around "
+                  className="flex flex-col md:flex-row items-center md:items-start justify-between md:justify-around "
                   key={e.id}
                 >
                   {/* left */}
                   <div className="relative mr-12 max-w-[380px] lg:max-w-[500px] xl:max-w-[664px]">
-                    <button onClick={() => likedwishlist(e)}>
-                      {findLike ? (
-                        <img className=" bg-yellow-400" src={reytingsariq} alt="" />
-                      ) : (
-                        <img
-                          className="right-12 absolute top-2"
-                          src={reyting}
-                          alt="reyting"
-                        />
-                      )}
+                    <button onClick={() => toggleLike(e)}>
+                      <img
+                        className="right-12 absolute top-2"
+                        src={isLiked ? like3 : like}
+                        alt={isLiked ? "liked" : "like"}
+                      />
                     </button>
-
                     <img
-                      className="w-[650px] h-[500px]   bg-transparent object-cover"
+                      className="w-[650px] h-[500px] bg-transparent object-cover"
                       src={e.img}
                       alt={e.title}
                     />
@@ -65,7 +67,7 @@ const KatalogDetail = () => {
 
                   {/* right */}
                   <div className="">
-                    <h3 className=" lg:text-2xl xl:text-3xl mb-5 lg:font-bold xl:font-black">
+                    <h3 className="lg:text-2xl xl:text-3xl mb-5 lg:font-bold xl:font-black">
                       {e.title}
                     </h3>
                     {/* razmer */}
@@ -95,14 +97,13 @@ const KatalogDetail = () => {
                       <div className="mr-9">
                         <p className="text-xl">{e.narxi} ₽</p>
                         <p className="text-base font-semibold">
-                          {" "}
                           размер - {selectedSize && `${selectedSize}`}
                         </p>
                       </div>
 
                       <button
                         onClick={() => mahsulotniWishlistgaQoshish(e)}
-                        className="text-xs flex items-center  rounded-md font-medium lg:font-extrabold text-white  py-3 lg:py-6 px-3 lg:px-7  bg-black"
+                        className="text-xs flex items-center rounded-md font-medium lg:font-extrabold text-white py-3 lg:py-6 px-3 lg:px-7 bg-black"
                       >
                         <span className="mr-6">Добавить в корзину</span>
                         <img src={next} alt="next" />
