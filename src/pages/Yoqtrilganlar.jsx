@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import like2 from '../img/like.svg' // reyting rasmi uchun import
+import like2 from '../img/like2.svg' // reyting rasmi uchun import
 import { productliked } from '../store/slice/productsWishlistDataSlice';
 
 const Yoqtrilganlar = () => {
