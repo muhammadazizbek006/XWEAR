@@ -1,16 +1,7 @@
 import React, { useEffect, useState } from "react";
-import like2 from '../img/like2.svg'
 import { Link, useParams } from "react-router-dom";
-import {
-  Drawer,
-  IconButton,
-} from "@material-tailwind/react";
-
-import {
-  Accordion,
-  AccordionHeader,
-  AccordionBody,
-} from "@material-tailwind/react";
+import { Drawer, IconButton } from "@material-tailwind/react";
+import { Accordion, AccordionHeader, AccordionBody } from "@material-tailwind/react";
 import { data } from "../data/data";
 
 function Icon({ id, open }) {
@@ -33,8 +24,12 @@ function Icon({ id, open }) {
     </svg>
   );
 }
-// img
+
 import vector from '../img/vectorblack.svg'
+import like from "../img/like2.svg";
+import like3 from '../img/like3.svg';
+import { useDispatch } from "react-redux";
+import { addProductToLike } from "../store/slice/laykSlice";
 
 const Katalog = () => {
   const [KatalogMahsulotlari, setKatalogMahsulotlari] = useState([]);
@@ -75,6 +70,7 @@ const Katalog = () => {
   }, [type]);
 
   const handleOpen = (value) => setOpen(open === value ? 0 : value);
+  const dispatch = useDispatch()
 
   const filteredProducts = KatalogMahsulotlari.filter((product) => {
     return (
@@ -85,64 +81,68 @@ const Katalog = () => {
     );
   });
 
-  // draw
-  const [openLeft, setOpenLeft] = React.useState(false);
-
+  const [openLeft, setOpenLeft] = useState(false);
   const openDrawerLeft = () => setOpenLeft(true);
   const closeDrawerLeft = () => setOpenLeft(false);
+  const Closedraw = () => setOpenLeft(false);
 
-  const Closedraw = () => {
-    setOpenLeft(false)
-  }
+  const [likedProducts, setLikedProducts] = useState({});
+
+  const toggleLike = (product) => {
+    const updatedLikedProducts = {
+      ...likedProducts,
+      [product.id]: !likedProducts[product.id],
+    };
+    setLikedProducts(updatedLikedProducts);
+    dispatch(addProductToLike(product));
+  };
 
   return (
     <>
       <section className="bg-white py-12 ">
-      <Drawer
-        placement="left"
-        open={openLeft}
-        onClose={closeDrawerLeft}
-        className="fixed top-0 left-0 md:-left-12 h-full shadow-lg     z-50 p-4 w-full max-w-[500px] "
-        overlayProps={{ className: " bg-black  bg-opacity-0" }}
-        transition={{ duration: 0.3 }}
-      >
-        <div>
-              {/* Kategoriyalar */}
-              <div className="mb-12    ">
-                <Accordion
-                  className=" md:w-60 xl:w-[318px] border-2 rounded-md  px-4 border-gray-500"
-                  open={open === 1}
-                  icon={<Icon id={1} open={open} />}
-                >
-                  <AccordionHeader className="" onClick={() => handleOpen(1)}>
-                    Категории
-                  </AccordionHeader>
-                  <AccordionBody onClick={closeDrawerLeft} className="flex flex-col items-start">
-                    {open === 1 &&
-                      categories.map((category, index) => (
-                        <button
-                          className="text-base font-semibold mb-5"
-                          key={index}
-                          onClick={() => setSelectedCategory(category)}
-                        >
-                          {category}
-                        </button>
-                      ))}
-                  </AccordionBody>
-                </Accordion>
-              </div>
-      
-            {/* Razmerlar */}
-            <div className="mb-12  ">
+        <Drawer
+          placement="left"
+          open={openLeft}
+          onClose={closeDrawerLeft}
+          className="fixed top-0 left-0 md:-left-12 h-full shadow-lg z-50 p-4 w-full max-w-[500px]"
+          overlayProps={{ className: "bg-black bg-opacity-0" }}
+          transition={{ duration: 0.3 }}
+        >
+          <div>
+            <div className="mb-12">
               <Accordion
-                className=" md:w-60 xl:w-[318px] border-2 rounded-md  px-4 border-gray-500"
+                className="md:w-60 xl:w-[318px] border-2 rounded-md px-4 border-gray-500"
+                open={open === 1}
+                icon={<Icon id={1} open={open} />}
+              >
+                <AccordionHeader className="" onClick={() => handleOpen(1)}>
+                  Категории
+                </AccordionHeader>
+                <AccordionBody onClick={closeDrawerLeft} className="flex flex-col items-start">
+                  {open === 1 &&
+                    categories.map((category, index) => (
+                      <button
+                        className="text-base font-semibold mb-5"
+                        key={index}
+                        onClick={() => setSelectedCategory(category)}
+                      >
+                        {category}
+                      </button>
+                    ))}
+                </AccordionBody>
+              </Accordion>
+            </div>
+
+            <div className="mb-12">
+              <Accordion
+                className="md:w-60 xl:w-[318px] border-2 rounded-md px-4 border-gray-500"
                 open={open === 2}
                 icon={<Icon id={2} open={open} />}
               >
                 <AccordionHeader className="" onClick={() => handleOpen(2)}>
                   Размеры (EU)
                 </AccordionHeader>
-                <AccordionBody onClick={closeDrawerLeft} className="grid grid-cols-3 gap-3 mb-6  ">
+                <AccordionBody onClick={closeDrawerLeft} className="grid grid-cols-3 gap-3 mb-6">
                   {open === 2 &&
                     sizes.map((size, index) => (
                       <button
@@ -157,10 +157,9 @@ const Katalog = () => {
               </Accordion>
             </div>
 
-            {/* Brendlar */}
-            <div className="mb-12 ">
+            <div className="mb-12">
               <Accordion
-                className=" md:w-60 xl:w-[318px] border-2 rounded-md  px-4 border-gray-500"
+                className="md:w-60 xl:w-[318px] border-2 rounded-md px-4 border-gray-500"
                 open={open === 3}
                 icon={<Icon id={3} open={open} />}
               >
@@ -182,10 +181,9 @@ const Katalog = () => {
               </Accordion>
             </div>
 
-            {/* Ranglar */}
-            <div className="mb-12 ">
+            <div className="mb-12">
               <Accordion
-                className=" md:w-60 xl:w-[318px] border-2 rounded-md  px-4 border-gray-500"
+                className="md:w-60 xl:w-[318px] border-2 rounded-md px-4 border-gray-500"
                 open={open === 4}
                 icon={<Icon id={4} open={open} />}
               >
@@ -206,58 +204,53 @@ const Katalog = () => {
                 </AccordionBody>
               </Accordion>
             </div>
-        </div>
+          </div>
+        </Drawer>
 
-      </Drawer>
-      
-        <div className="containerb flex flex-col md:flex-row  justify-between">
-          {/* Chap tomon */}
-          <div className="mr-5 " >
-            {/* filter responsive */}
+        <div className="containerb flex flex-col md:flex-row justify-between">
+          <div className="mr-5">
+            <button
+              onClick={openDrawerLeft}
+              className="w-80 h-16 block md:hidden border-2 rounded-md flex items-center justify-between px-2 border-gray-500"
+            >
+              <p className="text-xl font-extrabold">Открыть Фильтры</p>
+              <img src={vector} alt="btn filter" />
+            </button>
 
-                {/* Открыть Фильтры */}
-              <button onClick={openDrawerLeft} className=" w-80 h-16  block md:hidden  border-2 rounded-md flex items-center justify-between px-2  border-gray-500">
-                  <p className="text-xl font-extrabold">Открыть Фильтры</p>
-                  <img src={vector} alt="btn filter" />
-                
-              </button>
-           
-              {/* Kategoriyalar */}
-              <div className="mb-12 hidden md:block  ">
-                <Accordion
-                  className=" md:w-60 xl:w-[318px] border-2 rounded-md  px-4 border-gray-500"
-                  open={open === 1}
-                  icon={<Icon id={1} open={open} />}
-                >
-                  <AccordionHeader className="" onClick={() => handleOpen(1)}>
-                    Категории
-                  </AccordionHeader>
-                  <AccordionBody className="flex flex-col items-start">
-                    {open === 1 &&
-                      categories.map((category, index) => (
-                        <button
-                          className="text-base font-semibold mb-5"
-                          key={index}
-                          onClick={() => setSelectedCategory(category)}
-                        >
-                          {category}
-                        </button>
-                      ))}
-                  </AccordionBody>
-                </Accordion>
-              </div>
-
-            {/* Razmerlar */}
-            <div className="mb-12 hidden md:block ">
+            <div className="mb-12 hidden md:block">
               <Accordion
-                className=" md:w-60 xl:w-[318px] border-2 rounded-md  px-4 border-gray-500"
+                className="md:w-60 xl:w-[318px] border-2 rounded-md px-4 border-gray-500"
+                open={open === 1}
+                icon={<Icon id={1} open={open} />}
+              >
+                <AccordionHeader className="" onClick={() => handleOpen(1)}>
+                  Категории
+                </AccordionHeader>
+                <AccordionBody className="flex flex-col items-start">
+                  {open === 1 &&
+                    categories.map((category, index) => (
+                      <button
+                        className="text-base font-semibold mb-5"
+                        key={index}
+                        onClick={() => setSelectedCategory(category)}
+                      >
+                        {category}
+                      </button>
+                    ))}
+                </AccordionBody>
+              </Accordion>
+            </div>
+
+            <div className="mb-12 hidden md:block">
+              <Accordion
+                className="md:w-60 xl:w-[318px] border-2 rounded-md px-4 border-gray-500"
                 open={open === 2}
                 icon={<Icon id={2} open={open} />}
               >
                 <AccordionHeader className="" onClick={() => handleOpen(2)}>
                   Размеры (EU)
                 </AccordionHeader>
-                <AccordionBody className="grid grid-cols-3 gap-3 mb-6  ">
+                <AccordionBody className="grid grid-cols-3 gap-3 mb-6">
                   {open === 2 &&
                     sizes.map((size, index) => (
                       <button
@@ -271,10 +264,10 @@ const Katalog = () => {
                 </AccordionBody>
               </Accordion>
             </div>
-            {/* Brendlar */}
+
             <div className="mb-12 hidden md:block">
               <Accordion
-                className=" md:w-60 xl:w-[318px] border-2 rounded-md  px-4 border-gray-500"
+                className="md:w-60 xl:w-[318px] border-2 rounded-md px-4 border-gray-500"
                 open={open === 3}
                 icon={<Icon id={3} open={open} />}
               >
@@ -295,10 +288,10 @@ const Katalog = () => {
                 </AccordionBody>
               </Accordion>
             </div>
-            {/* Ranglar */}
+
             <div className="mb-12 hidden md:block">
               <Accordion
-                className=" md:w-60 xl:w-[318px] border-2 rounded-md  px-4 border-gray-500"
+                className="md:w-60 xl:w-[318px] border-2 rounded-md px-4 border-gray-500"
                 open={open === 4}
                 icon={<Icon id={4} open={open} />}
               >
@@ -321,27 +314,32 @@ const Katalog = () => {
             </div>
           </div>
 
-          {/* O'rta qism */}
           <div className="flex flex-col items-center">
-            {filteredProducts.length > 0 ? (
-              <ul className="grid sm:grid-cols-2  md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12">
+            {   filteredProducts.length > 0 ? (
+              <ul className="grid sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12">
                 {filteredProducts.map((e) => (
                   <li key={e.id} className="bg-white pl-3 relative w-80 sm:w-full">
-                      <button className="absolute right-3  ">
-                        <img   className=""  src={like2} alt={e.brend} />
-                      </button>
+                    <button
+                      className="absolute right-3"
+                      onClick={() => toggleLike(e)}
+                    >
+                      <img
+                        src={likedProducts[e.id] ? like3 : like}
+                        alt={e.brend}
+                      />
+                    </button>
                     <Link to={`/product/${e.id}`} className="block">
                       <div>
                         <img src={e.img} alt={e.title} />
-                        <p className=" text-base lg:text-xl">{e.title}</p>
-                        <p> от {e.narxi} ₽ </p>
+                        <p className="text-base lg:text-xl">{e.title}</p>
+                        <p>от {e.narxi} ₽</p>
                       </div>
                     </Link>
                   </li>
                 ))}
               </ul>
             ) : (
-              <div className="text-4xl ">Bu turdagi mahsulot yo'q</div>
+              <div className="text-4xl">Bu turdagi mahsulot yo'q</div>
             )}
           </div>
         </div>

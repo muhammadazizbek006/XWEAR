@@ -5,10 +5,11 @@ import NashBlock from "../components/home/NashBlock";
 
 // img
 import like from "../img/like2.svg";
-import like3 from '../img/like3.svg';
+import like3 from "../img/like3.svg";
 import next from "../img/nextwhite.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { addProductToWishlist } from "../store/slice/productsWishlistDataSlice";
+import { addProductToLike } from "../store/slice/laykSlice";
 
 const KatalogDetail = () => {
   const { id } = useParams();
@@ -30,9 +31,12 @@ const KatalogDetail = () => {
   );
 
   const toggleLike = (product) => {
-    const updatedLikedProducts = { ...likedProducts, [product.id]: !likedProducts[product.id] };
+    const updatedLikedProducts = {
+      ...likedProducts,
+      [product.id]: !likedProducts[product.id],
+    };
     setLikedProducts(updatedLikedProducts);
-    dispatch(addProductToWishlist(product));
+    dispatch(addProductToLike(product));
   };
 
   return (
@@ -75,11 +79,11 @@ const KatalogDetail = () => {
                       <p className="text-base mb-4 font-semibold">
                         EU размеры:
                       </p>
-                      <div className="grid grid-cols-3 gap-6">
+                      <div className="grid grid-cols-4 gap-6">
                         {e.razmer.map((size, index) => (
                           <button
                             key={index}
-                            className={`border-2 px-7 py-3 rounded text-base font-semibold ${
+                            className={`border-2 w-20 h-11 rounded text-base font-semibold ${
                               selectedSize === size
                                 ? "border-blue-500 bg-blue-500 text-white"
                                 : "border-black"
