@@ -37,12 +37,12 @@ const Kiyimlar = () => {
                     {
                         KatalogMahsulotlari.map((e)=>{
                             return(
-                                <li key={e.id} className=' bg-white pl-3 w-80 rounded-md sm:w-full'> 
-                                    <button>
-                                        <img className='mr-5  pt-5' src={like2} alt={e.brend} />
+                                <li key={e.id} className=' bg-white pl-3 relative  rounded-md  w-80'> 
+                                    <button className='absolute right-2'>
+                                        <img className='' src={like2} alt={e.brend} />
 
                                     </button>
-                                    <Link to={`/product/${e.id}`} className='' >
+                                    <Link to={`/product/${e.id}`} className='flex flex-col' >
                                     <div className=' flex flex-col items-end mb-3 '>
                                         <img src={e.img} alt={e.title} />
 
