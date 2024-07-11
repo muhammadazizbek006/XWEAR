@@ -36,14 +36,16 @@ const OyoqKiyimlar = () => {
             <ul className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-y-6 gap-x-8">
               {KatalogMahsulotlari.map((e) => {
                 return (
-                  <li key={e.id} className=" bg-white pl-3 w-80 sm:w-full ">
-                    <Link to={`/product/${e.id}`} className="">
-                      <div className=" flex flex-col items-end mb-3 ">
+                  <li key={e.id} className=" bg-white relative pl-3 w-80 ">
+                    <button className="absolute right-2">
                         <img
                           className="mr-5  pt-5"
                           src={like2}
                           alt={e.brend}
                         />
+                    </button>
+                    <Link to={`/product/${e.id}`} className="">
+                      <div className=" flex flex-col items-end mb-3 ">
                         <img src={e.img} alt={e.title} />
                       </div>
                       <div>

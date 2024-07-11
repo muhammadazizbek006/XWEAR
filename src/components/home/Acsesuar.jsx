@@ -37,10 +37,12 @@ const Acsesuar = () => {
                     {
                         KatalogMahsulotlari.map((e)=>{
                             return(
-                                <li key={e.id} className=' bg-white px-3 rounded-md  w-80 sm:w-full'> 
+                                <li key={e.id} className=' bg-white relative px-3 rounded-md  w-80 '> 
+                                <button className='absolute right-2'>
+                                    <img className='' src={like2} alt={e.brend} />
+                                </button>
                                     <Link to={`/product/${e.id}`} className='' >
                                     <div className=' flex flex-col items-end mb-3 '>
-                                        <img className='mr-5  pt-5' src={like2} alt={e.brend} />
                                         <img src={e.img} alt={e.title} />
 
                                     </div>
