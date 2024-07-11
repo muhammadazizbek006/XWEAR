@@ -320,7 +320,7 @@ const Katalog = () => {
                 {filteredProducts.map((e) => (
                   <li key={e.id} className="bg-white pl-3 relative w-80 sm:w-full">
                     <button
-                      className="absolute right-3"
+                      className="absolute right-2"
                       onClick={() => toggleLike(e)}
                     >
                       <img
