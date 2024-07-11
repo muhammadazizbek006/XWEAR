@@ -3,7 +3,10 @@ import { Link } from 'react-router-dom'
 // img
 import next from '../../img/next.svg'
 import like2 from '../../img/like2.svg'
+import like3 from "../../img/like3.svg";
 
+import { useDispatch } from "react-redux";
+import { addProductToLike } from "../../store/slice/laykSlice";
 // data
 import  { data } from "../../data/data";
 
@@ -18,6 +21,18 @@ const Acsesuar = () => {
   
       setKatalogMahsulotlari(filteredProducts ? filteredProducts : []);
     }, []);
+
+      // like btn va qo'shish
+  const dispatch = useDispatch();
+  const [likedProducts, setLikedProducts] = useState({});
+  const toggleLike = (product) => {
+    const updatedLikedProducts = {
+      ...likedProducts,
+      [product.id]: !likedProducts[product.id],
+    };
+    setLikedProducts(updatedLikedProducts);
+    dispatch(addProductToLike(product));
+  };
 
   return (
     <>
@@ -38,9 +53,15 @@ const Acsesuar = () => {
                         KatalogMahsulotlari.map((e)=>{
                             return(
                                 <li key={e.id} className=' bg-white relative px-3 rounded-md  w-80 '> 
-                                <button className='absolute right-2'>
-                                    <img className='' src={like2} alt={e.brend} />
-                                </button>
+                                     <button
+                                        className="absolute right-2"
+                                        onClick={() => toggleLike(e)}
+                                        >
+                                        <img
+                                            src={likedProducts[e.id] ? like3 : like2}
+                                            alt={e.brend}
+                                        />
+                                        </button>
                                     <Link to={`/product/${e.id}`} className='' >
                                     <div className=' flex flex-col items-end mb-3 '>
                                         <img src={e.img} alt={e.title} />
