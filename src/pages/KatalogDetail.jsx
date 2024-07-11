@@ -86,7 +86,7 @@ const KatalogDetail = () => {
                             className={`border-2 w-20 h-11 rounded text-base font-semibold ${
                               selectedSize === size
                                 ? "border-blue-500 bg-blue-500 text-white"
-                                : "border-black"
+                                : ""
                             }`}
                             onClick={() => setSelectedSize(size)}
                           >
