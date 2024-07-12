@@ -79,7 +79,7 @@ const KatalogDetail = () => {
                       <p className="text-base mb-4 font-semibold">
                         EU размеры:
                       </p>
-                      <div className="grid grid-cols-4 gap-6">
+                      <div className="grid grid-cols-4  gap-y-3">
                         {e.razmer.map((size, index) => (
                           <button
                             key={index}
