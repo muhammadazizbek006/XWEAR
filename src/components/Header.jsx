@@ -15,6 +15,9 @@ import like from '../img/like.svg'
 import shop from "../img/shop.svg";
 import linkmenyu from "../img/linkmenyu.svg";
 
+  // like snacbar
+  import laykSlice from '../store/slice/laykSlice'
+
 const Header = () => {
   const [showSearchInput, setShowSearchInput] = useState(false);
 
@@ -29,6 +32,8 @@ const Header = () => {
   const Closedraw = () => {
     setOpenLeft(false)
   }
+
+
 
   return (
     <header className="py-10 bg-black">
@@ -74,6 +79,7 @@ const Header = () => {
           </Link>
           <Link className="w-5" to='/yoqtrilganlar'>
             <img src={like} alt="reyting" />
+            <span></span>
           </Link>
 
           <Link to='/korzinka'>

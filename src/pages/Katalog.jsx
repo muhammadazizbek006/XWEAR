@@ -314,7 +314,7 @@ const Katalog = () => {
             </div>
           </div>
 
-          <div className="flex flex-col items-center">
+          <div className="">
             {   filteredProducts.length > 0 ? (
               <ul className="grid sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12">
                 {filteredProducts.map((e) => (
@@ -339,7 +339,7 @@ const Katalog = () => {
                 ))}
               </ul>
             ) : (
-              <div className="text-4xl">Bu turdagi mahsulot yo'q</div>
+              <div className="text-4xl">Нет такого товара</div>
             )}
           </div>
         </div>
