@@ -21,7 +21,7 @@ const NashBlock = () => {
           {/* top */}
           <div className='flex justify-between mb-10'>
             <h2 className='text-3xl font-bold'>Наш блог</h2>
-            <Link to='/katalog' className='flex items-center'>
+            <Link to='/katalog/kiyim' className='flex items-center'>
               <p className='mr-2 text-base'>больше товаров</p>
               <img src={next} alt="next" />
             </Link>
