@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Faq from '../pages/Faq'
 const Infarmatsiya = () => {
   return (
     <>
@@ -22,6 +22,7 @@ const Infarmatsiya = () => {
                 </div>
             </div>
         </section>
+        <Faq/>
     </>
   )
 }

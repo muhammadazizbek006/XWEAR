@@ -91,11 +91,11 @@ const Header = () => {
         placement="left"
         open={openLeft}
         onClose={closeDrawerLeft}
-        className="fixed top-0 left-0 h-full w-full z-50 pl-4 bg-black text-white"
+        className="fixed top-0 left-0 h-full w-full z-50 p-5 bg-black text-white"
         overlayProps={{ className: "bg-black bg-opacity-0" }}
         transition={{ duration: 0.3 }}
       >
-        <div className="mb-6 flex items-center justify-between pr-4 pt-4">
+        <div className="mb-6 flex items-center justify-between  ">
           <Link to='/'>
             <img onClick={closeDrawerLeft} className='w-10' src={logo} alt="logo" />
           </Link>
@@ -120,12 +120,13 @@ const Header = () => {
               />
             </svg>
           </IconButton>
+
         </div>
 
-        <div className='flex flex-col space-y-2'>
+        <div className='flex flex-col space-y-6 text-sm font-bold'>
           <Link to='/' onClick={closeDrawerLeft}>Главная</Link>
           {catalog.links.map((e) => (
-            <Link key={e.id} to={e.URL} onClick={closeDrawerLeft}>
+            <Link  className='' key={e.id} to={e.URL} onClick={closeDrawerLeft}>
               {e.link}
             </Link>
           ))}

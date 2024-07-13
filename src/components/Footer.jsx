@@ -15,10 +15,10 @@ const Footer = () => {
           <div className='text-white'>
             <div className=' flex flex-col space-y-2 mb-14'>
                <h3 className='text-base font-black  '>Каталог</h3>
-               <Link className='text-base'>Одежда</Link>
-               <Link  className='text-base'>Обувь</Link>
-               <Link  className='text-base'>Аксессуары</Link>
-               <Link  className='text-base' >Расчет стоимости</Link>
+               <Link to='/katalog/kiyim' className='text-base'>Одежда</Link>
+               <Link to='/katalog/krasofka'  className='text-base'>Обувь</Link>
+               <Link to='/katalog/acsesuar'  className='text-base'>Аксессуары</Link>
+               <Link to='/katalog/kiyim'  className='text-base' >Расчет стоимости</Link>
             </div>
             <img src={xwear} alt="" />
           </div>
