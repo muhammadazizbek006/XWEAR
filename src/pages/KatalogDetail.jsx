@@ -104,10 +104,10 @@ const KatalogDetail = () => {
                           размер - {selectedSize && `${selectedSize}`}
                         </p>
                       </div>
-
+                        
                       <button
                         onClick={() => mahsulotniWishlistgaQoshish(e)}
-                        className="text-xs flex items-center rounded-md font-medium lg:font-extrabold text-white py-3 lg:py-6 px-3 lg:px-7 bg-black"
+                        className="text-xs flex items-center  rounded-md font-medium lg:font-extrabold text-white py-3 lg:py-6 px-3 lg:px-7 bg-black"
                       >
                         <span className="mr-6">Добавить в корзину</span>
                         <img src={next} alt="next" />

@@ -3,7 +3,7 @@ import React from "react";
 const SotibOlish = () => {
   return (
     <>
-      <section className="bg-[#f4f7fd]">
+      <section className="">
         <div className="containerb">
           <h2 className="text-4xl font-semibold mb-6">Оформление заказа</h2>
           <form className="" action="">
