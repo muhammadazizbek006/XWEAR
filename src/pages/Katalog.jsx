@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { Drawer, IconButton } from "@material-tailwind/react";
+import { Drawer, IconButton, input } from "@material-tailwind/react";
 import { Accordion, AccordionHeader, AccordionBody } from "@material-tailwind/react";
 import { data } from "../data/data";
 
@@ -111,7 +111,7 @@ const Katalog = () => {
           <div>
             <div className="mb-12">
               <Accordion
-                className="md:w-60 xl:w-[318px] border-2 rounded-md px-4 border-gray-500"
+                className="md:w-60 xl:w-[318px] border-2 rounded-md px-4 border-[#E6E7EB]"
                 open={open === 1}
                 icon={<Icon id={1} open={open} />}
               >
@@ -135,7 +135,7 @@ const Katalog = () => {
 
             <div className="mb-12">
               <Accordion
-                className="md:w-60 xl:w-[318px] border-2 rounded-md px-4 border-gray-500"
+                className="md:w-60 xl:w-[318px] border-2 rounded-md px-4 border-[#E6E7EB]"
                 open={open === 2}
                 icon={<Icon id={2} open={open} />}
               >
@@ -159,7 +159,7 @@ const Katalog = () => {
 
             <div className="mb-12">
               <Accordion
-                className="md:w-60 xl:w-[318px] border-2 rounded-md px-4 border-gray-500"
+                className="md:w-60 xl:w-[318px] border-2 rounded-md px-4 border-[#E6E7EB]"
                 open={open === 3}
                 icon={<Icon id={3} open={open} />}
               >
@@ -170,7 +170,7 @@ const Katalog = () => {
                   {open === 3 &&
                     brands.map((brand, index) => (
                       <button
-                        className="text-base font-semibold mb-5"
+                        className="text-base font-medium mb-5"
                         key={index}
                         onClick={() => setSelectedBrand(brand)}
                       >
@@ -183,7 +183,7 @@ const Katalog = () => {
 
             <div className="mb-12">
               <Accordion
-                className="md:w-60 xl:w-[318px] border-2 rounded-md px-4 border-gray-500"
+                className="md:w-60 xl:w-[318px] border-2 rounded-md px-4 border-[#E6E7EB]"
                 open={open === 4}
                 icon={<Icon id={4} open={open} />}
               >
@@ -194,7 +194,7 @@ const Katalog = () => {
                   {open === 4 &&
                     colors.map((color, index) => (
                       <button
-                        className="text-base font-semibold mb-5"
+                        className="text-base font-medium mb-5"
                         key={index}
                         onClick={() => setSelectedColor(color)}
                       >
@@ -211,7 +211,7 @@ const Katalog = () => {
           <div className="mr-5">
             <button
               onClick={openDrawerLeft}
-              className="w-80 h-16 block md:hidden border-2 rounded-md flex items-center justify-between px-2 border-gray-500"
+              className="w-80 h-16 block md:hidden border-2 rounded-md flex items-center justify-between px-2 border-[#E6E7EB]"
             >
               <p className="text-xl font-extrabold">Открыть Фильтры</p>
               <img src={vector} alt="btn filter" />
@@ -219,18 +219,18 @@ const Katalog = () => {
 
             <div className="mb-12 hidden md:block">
               <Accordion
-                className="md:w-60 xl:w-[318px] border-2 rounded-md px-4 border-gray-500"
+                className="md:w-60 xl:w-[318px] border-2 rounded-md px-4 border-[#E6E7EB]"
                 open={open === 1}
                 icon={<Icon id={1} open={open} />}
               >
-                <AccordionHeader className="" onClick={() => handleOpen(1)}>
+                <AccordionHeader className="text-sm font-black" onClick={() => handleOpen(1)}>
                   Категории
                 </AccordionHeader>
-                <AccordionBody className="flex flex-col items-start">
+                <AccordionBody className="flex flex-col items-start space-y-5">
                   {open === 1 &&
                     categories.map((category, index) => (
                       <button
-                        className="text-base font-semibold mb-5"
+                        className="text-sm font-medium"
                         key={index}
                         onClick={() => setSelectedCategory(category)}
                       >
@@ -243,18 +243,18 @@ const Katalog = () => {
 
             <div className="mb-12 hidden md:block">
               <Accordion
-                className="md:w-60 xl:w-[318px] border-2 rounded-md px-4 border-gray-500"
+                className="md:w-60 xl:w-[318px] border-2 rounded-md px-4 border-[#E6E7EB]"
                 open={open === 2}
                 icon={<Icon id={2} open={open} />}
               >
-                <AccordionHeader className="" onClick={() => handleOpen(2)}>
+                <AccordionHeader className="text-sm font-black" onClick={() => handleOpen(2)}>
                   Размеры (EU)
                 </AccordionHeader>
                 <AccordionBody className="grid grid-cols-3 gap-3 mb-6">
                   {open === 2 &&
                     sizes.map((size, index) => (
                       <button
-                        className="text-base font-semibold rounded border-2 px-8 py-2"
+                        className="text-sm  font-medium rounded border  py-2"
                         key={index}
                         onClick={() => setSelectedSize(size)}
                       >
@@ -267,23 +267,21 @@ const Katalog = () => {
 
             <div className="mb-12 hidden md:block">
               <Accordion
-                className="md:w-60 xl:w-[318px] border-2 rounded-md px-4 border-gray-500"
+                className="md:w-60 xl:w-[318px] border-2 rounded-md px-4 border-[#E6E7EB]"
                 open={open === 3}
                 icon={<Icon id={3} open={open} />}
               >
-                <AccordionHeader className="" onClick={() => handleOpen(3)}>
+                <AccordionHeader className="text-sm font-semibold" onClick={() => handleOpen(3)}>
                   Брэнды
                 </AccordionHeader>
-                <AccordionBody className="flex flex-col items-start">
+                <AccordionBody className="flex flex-col space-y-5 items-start">
                   {open === 3 &&
                     brands.map((brand, index) => (
-                      <button
-                        className="text-base font-semibold mb-5"
-                        key={index}
-                        onClick={() => setSelectedBrand(brand)}
-                      >
-                        {brand}
-                      </button>
+                      <div onClick={() => setSelectedBrand(brand)} className="flex items-center" key={index}> 
+                          <input  className="mr-3 w-5 h-5" type="checkbox" />
+                          <label htmlFor="brand">{brand}</label>
+                      </div>
+
                     ))}
                 </AccordionBody>
               </Accordion>
@@ -291,7 +289,7 @@ const Katalog = () => {
 
             <div className="mb-12 hidden md:block">
               <Accordion
-                className="md:w-60 xl:w-[318px] border-2 rounded-md px-4 border-gray-500"
+                className="md:w-60 xl:w-[318px] border-2 rounded-md px-4 border-[#E6E7EB]"
                 open={open === 4}
                 icon={<Icon id={4} open={open} />}
               >
@@ -302,7 +300,7 @@ const Katalog = () => {
                   {open === 4 &&
                     colors.map((color, index) => (
                       <button
-                        className="text-base font-semibold mb-5"
+                        className="text-sm font-medium mb-5"
                         key={index}
                         onClick={() => setSelectedColor(color)}
                       >
