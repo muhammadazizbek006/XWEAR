@@ -100,7 +100,7 @@ const Korzinka = () => {
                     </div>
                   </div>
                   {/* shop btn */}
-                  <Link  className="bg-black px-10 py-3 text-white rounded-md hover:bg-green-500 duration-500">заказать</Link>
+                  <Link to='/sotibolish' className="bg-black px-10 py-3 text-white rounded-md hover:bg-green-500 duration-500">заказать</Link>
                 </li>
               ))}
             </ul>

@@ -10,6 +10,9 @@ export default {
       screens:{
         '500':'500px',
         '1313px':'1313px'
+      },
+      colors:{
+        'labelcolor':'#999a9e',
       }
     },
   },
