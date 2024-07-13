@@ -54,7 +54,7 @@ const KatalogDetail = () => {
                   key={e.id}
                 >
                   {/* left */}
-                  <div className="relative mr-12 max-w-[380px] lg:max-w-[500px] xl:max-w-[664px]">
+                  <div className="relative md:mr-12 max-w-[380px] lg:max-w-[500px] xl:max-w-[664px]">
                     <button onClick={() => toggleLike(e)}>
                       <img
                         className="right-12 absolute top-2"
@@ -63,7 +63,7 @@ const KatalogDetail = () => {
                       />
                     </button>
                     <img
-                      className="w-[650px] h-[500px] bg-transparent object-cover"
+                      className=" w-96 lg:w-[500px] xl:w-[650px] h-[350px] lg:h-[400px] xl:h-[500px] bg-transparent object-cover"
                       src={e.img}
                       alt={e.title}
                     />
@@ -71,7 +71,7 @@ const KatalogDetail = () => {
 
                   {/* right */}
                   <div className="">
-                    <h3 className="lg:text-2xl xl:text-3xl mb-5 lg:font-bold xl:font-black">
+                    <h3 className=" text-2xl  lg:text-2xl xl:text-3xl mb-5 font-semibold lg:font-bold xl:font-black">
                       {e.title}
                     </h3>
                     {/* razmer */}
@@ -79,7 +79,7 @@ const KatalogDetail = () => {
                       <p className="text-base mb-4 font-semibold">
                         EU размеры:
                       </p>
-                      <div className="grid grid-cols-4  gap-y-3">
+                      <div className="grid grid-cols-4  gap-y-3 gap-x-2 md:gap-x-3 w-[350px]">
                         {e.razmer.map((size, index) => (
                           <button
                             key={index}

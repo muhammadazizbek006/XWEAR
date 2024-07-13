@@ -100,6 +100,7 @@ const Katalog = () => {
   return (
     <>
       <section className="bg-white py-12 ">
+        {/* draw */}
         <Drawer
           placement="left"
           open={openLeft}
@@ -115,14 +116,14 @@ const Katalog = () => {
                 open={open === 1}
                 icon={<Icon id={1} open={open} />}
               >
-                <AccordionHeader className="" onClick={() => handleOpen(1)}>
+                <AccordionHeader className="text-sm font-black" onClick={() => handleOpen(1)}>
                   Категории
                 </AccordionHeader>
-                <AccordionBody onClick={closeDrawerLeft} className="flex flex-col items-start">
+                <AccordionBody onClick={closeDrawerLeft} className="flex flex-col  space-y-5 items-start">
                   {open === 1 &&
                     categories.map((category, index) => (
                       <button
-                        className="text-base font-semibold mb-5"
+                        className="text-sm font-semibold "
                         key={index}
                         onClick={() => setSelectedCategory(category)}
                       >
@@ -139,14 +140,14 @@ const Katalog = () => {
                 open={open === 2}
                 icon={<Icon id={2} open={open} />}
               >
-                <AccordionHeader className="" onClick={() => handleOpen(2)}>
+                <AccordionHeader className="text-sm font-black" onClick={() => handleOpen(2)}>
                   Размеры (EU)
                 </AccordionHeader>
                 <AccordionBody onClick={closeDrawerLeft} className="grid grid-cols-3 gap-3 mb-6">
                   {open === 2 &&
                     sizes.map((size, index) => (
                       <button
-                        className="text-base font-semibold rounded border-2 px-8 py-2"
+                        className="text-sm font-semibold rounded border-2 px-8 py-2"
                         key={index}
                         onClick={() => setSelectedSize(size)}
                       >
@@ -163,14 +164,14 @@ const Katalog = () => {
                 open={open === 3}
                 icon={<Icon id={3} open={open} />}
               >
-                <AccordionHeader className="" onClick={() => handleOpen(3)}>
+                <AccordionHeader className="text-sm font-black" onClick={() => handleOpen(3)}>
                   Брэнды
                 </AccordionHeader>
                 <AccordionBody onClick={closeDrawerLeft} className="flex flex-col items-start">
                   {open === 3 &&
                     brands.map((brand, index) => (
                       <button
-                        className="text-base font-medium mb-5"
+                        className="text-sm font-medium mb-5"
                         key={index}
                         onClick={() => setSelectedBrand(brand)}
                       >
@@ -187,14 +188,14 @@ const Katalog = () => {
                 open={open === 4}
                 icon={<Icon id={4} open={open} />}
               >
-                <AccordionHeader className="" onClick={() => handleOpen(4)}>
+                <AccordionHeader className="text-sm font-black" onClick={() => handleOpen(4)}>
                   Цвета
                 </AccordionHeader>
                 <AccordionBody onClick={closeDrawerLeft} className="flex flex-col items-start">
                   {open === 4 &&
                     colors.map((color, index) => (
                       <button
-                        className="text-base font-medium mb-5"
+                        className="text-sm font-medium "
                         key={index}
                         onClick={() => setSelectedColor(color)}
                       >
@@ -207,11 +208,12 @@ const Katalog = () => {
           </div>
         </Drawer>
 
+        {/* filter va maxsulotlar */}
         <div className="containerb flex flex-col md:flex-row justify-between">
           <div className="mr-5">
             <button
               onClick={openDrawerLeft}
-              className="w-80 h-16 block md:hidden border-2 rounded-md flex items-center justify-between px-2 border-[#E6E7EB]"
+              className="w-80 h-16 block md:hidden border-2 rounded-md flex items-center justify-between px-2 mb-5 border-[#E6E7EB]"
             >
               <p className="text-xl font-extrabold">Открыть Фильтры</p>
               <img src={vector} alt="btn filter" />
@@ -312,7 +314,7 @@ const Katalog = () => {
             </div>
           </div>
 
-          <div className="">
+          <div className="flex flex-col items-center">
             {   filteredProducts.length > 0 ? (
               <ul className="grid sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12">
                 {filteredProducts.map((e) => (
