@@ -72,30 +72,30 @@ const Korzinka = () => {
                   рассчитают его стоимость.
                 </p>
               </div>
-              <div className="flex   ">
+              <div className="flex flex-col md:flex-row items-center md:items-start   ">
                 {/* tanlangan maxsulot map */}
-                <ul className="bg-white shadow drop-shadow-md rounded-2xl py-3 px-8  w-4/6 mr-12 ">
+                <ul className="bg-white shadow drop-shadow-md rounded-2xl py-3 px-2 sm:px-8 w-full  md:w-4/6 md:mr-12  mb-8 sm:mb-0">
                   {tanlanganMahsulotlar.map((e) => {
                     return (
-                      <li className="flex justify-between items-center border-b-2 ">
+                      <li className="flex justify-between items-center border-b-2  relative">
 
                         {/* left */}
-                        <div className="flex items-center">
+                        <div className="flex flex-col lg:flex-row  items-center">
                           {/* img */}
                           <div className="mr-4">
                             <img className="w-32 h-32" src={e.img} alt="" />
                           </div>
                           {/* title and brend */}
                           <div>
-                            <h3 className="text-base font-semibold mb-2">
+                            <h3 className=" text-sm lg:text-base font-medium sm:font-semibold mb-2">
                               {e.title}
                             </h3>
-                            <span className="text-base font-semibold">{e.brend}</span>
+                            <span className=" text-sm lg:text-base font-medium sm:font-semibold">{e.brend}</span>
                           </div>
                         </div>
 
                         {/* center */}
-                        <div className="flex items-center space-x-4">
+                        <div className="flex items-center space-x-4 top-4  right-16 absolute sm:static">
                           <button
                             onClick={() => decrement(e.id)}
                             className="   hover:bg-red-500  hover:text-white duration-300  text-gray-700 rounded-full"
@@ -112,11 +112,11 @@ const Korzinka = () => {
                         </div>
                         {/* summa */}
                         <div>
-                          <p className="text-base"> <span className="text-base font-semibold">категория:</span> {e.kategoria}</p>
-                          <p className="text-base "> <span className="text-base font-semibold">расходы: </span>{e.narxi}  ₽</p>
+                          <p className="text-base"> <span className=" text-sm sm:text-base font-medium sm:font-semibold">категория:</span> {e.kategoria}</p>
+                          <p className="text-base "> <span className=" text-sm sm:text-base font-medium sm:font-semibold">расходы: </span>{e.narxi}  ₽</p>
                         </div>
                         {/* delete btn  */}
-                        <div>
+                        <div className=" absolute lg:relative right-4 top-4">
                         <button onClick={()=>handleDelete(e.id)} className="group">
                           <svg fill='current color' className="w-6 h-6 fill-current text-black group-hover:text-red-500 duration-300" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="30px" height="30px"><path d="M 13 3 A 1.0001 1.0001 0 0 0 11.986328 4 L 6 4 A 1.0001 1.0001 0 1 0 6 6 L 24 6 A 1.0001 1.0001 0 1 0 24 4 L 18.013672 4 A 1.0001 1.0001 0 0 0 17 3 L 13 3 z M 6 8 L 6 24 C 6 25.105 6.895 26 8 26 L 22 26 C 23.105 26 24 25.105 24 24 L 24 8 L 6 8 z"/></svg>
                         </button>
@@ -127,13 +127,16 @@ const Korzinka = () => {
                 </ul>
 
               {/* jami narx va maxsulotlar */}
-              <div className="bg-white shadow-md py-8 px-6 rounded-md flex flex-col items-center">
-                <p className="mb-3 text-base font-semibold">
+              <div className="bg-white shadow-md py-8 px-6 h-48 rounded-md flex flex-col items-center">
+                <p className="mb-3 lg:text-base font-semibold">
                   В корзине {tanlanganMahsulotlar.length} товара
                 </p>
-                <div>
+                <div  className="">
                   <p className="text-base font-semibold">Общая сумма:</p>
+                  <p>dd</p>
                 </div>
+                  
+                <Link to='/sotibolish' className="px-8 py-3 bg-black rounded-md text-white hover:bg-green-500 duration-500">скручивание</Link>
               </div>
 
               </div>

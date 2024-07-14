@@ -5,10 +5,11 @@ import { Link } from "react-router-dom";
 import next from "../../img/next.svg";
 import like2 from "../../img/like2.svg";
 import like3 from "../../img/like3.svg";
-import shop from '../../img/shop.svg'
+import shop from "../../img/shop.svg";
 import { useDispatch } from "react-redux";
 import { addProductToLike } from "../../store/slice/laykSlice";
 import { data } from "../../data/data";
+import { addProductToWishlist } from "../../store/slice/productsWishlistDataSlice";
 
 // data
 
@@ -34,6 +35,12 @@ const Kiyimlar = () => {
     };
     setLikedProducts(updatedLikedProducts);
     dispatch(addProductToLike(product));
+  };
+
+  // maxsulotlarni korzinkaga qo'shish
+
+  const mahsulotniWishlistgaQoshish = (product) => {
+    dispatch(addProductToWishlist(product));
   };
   return (
     <>
@@ -65,19 +72,32 @@ const Kiyimlar = () => {
                       />
                     </button>
                     <Link to={`/product/${e.id}`} className="flex flex-col">
-                    <div className=" flex flex-col items-end mb-3 ">
+                      <div className=" flex flex-col items-end mb-3 ">
                         <img src={e.img} alt={e.title} />
                       </div>
                       <div className="mb-1">
                         <p className="text-xl font-semibold ">{e.title}</p>
-                         <p className="text-base"><span className="text-xl font-semibold">категория: </span>{e.kategoria}</p>
+                        <p className="text-base">
+                          <span className="text-xl font-semibold">
+                            категория:{" "}
+                          </span>
+                          {e.kategoria}
+                        </p>
                       </div>
-                     
                     </Link>
-                     {/* shop btn va kategoria */}
+                    {/* shop btn va kategoria */}
                     <div className="flex justify-between">
-                        <p  className="text-base"> <span className="text-base font-semibold">расходы: </span>от {e.narxi} ₽ </p>
-                      <button className="bg-black px-8 py-2 rounded-md hover:bg-green-500 duration-300">
+                      <p className="text-base">
+                        {" "}
+                        <span className="text-base font-semibold">
+                          расходы:{" "}
+                        </span>
+                        от {e.narxi} ₽{" "}
+                      </p>
+                      <button
+                        onClick={() => mahsulotniWishlistgaQoshish(e)}
+                        className="bg-black px-8 py-2 rounded-md hover:bg-green-500 duration-300"
+                      >
                         <img src={shop} alt="" />
                       </button>
                     </div>

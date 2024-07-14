@@ -9,6 +9,7 @@ import { useDispatch } from "react-redux";
 import { addProductToLike } from "../../store/slice/laykSlice";
 // data
 import  { data } from "../../data/data";
+import { addProductToWishlist } from "../../store/slice/productsWishlistDataSlice";
 
 const OyoqKiyimlar = () => {
   const [KatalogMahsulotlari, setKatalogMahsulotlari] = useState([]);
@@ -34,6 +35,12 @@ const dispatch = useDispatch()
     setLikedProducts(updatedLikedProducts);
     dispatch(addProductToLike(product));
   };
+    // maxsulotlarni korzinkaga qo'shish
+
+
+    const mahsulotniWishlistgaQoshish = (product) => {
+      dispatch(addProductToWishlist(product));
+    };
   return (
     <>
       <section className="pt-12 ">
@@ -74,7 +81,7 @@ const dispatch = useDispatch()
                     {/* shop btn va kategoria */}
                     <div className="flex justify-between">
                         <p  className="text-base"> <span className="text-base font-semibold">расходы: </span>от {e.narxi} ₽ </p>
-                      <button className="bg-black px-8 py-2 rounded-md hover:bg-green-500 duration-300">
+                      <button onClick={() => mahsulotniWishlistgaQoshish(e)} className="bg-black px-8 py-2 rounded-md hover:bg-green-500 duration-300">
                         <img src={shop} alt="" />
                       </button>
                     </div>

@@ -31,7 +31,7 @@ const Yoqtrilganlar = () => {
               <ul className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-12">
                 {productliked.map((product) => (
                   <li key={product.id} className="bg-white shadow-md relative px-4 py-3 rounded-md w-80 sm:w-full relative">
-                        <button className="right-2 absolute top-2 w-5">
+                        <button className="right-3 absolute top-2">
                           <img className="" src={like2} alt={product.brend} />
                         </button>
                     <Link to={`/product/${product.id}`} className="flex flex-col items-start">
