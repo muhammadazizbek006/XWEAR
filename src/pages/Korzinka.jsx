@@ -49,7 +49,7 @@ const Korzinka = () => {
     <>
       <section className="py-10 relative bg-slate-100 ">
         {tanlanganMahsulotlar.length > 0 ? (
-          <div className="containerb flex items-center justify-between">
+          <div className="containerb ">
 
             <div>
               <h2 className="text-3xl font-black mb-4">Рассчитать стоимость</h2>
@@ -72,67 +72,70 @@ const Korzinka = () => {
                   рассчитают его стоимость.
                 </p>
               </div>
-              {/* tanlangan maxsulot map */}
-              <ul className="bg-white shadow drop-shadow-md rounded-2xl py-3 px-8 ">
-                {tanlanganMahsulotlar.map((e) => {
-                  return (
-                    <li className="flex justify-between items-center border-b-2 ">
+              <div className="flex   ">
+                {/* tanlangan maxsulot map */}
+                <ul className="bg-white shadow drop-shadow-md rounded-2xl py-3 px-8  w-4/6 mr-12 ">
+                  {tanlanganMahsulotlar.map((e) => {
+                    return (
+                      <li className="flex justify-between items-center border-b-2 ">
 
-                      {/* left */}
-                      <div className="flex items-center">
-                        {/* img */}
-                        <div className="mr-4">
-                          <img className="w-32 h-32" src={e.img} alt="" />
+                        {/* left */}
+                        <div className="flex items-center">
+                          {/* img */}
+                          <div className="mr-4">
+                            <img className="w-32 h-32" src={e.img} alt="" />
+                          </div>
+                          {/* title and brend */}
+                          <div>
+                            <h3 className="text-base font-semibold mb-2">
+                              {e.title}
+                            </h3>
+                            <span className="text-base font-semibold">{e.brend}</span>
+                          </div>
                         </div>
-                        {/* title and brend */}
+
+                        {/* center */}
+                        <div className="flex items-center space-x-4">
+                          <button
+                            onClick={() => decrement(e.id)}
+                            className="   hover:bg-red-500  hover:text-white duration-300  text-gray-700 rounded-full"
+                          >
+                            <img src={minus} alt="" />
+                          </button>
+                          <span className="mx-2 ">{counts[e.id]}</span>
+                          <button
+                            onClick={() => increment(e.id)}
+                            className="  hover:bg-green-500 hover:text-white duration-300  text-gray-700 rounded-full"
+                          >
+                            <img src={pilus} alt="" />
+                          </button>
+                        </div>
+                        {/* summa */}
                         <div>
-                          <h3 className="text-base font-semibold mb-2">
-                            {e.title}
-                          </h3>
-                          <span className="text-base font-semibold">{e.brend}</span>
+                          <p className="text-base"> <span className="text-base font-semibold">категория:</span> {e.kategoria}</p>
+                          <p className="text-base "> <span className="text-base font-semibold">расходы: </span>{e.narxi}  ₽</p>
                         </div>
-                      </div>
-
-                      {/* center */}
-                      <div className="flex items-center space-x-4">
-                        <button
-                          onClick={() => decrement(e.id)}
-                          className="   hover:bg-red-500  hover:text-white duration-300  text-gray-700 rounded-full"
-                        >
-                          <img src={minus} alt="" />
+                        {/* delete btn  */}
+                        <div>
+                        <button onClick={()=>handleDelete(e)} className="group">
+                          <svg fill='current color' className="w-6 h-6 fill-current text-black group-hover:text-red-500 duration-300" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="30px" height="30px"><path d="M 13 3 A 1.0001 1.0001 0 0 0 11.986328 4 L 6 4 A 1.0001 1.0001 0 1 0 6 6 L 24 6 A 1.0001 1.0001 0 1 0 24 4 L 18.013672 4 A 1.0001 1.0001 0 0 0 17 3 L 13 3 z M 6 8 L 6 24 C 6 25.105 6.895 26 8 26 L 22 26 C 23.105 26 24 25.105 24 24 L 24 8 L 6 8 z"/></svg>
                         </button>
-                        <span className="mx-2 ">{counts[e.id]}</span>
-                        <button
-                          onClick={() => increment(e.id)}
-                          className="  hover:bg-green-500 hover:text-white duration-300  text-gray-700 rounded-full"
-                        >
-                          <img src={pilus} alt="" />
-                        </button>
-                      </div>
-                      {/* summa */}
-                      <div>
-                        <p className="text-base"> <span className="text-base font-semibold">категория:</span> {e.kategoria}</p>
-                        <p className="text-base "> <span className="text-base font-semibold">расходы: </span>{e.narxi}  ₽</p>
-                      </div>
-                      {/* delete btn  */}
-                      <div>
-                      <button onClick={()=>handleDelete(e)} className="group">
-                        <svg fill='current color' className="w-6 h-6 fill-current text-black group-hover:text-red-500 duration-300" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="30px" height="30px"><path d="M 13 3 A 1.0001 1.0001 0 0 0 11.986328 4 L 6 4 A 1.0001 1.0001 0 1 0 6 6 L 24 6 A 1.0001 1.0001 0 1 0 24 4 L 18.013672 4 A 1.0001 1.0001 0 0 0 17 3 L 13 3 z M 6 8 L 6 24 C 6 25.105 6.895 26 8 26 L 22 26 C 23.105 26 24 25.105 24 24 L 24 8 L 6 8 z"/></svg>
-                      </button>
-                      </div>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
+                        </div>
+                      </li>
+                    );
+                  })}
+                </ul>
 
-            {/* jami narx va maxsulotlar */}
-            <div className="bg-white shadow-md mt-24 py-8 px-6 rounded-md flex flex-col items-center">
-              <p className="mb-3 text-base font-semibold">
-                В корзине {tanlanganMahsulotlar.length} товара
-              </p>
-              <div>
-                <p className="text-base font-semibold">Общая сумма:</p>
+              {/* jami narx va maxsulotlar */}
+              <div className="bg-white shadow-md py-8 px-6 rounded-md flex flex-col items-center">
+                <p className="mb-3 text-base font-semibold">
+                  В корзине {tanlanganMahsulotlar.length} товара
+                </p>
+                <div>
+                  <p className="text-base font-semibold">Общая сумма:</p>
+                </div>
+              </div>
+
               </div>
             </div>
 
