@@ -28,7 +28,7 @@ function Icon({ id, open }) {
 import vector from '../img/vectorblack.svg'
 import like from "../img/like2.svg";
 import like3 from '../img/like3.svg';
-
+import shop from '../img/shop.svg'
 import { addProductToLike } from "../store/slice/laykSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { addProductToWishlist } from "../store/slice/productsWishlistDataSlice";
@@ -107,7 +107,7 @@ const Katalog = () => {
   };
   return (
     <>
-      <section className="bg-white py-12 ">
+      <section className=" py-12 ">
         {/* draw */}
         <Drawer
           placement="left"
@@ -326,7 +326,7 @@ const Katalog = () => {
             {   filteredProducts.length > 0 ? (
               <ul className="grid sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12">
                 {filteredProducts.map((e) => (
-                  <li key={e.id} className="bg-white pl-3 relative w-80 sm:w-full">
+                  <li key={e.id} className=" bg-white shadow-md relative px-4 py-3 rounded-md w-80  sm:w-full">
                     <button
                       className="absolute right-7"
                       onClick={() => toggleLike(e)}
@@ -337,20 +337,19 @@ const Katalog = () => {
                       />
                     </button>
                     <Link to={`/product/${e.id}`} className="block">
-                      <div>
+                    <div className=" flex flex-col items-end mb-3 ">
                         <img src={e.img} alt={e.title} />
                       </div>
-                    </Link>
-                    <div className="flex  justify-around items-start">
-                      <div className="">
-                        <p className="text-base lg:text-xl">{e.title}</p>
-                        <p>от {e.narxi} ₽</p>
-
+                      <div className="mb-1">
+                        <p className="text-xl font-semibold ">{e.title}</p>
+                         <p className="text-base"><span className="text-xl font-semibold">категория: </span>{e.kategoria}</p>
                       </div>
-                      <button onClick={() => mahsulotniWishlistgaQoshish(e)}>
-                      <svg width="28" height="26" viewBox="0 0 18 16" fill="black" xmlns="http://www.w3.org/2000/svg">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M3.0905 2.91311H16.7397C17.2062 2.91311 17.5482 3.35211 17.4353 3.80391L15.9785 9.63048C15.9025 9.93446 15.6378 10.1539 15.3251 10.1723L3.86762 10.8456C4.07245 11.3243 4.54702 11.6529 5.09162 11.6529H13.0982C14.2967 11.6529 15.2717 12.628 15.2717 13.8264C15.2717 15.0249 14.2967 16 13.0982 16C11.5964 16 10.5406 14.502 11.0544 13.0868H7.13056C7.645 14.5038 6.58692 16 5.08677 16C3.27933 16 2.26409 13.9081 3.37522 12.4891C2.75894 12.0009 2.40119 11.2825 2.34268 10.6204C1.43419 0.498541 1.47444 0.946953 1.55953 1.89506L1.56008 1.9012C1.61714 2.53699 1.6934 3.38676 1.51811 1.43385H0.716927C0.320978 1.43385 0 1.11288 0 0.716927C0 0.320978 0.320978 0 0.716927 0H2.17355C2.54465 0 2.85443 0.28322 2.88761 0.652847L3.0905 2.91311ZM4.3471 13.8264C4.3471 14.2343 4.67894 14.5661 5.08677 14.5661C5.49463 14.5661 5.82647 14.2343 5.82647 13.8264C5.82647 13.4186 5.49463 13.0868 5.08677 13.0868C4.67894 13.0868 4.3471 13.4186 4.3471 13.8264ZM13.0982 14.5661C12.6903 14.5661 12.3585 14.2343 12.3585 13.8264C12.3585 13.4186 12.6903 13.0868 13.0982 13.0868C13.506 13.0868 13.8379 13.4186 13.8379 13.8264C13.8379 14.2343 13.506 14.5661 13.0982 14.5661ZM3.67463 9.42062L14.7152 8.77181L15.8215 4.34693H3.21921L3.67463 9.42062Z" fill="black"/>
-                      </svg>
+                    </Link>
+                  {/* shop btn va kategoria */}
+                  <div className="flex justify-between">
+                        <p  className="text-base"> <span className="text-base font-semibold">расходы: </span>от {e.narxi} ₽ </p>
+                      <button onClick={() => mahsulotniWishlistgaQoshish(e)} className="bg-black px-8 py-2 rounded-md hover:bg-green-500 duration-300">
+                        <img src={shop} alt="" />
                       </button>
                     </div>
 
@@ -361,6 +360,7 @@ const Katalog = () => {
               <div className="text-4xl">Нет такого товара</div>
             )}
           </div>
+              
         </div>
       </section>
     </>
