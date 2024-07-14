@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 import logo from "../img/logo.svg";
 import searchIcon from "../img/search.svg"; // search nomi bilan conflict bo'lmasligi uchun o'zgartirdim
 import like from '../img/like.svg'
-import shop from "../img/shop.svg";
+import shop from "../img/headshop.svg";
 import linkmenyu from "../img/linkmenyu.svg";
 
   // like snacbar

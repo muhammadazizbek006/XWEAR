@@ -418,7 +418,7 @@ export const data = [
 {
   id: 24,
   img: ac2,
-  title: "Herschel Little America Backpack",
+  title: "Herschel Little America ",
   type: "acsesuar",
   brend: "Herschel",
   narxi: 4500,
