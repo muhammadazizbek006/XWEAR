@@ -326,7 +326,7 @@ const Katalog = () => {
             {   filteredProducts.length > 0 ? (
               <ul className="grid sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12">
                 {filteredProducts.map((e) => (
-                  <li key={e.id} className=" bg-white shadow-md relative px-4 py-3 rounded-md w-80  sm:w-full">
+                  <li key={e.id} className=" relative px-4 py-3 rounded-md w-80  sm:w-full">
                     <button
                       className="absolute right-7"
                       onClick={() => toggleLike(e)}

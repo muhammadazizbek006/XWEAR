@@ -58,7 +58,7 @@ const Acsesuar = () => {
                 return (
                   <li
                     key={e.id}
-                    className="bg-white shadow-md relative px-4 py-3 rounded-md w-80 "
+                    className=" relative px-4 py-3 rounded-md w-80 "
                   >
                     <button
                       className="absolute right-2"
