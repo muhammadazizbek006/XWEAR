@@ -16,9 +16,13 @@ import shop from "../img/headshop.svg";
 import linkmenyu from "../img/linkmenyu.svg";
 
   // like snacbar
-  import laykSlice from '../store/slice/laykSlice'
+import { useDispatch } from "react-redux";
+import { addProductToLike } from "../store/slice/laykSlice";
 
 const Header = () => {
+
+
+
   const [showSearchInput, setShowSearchInput] = useState(false);
 
   const onSearch = () => {
@@ -74,16 +78,15 @@ const Header = () => {
         </div>
         {/* right */}
         <div className="flex items-center space-x-4 lg:space-x-8">
-          <Link className="hidden sm:block" onClick={onSearch}>
-            <img src={searchIcon} alt="search" />
-          </Link>
-          <Link className="w-5" to='/yoqtrilganlar'>
+
+          <Link className="w-5 relative" to='/yoqtrilganlar'>
             <img src={like} alt="reyting" />
-            <span></span>
+            <span className="bg-white absolute  px-2 -top-2 -right-4 rounded-full">{addProductToLike.length}</span>
           </Link>
 
-          <Link to='/korzinka'>
+          <Link className=" relative" to='/korzinka'>
             <img src={shop} alt="shop" />
+            <span className="bg-white absolute  px-2 -top-2 -right-4 rounded-full">{addProductToLike.length}</span>
           </Link>
         </div>
       </div>
