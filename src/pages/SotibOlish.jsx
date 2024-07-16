@@ -70,9 +70,9 @@ const SotibOlish = () => {
           <div className="w-[70%]">
             <form onSubmit={handleSubmitInput}>
               <ul>
-                <li className="bg-white rounded-lg shadow-md p-12">
+                <li className="bg-white rounded-lg shadow-md p-7 xl:p-12">
                   <div>
-                    <div className="flex justify-between mb-6">
+                    <div className="flex flex-col lg:flex-row space-y-3 lg:space-y-0 justify-between mb-6">
                       <div className="flex flex-col">
                         <label className="text-sm font-medium text-labelcolor mb-1" htmlFor="">
                           Телефон *
@@ -81,7 +81,7 @@ const SotibOlish = () => {
                           onChange={handlePhone}
                           value={phone}
                           required
-                          className="w-[452px] py-2 px-3 rounded-md border-2 border-[#c2c6d1]"
+                          className=" lg:w-72 xl:w-96 1473:w-[452px] py-2 px-3 rounded-md border-2 border-[#c2c6d1]"
                           type="tel"
                           placeholder="+998"
                         />
@@ -94,12 +94,12 @@ const SotibOlish = () => {
                           onChange={handleName}
                           value={name}
                           required
-                          className="w-[452px] py-2 px-3 rounded-md border-2 border-[#c2c6d1]"
+                          className=" lg:w-72 xl:w-96 1473:w-[452px] py-2 px-3 rounded-md border-2 border-[#c2c6d1]"
                           type="text"
                         />
                       </div>
                     </div>
-                    <div className="flex justify-between mb-6">
+                    {/* <div className="flex justify-between mb-6">
                       <div className="flex flex-col">
                         <label className="text-sm font-medium text-labelcolor mb-1" htmlFor="">
                           Область *
@@ -160,7 +160,7 @@ const SotibOlish = () => {
                           className="w-[452px] pt-2 pb-3 px-3 rounded-md border-2 border-[#c2c6d1] resize-none"
                         ></textarea>
                       </div>
-                    </div>
+                    </div> */}
                     <div>
                       <button className="px-8 py-3 bg-black text-white rounded-md mr-4">Заказать</button>
                       <Link className="px-8 pt-3 pb-4 text-base hover:bg-black hover:text-white duration-500 rounded-md" to="/">
@@ -172,6 +172,8 @@ const SotibOlish = () => {
               </ul>
             </form>
           </div>
+         
+         
           {/* Ваши выбранные товары */}
           <div className="w-[20%] bg-white rounded-lg shadow-md p-6 flex flex-col  ">
             <h3 className="text-base font-semibold mb-4">В корзине {tanlanganMahsulotlar.length} товара</h3>
