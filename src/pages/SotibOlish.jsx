@@ -72,7 +72,7 @@ const SotibOlish = () => {
               <ul>
                 <li className="bg-white rounded-lg shadow-md p-7 xl:p-12">
                   <div>
-                    <div className="flex flex-col lg:flex-row space-y-3 lg:space-y-0 justify-between mb-6">
+                    <div className="flex flex-col lg:items-center  lg:flex-row space-y-3 lg:space-y-0 justify-between mb-6">
                       <div className="flex flex-col">
                         <label className="text-sm font-medium text-labelcolor mb-1" htmlFor="">
                           Телефон *
@@ -99,7 +99,7 @@ const SotibOlish = () => {
                         />
                       </div>
                     </div>
-                    {/* <div className="flex justify-between mb-6">
+                    <div className="flex flex-col lg:items-center lg:flex-row space-y-3 lg:space-y-0 justify-between mb-6">
                       <div className="flex flex-col">
                         <label className="text-sm font-medium text-labelcolor mb-1" htmlFor="">
                           Область *
@@ -108,7 +108,7 @@ const SotibOlish = () => {
                           onChange={handleoblast}
                           value={oblast}
                           required
-                          className="w-[452px] pt-2 pb-3 px-3 rounded-md border-2 border-[#c2c6d1]"
+                          className="lg:w-72 xl:w-96 1473:w-[452px] pt-2 pb-3 px-3 rounded-md border-2 border-[#c2c6d1]"
                         >
                           <option disabled value="Выберите">
                             Выберите
@@ -133,13 +133,13 @@ const SotibOlish = () => {
                           onChange={handleemail}
                           value={email}
                           required
-                          className="w-[452px] py-2 px-3 rounded-md border-2 border-[#c2c6d1]"
+                          className="lg:w-72 xl:w-96 1473:w-[452px] py-2 px-3 rounded-md border-2 border-[#c2c6d1]"
                           type="email"
                           placeholder="Выберите Адрес"
                         />
                       </div>
                     </div>
-                    <div className="flex justify-between mb-6">
+                    <div className="flex justify-between flex-col lg:items-center lg:flex-row space-y-3 lg:space-y-0 mb-6">
                       <div className="flex flex-col">
                         <label className="text-sm font-medium text-labelcolor mb-1" htmlFor="">
                           Комментарий к заказу
@@ -147,7 +147,7 @@ const SotibOlish = () => {
                         <textarea
                           onChange={handleMessage}
                           value={message}
-                          className="w-[452px] pt-2 pb-3 px-3 rounded-md border-2 border-[#c2c6d1] resize-none"
+                          className="lg:w-72 xl:w-96 1473:w-[452px] pt-2 pb-3 px-3 rounded-md border-2 border-[#c2c6d1] resize-none"
                         ></textarea>
                       </div>
                       <div className="flex flex-col">
@@ -157,10 +157,10 @@ const SotibOlish = () => {
                         <textarea
                           onChange={handleadress}
                           value={ishadress}
-                          className="w-[452px] pt-2 pb-3 px-3 rounded-md border-2 border-[#c2c6d1] resize-none"
+                          className="lg:w-72 xl:w-96 1473:w-[452px] pt-2 pb-3 px-3 rounded-md border-2 border-[#c2c6d1] resize-none"
                         ></textarea>
                       </div>
-                    </div> */}
+                    </div>
                     <div>
                       <button className="px-8 py-3 bg-black text-white rounded-md mr-4">Заказать</button>
                       <Link className="px-8 pt-3 pb-4 text-base hover:bg-black hover:text-white duration-500 rounded-md" to="/">
