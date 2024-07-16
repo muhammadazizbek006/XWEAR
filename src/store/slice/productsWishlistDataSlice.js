@@ -13,8 +13,6 @@ export const productsWishlistDataSlice = createSlice({
 
       if (!state.data.find((item) => item.id === id)) {
         state.data.push(action.payload);
-      } else {
-        console.log("pashol na***y");
       }
     },
     deleteUserOfferLinkData: (state, actions) => {

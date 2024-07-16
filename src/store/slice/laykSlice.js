@@ -14,8 +14,6 @@ export const laykSlice = createSlice({
       const id = action.payload.id;
       if (!state.data.find((item) => item.id === id)) {
         state.data.push(action.payload);
-      } else {
-        console.log("pashol na***y");
       }
     },
 

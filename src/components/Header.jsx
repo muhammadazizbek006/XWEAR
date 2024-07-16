@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Drawer,
   IconButton,
@@ -10,24 +10,15 @@ import { Link } from "react-router-dom";
 
 // img
 import logo from "../img/logo.svg";
-import searchIcon from "../img/search.svg"; // search nomi bilan conflict bo'lmasligi uchun o'zgartirdim
 import like from '../img/like.svg'
 import shop from "../img/headshop.svg";
 import linkmenyu from "../img/linkmenyu.svg";
 
   // like snacbar
-import { useDispatch } from "react-redux";
-import { addProductToLike } from "../store/slice/laykSlice";
+import { addProductToWishlist } from "../store/slice/productsWishlistDataSlice";
 
 const Header = () => {
 
-
-
-  const [showSearchInput, setShowSearchInput] = useState(false);
-
-  const onSearch = () => {
-    setShowSearchInput(!showSearchInput);
-  };
   const [openLeft, setOpenLeft] = React.useState(false);
 
   const openDrawerLeft = () => setOpenLeft(true);
@@ -55,13 +46,7 @@ const Header = () => {
 
         {/* center */}
         <div className="flex space-x-12 items-center">
-          {/* {showSearchInput ? (
-            <input
-              type="serach"
-              className=" border-2 py-2  md:py-4 hidden sm:block sm:pr-40 md:pr-80  lg:pr-[524px]  pl-7 xl:pr-[624px] rounded-full text-white bg-transparent"
-              placeholder="Поиск по каталогу товаров..."
-            />
-          ) : ( */}
+        
             <ul className="flex   md:space-x-5 lg:space-x-8 xl:space-x-12 items-center">
               {catalog.links.map((e) => {
                 return (
@@ -81,12 +66,12 @@ const Header = () => {
 
           <Link className="w-5 relative" to='/yoqtrilganlar'>
             <img src={like} alt="reyting" />
-            <span className="bg-white absolute  px-2 -top-2 -right-4 rounded-full">{addProductToLike.length}</span>
+            <span className="bg-white absolute  px-2 -top-2 -right-4 rounded-full">{}</span>
           </Link>
 
           <Link className=" relative" to='/korzinka'>
             <img src={shop} alt="shop" />
-            <span className="bg-white absolute  px-2 -top-2 -right-4 rounded-full">{addProductToLike.length}</span>
+            <span className="bg-white absolute  px-2 -top-2 -right-4 rounded-full">{addProductToWishlist.length}</span>
           </Link>
         </div>
       </div>

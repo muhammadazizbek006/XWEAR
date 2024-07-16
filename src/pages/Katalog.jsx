@@ -348,7 +348,7 @@ const Katalog = () => {
                   {/* shop btn va kategoria */}
                   <div className="flex justify-between">
                         <p  className="text-base"> <span className="text-base font-semibold">расходы: </span>от {e.narxi} ₽ </p>
-                      <button onClick={() => mahsulotniWishlistgaQoshish(e)} className="bg-black px-8 py-2 rounded-md hover:bg-green-500 duration-300">
+                      <button onClick={() => mahsulotniWishlistgaQoshish(e)} className="bg-black px-8 py-2 rounded-md">
                         <img src={shop} alt="" />
                       </button>
                     </div>

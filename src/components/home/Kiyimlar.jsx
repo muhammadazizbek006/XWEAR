@@ -96,7 +96,7 @@ const Kiyimlar = () => {
                       </p>
                       <button
                         onClick={() => mahsulotniWishlistgaQoshish(e)}
-                        className="bg-black px-8 py-2 rounded-md hover:bg-green-500 duration-300"
+                        className="bg-black px-8 py-2 rounded-md "
                       >
                         <img src={shop} alt="" />
                       </button>
