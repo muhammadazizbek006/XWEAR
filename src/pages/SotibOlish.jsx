@@ -65,9 +65,9 @@ const SotibOlish = () => {
     <>
       <section className="py-12">
             <h2 className="text-4xl font-semibold mb-6 containerb">Оформление заказа</h2>
-        <div className="containerb flex justify-between">
+        <div className="containerb flex flex-col sm:flex-row  justify-between">
           {/* Оформление заказа */}
-          <div className="w-[70%]">
+          <div className=" w-full  sm:w-[55%] md:w-[61%] xl:w-[70%] mb-7">
             <form onSubmit={handleSubmitInput}>
               <ul>
                 <li className="bg-white rounded-lg shadow-md p-7 xl:p-12">
@@ -175,20 +175,20 @@ const SotibOlish = () => {
          
          
           {/* Ваши выбранные товары */}
-          <div className="w-[20%] bg-white rounded-lg shadow-md p-6 flex flex-col  ">
+          <div className=" w-full sm:w-[42%]  md:w-[37%] lg:w-[25%] xl:w-[20%] bg-white rounded-lg shadow-md px-4 1473:px-6 py-5 flex flex-col  ">
             <h3 className="text-base font-semibold mb-4">В корзине {tanlanganMahsulotlar.length} товара</h3>
             <ul>
               {tanlanganMahsulotlar.map((product) => (
-                <li key={product.id} className="flex  justify-between mb-4">
+                <li key={product.id} className="flex  justify-between items-center mb-4">
                   <div className="inline-block mr-4">
-                    <img className="w-20 h-20 " src={product.img} alt={product.title} />
+                    <img className=" h-24 w-24 sm:w-20 sm:h-20 " src={product.img} alt={product.title} />
 
                   </div>
                   <div>
-                    <h4 className="text-base ">{product.title}</h4>
+                    <h4 className=" text-xl sm:text-sm 1473:text-base ">{product.title}</h4>
                     <div className="flex">
-                      <p className="text-sm mr-3">{product.brend}</p>
-                      <p className="text-sm">{product.narxi} ₽</p>
+                      <p className=" text-base sm:text-xs mr-3">{product.brend}</p>
+                      <p className=" text-base sm:text-xs">{product.narxi} ₽</p>
                     </div>
                   </div>
                 </li>
