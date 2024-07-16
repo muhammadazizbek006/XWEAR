@@ -78,7 +78,7 @@ const Korzinka = () => {
                 </p>
               </div>
               <div className="flex flex-col md:flex-row items-center md:items-start">
-                <ul className="bg-white shadow drop-shadow-md rounded-lg py-3 px-2 sm:px-8 w-full md:w-4/6 md:mr-12 mb-8 sm:mb-0">
+                <ul className="bg-white shadow drop-shadow-md rounded-lg py-3 px-2 sm:px-8 w-full md:w-4/6 md:mr-12 mb-8 md:mb-0">
                   {tanlanganMahsulotlar.map((e) => (
                     <li
                       key={e.id}
