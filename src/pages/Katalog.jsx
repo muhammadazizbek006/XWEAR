@@ -155,7 +155,7 @@ const Katalog = () => {
                   {open === 2 &&
                     sizes.map((size, index) => (
                       <button
-                        className="text-sm font-semibold rounded border-2 px-8 py-2"
+                        className="text-sm font-semibold rounded border-2 px-2 py-2"
                         key={index}
                         onClick={() => setSelectedSize(size)}
                       >

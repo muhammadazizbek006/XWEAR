@@ -27,10 +27,10 @@ const Footer = () => {
            <div className='text-white'>
             <div className=' flex flex-col space-y-2 mb-14'>
                <h3 className='text-base font-black  '>Информация</h3>
-               <Link className='text-base'>Блог</Link>
+
                <Link to='/kontackt'  className='text-base'>Контакты</Link>
                <Link  className='text-base'>Доставка</Link>
-               <Link  className='text-base' >Оплата</Link>
+
                <Link to='/faq'  className='text-base' >FAQ</Link>
 
             </div>
