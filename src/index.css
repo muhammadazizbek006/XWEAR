@@ -10,36 +10,6 @@
 }
 
 
-  
-  body {
-    background: #eee;
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    color: #000;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .swiper {
-    width: 100%;
-
-  }
-  
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-
-  
-    /* Center slide text vertically */
-
-  }
-  
-  .swiper-slide img {
-    display: block;
-
-    object-fit: cover;
-  }
-  
   .raschitat{
     background: linear-gradient(267.03deg, #0D99F8 0.94%, #21A0F8 5.36%, #54B5FF 27.35%, #0DBBF8 79%, #0DDBF8 97.53%);
 
@@ -49,3 +19,8 @@
     display: none;
     
   }
+
+
+
+  
+

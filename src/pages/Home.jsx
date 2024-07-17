@@ -10,8 +10,8 @@ const Home = () => {
     <>
       {/* <Hero/> */}
       <OyoqKiyimlar/>
-      <Kiyimlar/>
-      <Acsesuar/>
+      {/* <Kiyimlar/> */}
+      {/* <Acsesuar/> */}
       <Raschitat/>
       <NashBlock/>
     </>
