@@ -71,17 +71,17 @@ const Kontackt = () => {
             <form onSubmit={handleSubmitInput} className="flex flex-col items-center sm:items-start" action="">
               <div className=" flex flex-col items-center xl:flex-row space-y-4 xl:space-y-0 mb-8">
                 {/* Ваше имя: */}
-                <input onChange={handleName}
-                    value={name} className="bg-slate-100 w-[320px] py-4 pl-5 rounded-md lg:mr-8" type="text" placeholder="Ваше имя:" />
-                <input onChange={handleEmail}
-                    value={email} className="bg-slate-100 w-[320px] py-4 pl-5 rounded-md"  type="email" placeholder="Ваш email:" />
+                <input required onChange={handleName}
+                    value={name} className="bg-slate-100 w-[320px] py-4 pl-5 rounded-md lg:mr-8 border-2 border-[#c2c6d1]" type="text" placeholder="Ваше имя:" />
+                <input required onChange={handleEmail}
+                    value={email} className="bg-slate-100 w-[320px] py-4 pl-5 rounded-md border-2 border-[#c2c6d1]"  type="email" placeholder="Ваш email:" />
               </div>
 
               <div className="flex flex-col mb-8">
-                <input onChange={handlePhone}
-                    value={phone} className="bg-slate-100 w-[320px] xl:w-[666px] py-4 pl-5 rounded-md mb-8" type="tel"   placeholder="Номер телефона:"/>
-                <textarea onChange={handleMessage}
-                    value={message}  className="bg-slate-100 w-[320px] xl:w-[666px] py-4 pl-5 rounded-md resize-none" placeholder="Текст сообщения:"></textarea>
+                <input required onChange={handlePhone}
+                    value={phone} className="bg-slate-100 w-[320px] xl:w-[666px] py-4 pl-5 rounded-md mb-8 border-2 border-[#c2c6d1]" type="tel"   placeholder="Номер телефона:"/>
+                <textarea required onChange={handleMessage}
+                    value={message}  className="bg-slate-100 w-[320px] xl:w-[666px] py-4 pl-5 rounded-md resize-none border-2 border-[#c2c6d1]" placeholder="Текст сообщения:"></textarea>
               </div>
               <button className="bg-black mb-5 md:mb-0   text-white h-[66px] w-[230px] rounded-md">Задать вопрос</button>
             </form>
