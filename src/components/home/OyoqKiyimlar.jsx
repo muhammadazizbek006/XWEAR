@@ -55,7 +55,7 @@ const dispatch = useDispatch()
     };
   return (
     <>
-      <section className="py-12 mb-12 ">
+      <section className="py-12  ">
         <div className="containerb flex flex-col  ">
           {/* top */}
           <div className="flex flex-col sm:flex-row items-center justify-between mb-10">

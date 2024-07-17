@@ -1,6 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import  { useRef } from 'react';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
 
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+// import required modules
+import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 // img
 import next from "../../img/next.svg";
 import like2 from "../../img/like2.svg";
@@ -20,7 +28,7 @@ const Kiyimlar = () => {
       .filter((product) => {
         return product.type === "kiyim";
       })
-      .slice(0, 4);
+
 
     setKatalogMahsulotlari(filteredProducts ? filteredProducts : []);
   }, []);
@@ -55,56 +63,79 @@ const Kiyimlar = () => {
             </Link>
           </div>
           <div className="flex flex-col items-center sm:items-stretch">
-            <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-6 gap-x-8 ">
-              {KatalogMahsulotlari.map((e) => {
-                return (
-                  <li
-                    key={e.id}
-                    className=" relative px-4 py-3 rounded-md w-80"
-                  >
+          <Swiper
+    slidesPerView={4}
+    spaceBetween={30}
+    pagination={{
+        clickable: true,
+        el: '.swiper-pagination',
+        dynamicBullets: true
+    }}
+    navigation={true}
+    autoplay={{
+        delay: 1500,
+        disableOnInteraction: false
+    }}
+    modules={[Pagination, Navigation, Autoplay]}
+    breakpoints={{
+      // Ekran o'lchamlari bo'yicha slaydlarni ko'rsatish uchun breakpoints
+      100: {
+          slidesPerView: 1,
+          spaceBetween: 10
+      },
+      622: {
+          slidesPerView: 2,
+          spaceBetween: 20
+      },
+      1024: {
+          slidesPerView: 3,
+          spaceBetween: 30
+      },
+      1280: {
+          slidesPerView: 4,
+          spaceBetween: 30
+      }
+  }}
+    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+    style={{ paddingBottom: '60px' }} // Pagination uchun 30px pastda joylashtirish
+>
+    {
+        KatalogMahsulotlari.map((e) => {
+            return (
+                <SwiperSlide key={e.id} className="relative px-4 py-3 swiper-slide  rounded-lg shadow-md bg-white" style={{  width: '318px' }}>
+                    {/* like */}
                     <button
-                      className="absolute right-2"
-                      onClick={() => toggleLike(e)}
+                        className="absolute right-3"
+                        onClick={() => toggleLike(e)}
                     >
-                      <img
-                        src={likedProducts[e.id] ? like3 : like2}
-                        alt={e.brend}
-                      />
+                        <img
+                            src={likedProducts[e.id] ? like3 : like2}
+                            alt={e.brend}
+                        />
                     </button>
-                    <Link to={`/product/${e.id}`} className="flex flex-col">
-                      <div className=" flex flex-col items-end mb-3 ">
-                        <img src={e.img} alt={e.title} />
-                      </div>
-                      <div className="mb-1">
-                        <p className="text-xl font-semibold ">{e.title}</p>
-                        <p className="text-base">
-                          <span className="text-xl font-semibold">
-                            категория:{" "}
-                          </span>
-                          {e.kategoria}
-                        </p>
-                      </div>
+
+                    <Link to={`/product/${e.id}`} className="flex flex-col justify-between">
+                        <div className="flex flex-col items-center mb-3">
+                            <img src={e.img} alt={e.title} />
+                        </div>
+                        <div className="mb-1 flex flex-col items-start justify-between">
+                            <p className="text-xl font-semibold">{e.title}</p>
+                            <p className="text-base"><span className="text-xl font-semibold">категория: </span>{e.kategoria}</p>
+                        </div>
                     </Link>
                     {/* shop btn va kategoria */}
                     <div className="flex justify-between">
-                      <p className="text-base">
-                        {" "}
-                        <span className="text-base font-semibold">
-                          расходы:{" "}
-                        </span>
-                        от {e.narxi} ₽{" "}
-                      </p>
-                      <button
-                        onClick={() => mahsulotniWishlistgaQoshish(e)}
-                        className="bg-black px-8 py-2 rounded-md "
-                      >
-                        <img src={shop} alt="" />
-                      </button>
+                        <p className="text-base"><span className="text-base font-semibold">расходы: </span>от {e.narxi} ₽</p>
+                        <button onClick={() => mahsulotniWishlistgaQoshish(e)} className="bg-black px-8 py-3 rounded-md">
+                            <img src={shop} alt="" />
+                        </button>
                     </div>
-                  </li>
-                );
-              })}
-            </ul>
+                </SwiperSlide>
+            );
+        })
+    }
+    <div className="swiper-pagination" style={{ marginTop: '30px' }}></div> {/* Pagination uchun joy */}
+        </Swiper>
           </div>
         </div>
       </section>
