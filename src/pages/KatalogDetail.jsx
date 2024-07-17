@@ -101,7 +101,7 @@ const KatalogDetail = () => {
                       <div className="mr-9">
                         <p className="text-xl">{e.narxi} ₽</p>
                         <p className="text-base font-semibold">
-                          размер - {selectedSize && `${selectedSize}`}
+                          размер -  {selectedSize && `${selectedSize}`}
                         </p>
                       </div>
                         
