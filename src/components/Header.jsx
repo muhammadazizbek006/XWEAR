@@ -16,6 +16,7 @@ import linkmenyu from "../img/linkmenyu.svg";
 
   // like snacbar
 import { addProductToWishlist } from "../store/slice/productsWishlistDataSlice";
+import { useSelector } from "react-redux";
 
 const Header = () => {
 
@@ -27,9 +28,13 @@ const Header = () => {
   const Closedraw = () => {
     setOpenLeft(false)
   }
+  const productliked = useSelector(
+    (store) => store.likemaxsulotlar.data
+  );
 
-
-
+  const tanlanganMahsulotlar = useSelector(
+    (store) => store.tanlanganMahsulotlar.data
+  );
   return (
     <header className="py-10 bg-black">
       <div className="containerb flex items-center justify-between">
@@ -66,12 +71,12 @@ const Header = () => {
 
           <Link className="w-5 relative" to='/yoqtrilganlar'>
             <img src={like} alt="reyting" />
-            <span className="bg-white absolute  px-2 -top-2 -right-4 rounded-full">{}</span>
+            <span className="bg-white absolute  px-2 -top-2 -right-4 rounded-full">{productliked.length}</span>
           </Link>
 
           <Link className=" relative" to='/korzinka'>
             <img src={shop} alt="shop" />
-            <span className="bg-white absolute  px-2 -top-2 -right-4 rounded-full">{addProductToWishlist.length}</span>
+            <span className="bg-white absolute  px-2 -top-2 -right-4 rounded-full">{tanlanganMahsulotlar.length}</span>
           </Link>
         </div>
       </div>

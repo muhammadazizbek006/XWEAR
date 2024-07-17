@@ -9,7 +9,7 @@ const Yoqtrilganlar = () => {
   const productliked = useSelector(
     (store) => store.likemaxsulotlar.data
   );
-  console.log(productliked);
+  console.log(productliked.length);
   const [count, setCount] = useState(1);
 
   const increment = () => setCount(count + 1);
