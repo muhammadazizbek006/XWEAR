@@ -58,9 +58,9 @@ const dispatch = useDispatch()
             <ul className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-y-6 gap-x-8">
               {KatalogMahsulotlari.map((e) => {
                 return (
-                  <li key={e.id} className="  relative px-4 py-3 rounded-md w-80 ">
+                  <li key={e.id} className="  relative px-4 py-3 bg-white w-80 ">
                      <button
-                      className="absolute right-2"
+                      className="absolute right-3"
                       onClick={() => toggleLike(e)}
                     >
                       <img

@@ -1,6 +1,6 @@
 // Import images
 import vector from '../img/vector.svg';
-import hero1 from '../img/hero/hero1.png'
+import hero1 from '../img/hero/hero.png'
 import hero2 from '../img/hero/hero2.png'
 
 import kiyim from '../img/hero/kiyim.png';

@@ -49,10 +49,3 @@
     display: none;
     
   }
-
-  .hero{
-    background: linear-gradient(180deg, #9DF2EB 0%, #9CF3EA 100%),
-    radial-gradient(63.71% 126.56% at 88.84% 33.6%, rgba(255, 255, 255, 0.48) 0%, rgba(255, 255, 255, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
-
-  }
-
