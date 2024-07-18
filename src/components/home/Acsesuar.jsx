@@ -22,7 +22,7 @@ const Acsesuar = () => {
   useEffect(() => {
     const filteredProducts = data
       .filter((product) => product.type === "acsesuar")
-      .slice(0, 4);
+
     setKatalogMahsulotlari(filteredProducts || []);
   }, []);
 
@@ -98,7 +98,7 @@ const Acsesuar = () => {
                 </button>
                 <Link to={`/product/${e.id}`} className="flex flex-col justify-between">
                   <div className="flex flex-col items-center mb-3">
-                    <img src={e.img} alt={e.title} />
+                    <img className="h-64" src={e.img} alt={e.title} />
                   </div>
                   <div className="mb-1 flex flex-col items-start justify-between">
                     <p className="text-xl font-semibold">{e.title}</p>

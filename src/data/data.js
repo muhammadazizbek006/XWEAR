@@ -43,6 +43,10 @@ import ac1 from '../img/acsesuar/ac1.png';
 import ac2 from '../img/acsesuar/ac2.png';
 import ac3 from '../img/acsesuar/ac3.png';
 import ac4 from '../img/acsesuar/ac4.png';
+import ac5 from '../img/acsesuar/ac5.png'
+import ac6 from '../img/acsesuar/ac6.png'
+import ac7 from '../img/acsesuar/ac7.png'
+
 
 import nash1 from '../img/nashblock/nash1.png';
 import nash2 from '../img/nashblock/nash2.png';
@@ -516,7 +520,7 @@ export const data = [
     },
     // acsesuarlar
 {
-  id: 23,
+  id: 32,
   img: ac1,
   title: "New Era 59FIFTY",
   type: "acsesuar",
@@ -527,7 +531,7 @@ export const data = [
   kategoria: "Кепки",
 },
 {
-  id: 24,
+  id: 33,
   img: ac2,
   title: "Herschel Little America ",
   type: "acsesuar",
@@ -538,18 +542,18 @@ export const data = [
   kategoria: "Рюкзаки",
 },
 {
-  id: 25,
+  id: 34,
   img: ac3,
   title: "Nike Heritage 86 Cap",
   type: "acsesuar",
-  brend: "Nike",
+  brend: "Herschel",
   narxi: 1200,
   razmer: [1, 2, 3, 4, 5, 6, 7],
   rang: ["Чёрный", "Белый", "Красный"],
   kategoria: "Кепки",
 },
 {
-  id: 26,
+  id: 35,
   img: ac4,
   title: "Adidas Originals Waist Bag",
   type: "acsesuar",
@@ -558,7 +562,41 @@ export const data = [
   razmer: [1, 2, 3, 4, 5, 6, 7],
   rang: ["Чёрный", "Белый", "Красный"],
   kategoria: "Сумки",
-}
+},
+{
+  id: 36,
+  img: ac5,
+  title: "Herschel Originals Waist Bag",
+  type: "acsesuar",
+  brend: "Herschel",
+  narxi: 2300,
+  razmer: [1, 2, 3, 4, 5, 6, 7],
+  rang: ["Чёрный", "Белый", "Красный"],
+  kategoria: "Сумки",
+},
+{
+  id: 37,
+  img: ac6,
+  title: "Herschel Originals Waist Bag",
+  type: "acsesuar",
+  brend: "Herschel",
+  narxi: 2300,
+  razmer: [1, 2, 3, 4, 5, 6, 7],
+  rang: ["Чёрный", "Белый", "Красный"],
+  kategoria: "Сумки",
+},
+{
+  id: 38,
+  img: ac7,
+  title: "Herschel Originals Waist Bag",
+  type: "acsesuar",
+  brend: "Herschel",
+  narxi: 2300,
+  razmer: [1, 2, 3, 4, 5, 6, 7],
+  rang: ["Чёрный", "Белый", "Красный"],
+  kategoria: "Сумки",
+},
+
 
 ];
 

@@ -281,7 +281,7 @@ const Katalog = () => {
                 open={open === 3}
                 icon={<Icon id={3} open={open} />}
               >
-                <AccordionHeader className="text-sm font-semibold" onClick={() => handleOpen(3)}>
+                <AccordionHeader className="text-sm font-black" onClick={() => handleOpen(3)}>
                   Брэнды
                 </AccordionHeader>
                 <AccordionBody className="flex flex-col space-y-5 items-start">
@@ -303,7 +303,7 @@ const Katalog = () => {
                 open={open === 4}
                 icon={<Icon id={4} open={open} />}
               >
-                <AccordionHeader className="" onClick={() => handleOpen(4)}>
+                <AccordionHeader className="text-sm font-black" onClick={() => handleOpen(4)}>
                   Цвета
                 </AccordionHeader>
                 <AccordionBody className="flex flex-col items-start">
