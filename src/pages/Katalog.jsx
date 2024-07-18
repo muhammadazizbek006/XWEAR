@@ -338,7 +338,7 @@ const Katalog = () => {
                     </button>
                     <Link to={`/product/${e.id}`} className="block">
                     <div className=" flex flex-col items-end mb-3 ">
-                        <img src={e.img} alt={e.title} />
+                        <img className="h-64" src={e.img} alt={e.title} />
                       </div>
                       <div className="mb-1">
                         <p className="text-xl font-semibold ">{e.title}</p>

@@ -28,10 +28,22 @@ import kiyim1 from '../img/kiyimlar/kiyim1.png';
 import kiyim2 from '../img/kiyimlar/kiyim2.png';
 import kiyim3 from '../img/kiyimlar/kiyim3.png';
 import kiyim4 from '../img/kiyimlar/kiyim4.png';
+import kiyim5 from '../img/kiyimlar/kiyim5.png'
+import kiyim6 from '../img/kiyimlar/kiyim6.png'
+import kiyim7 from '../img/kiyimlar/kiyim7.png'
+import kiyim8 from '../img/kiyimlar/kiyim8.png'
+import kiyim9 from '../img/kiyimlar/kiyim9.png'
+import kiyim10 from '../img/kiyimlar/kiyim10.png'
+import kiyim11 from '../img/kiyimlar/kiyim11.png'
+import kiyim12 from '../img/kiyimlar/kiyim12.png'
+import kiyim13 from '../img/kiyimlar/kiyim13.png'
+
+
 import ac1 from '../img/acsesuar/ac1.png';
 import ac2 from '../img/acsesuar/ac2.png';
 import ac3 from '../img/acsesuar/ac3.png';
 import ac4 from '../img/acsesuar/ac4.png';
+
 import nash1 from '../img/nashblock/nash1.png';
 import nash2 from '../img/nashblock/nash2.png';
 import nash3 from '../img/nashblock/nash3.png';
@@ -399,6 +411,105 @@ export const data = [
       title: "Nike Air Max 270",
       brend: "Nike",
       narxi: 5200,
+      razmer: ["S", "L", "XL", "XXL", "XXXL", "XXXXL", "XXXL"],
+      rang: ["Голубой"],
+      kategoria: "Футболки",
+    },
+    {
+      id: 23,
+      type: "kiyim",
+      img: kiyim5,
+      title: "Nike Air Max 270",
+      brend: "Nike",
+      narxi: 5200,
+      razmer: ["S", "L", "XL", "XXL", "XXXL"],
+      rang: ["Зеленый"],
+      kategoria: "Футболки",
+    },
+    {
+      id: 24,
+      type: "kiyim",
+      img: kiyim6,
+      title: "Nike Air Max 270",
+      brend: "Nike",
+      narxi: 5200,
+      razmer: ["S", "L", "XL", "XXL", "XXXL", "XXXXL", "XXXL"],
+      rang: ["Голубой"],
+      kategoria: "Футболки",
+    },
+    {
+      id: 25,
+      type: "kiyim",
+      img: kiyim7,
+      title: "Nike Air Max 270",
+      brend: "Nike",
+      narxi: 5200,
+      razmer: ["S", "L", "XL", "XXL", "XXXL", "XXXXL", "XXXL"],
+      rang: ["Голубой"],
+      kategoria: "Футболки",
+    },
+    {
+      id: 26,
+      type: "kiyim",
+      img: kiyim8,
+      title: "Nike Air Max 270",
+      brend: "Nike",
+      narxi: 5200,
+      razmer: ["S", "L", "XL", "XXL", "XXXL", "XXXXL", "XXXL"],
+      rang: ["Голубой"],
+      kategoria: "Футболки",
+    },
+    {
+      id: 27,
+      type: "kiyim",
+      img: kiyim9,
+      title: "Nike Air Max 270",
+      brend: "Nike",
+      narxi: 5200,
+      razmer: ["S", "L", "XL", "XXL", "XXXL", "XXXXL", "XXXL"],
+      rang: ["Голубой"],
+      kategoria: "Футболки",
+    },
+    {
+      id: 28,
+      type: "kiyim",
+      img: kiyim10,
+      title: "Nike Air Max 270",
+      brend: "Nike",
+      narxi: 5200,
+      razmer: ["S", "L", "XL", "XXL", "XXXL", "XXXXL", "XXXL"],
+      rang: ["Голубой"],
+      kategoria: "Футболки",
+    },
+    {
+      id: 29,
+      type: "kiyim",
+      img: kiyim11,
+      title: "Nike Air Max 270",
+      brend: "Nike",
+      narxi: 5200,
+      razmer: ["S", "L", "XL", "XXL", "XXXL", "XXXXL", "XXXL"],
+      rang: ["Голубой"],
+      kategoria: "Футболки",
+    },
+    {
+      id: 30,
+      type: "kiyim",
+      img: kiyim12,
+      title: "Nike Air Max 270",
+      brend: "Nike",
+      narxi: 5300,
+      razmer: ["S", "L", "XL", "XXL", "XXXL", "XXXXL", "XXXL"],
+      rang: ["Голубой"],
+      kategoria: "Футболки",
+    },
+    {
+      id: 31,
+      type: "kiyim",
+      img: kiyim13,
+      title: "Nike Air Max 270",
+      brend: "Nike",
+      narxi: 5300,
       razmer: ["S", "L", "XL", "XXL", "XXXL", "XXXXL", "XXXL"],
       rang: ["Голубой"],
       kategoria: "Футболки",

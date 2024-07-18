@@ -1,6 +1,7 @@
 import React from 'react'
 // import Hero from   '../components/home/Hero'
 import OyoqKiyimlar from '../components/home/OyoqKiyimlar'
+// import Turotial from '../components/home/Turotial'
 import Kiyimlar from '../components/home/Kiyimlar'
 import Acsesuar from '../components/home/Acsesuar'
 import Raschitat from '../components/home/Raschitat'
@@ -10,6 +11,7 @@ const Home = () => {
     <>
       {/* <Hero/> */}
       <OyoqKiyimlar/>
+      {/* <Turotial/> */}
       <Kiyimlar/>
       <Acsesuar/>
       <Raschitat/>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import  { useRef } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -7,21 +6,24 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+
+
+
 // import required modules
 import { Pagination, Navigation, Autoplay } from 'swiper/modules';
+import { Link } from "react-router-dom";
 // img
 import next from "../../img/next.svg";
-import like2 from "../../img/like2.svg";
-import like3 from "../../img/like3.svg";
-import shop from "../../img/shop.svg";
+import like2 from '../../img/like2.svg'
+import like3 from '../../img/like3.svg';
+import shop from '../../img/shop.svg'
 import { useDispatch } from "react-redux";
 import { addProductToLike } from "../../store/slice/laykSlice";
-import { data } from "../../data/data";
+// data
+import  { data } from "../../data/data";
 import { addProductToWishlist } from "../../store/slice/productsWishlistDataSlice";
 
-// data
-
-const Kiyimlar = () => {
+const OyoqKiyimlar = () => {
   const [KatalogMahsulotlari, setKatalogMahsulotlari] = useState([]);
   useEffect(() => {
     const filteredProducts = data
@@ -52,16 +54,17 @@ const Kiyimlar = () => {
   };
   return (
     <>
-      <section className="pt-12  ">
-        <div className="containerb ">
+      <section className="py-12  ">
+        <div className="containerb flex flex-col  ">
           {/* top */}
           <div className="flex flex-col sm:flex-row items-center justify-between mb-10">
-            <h2 className="text-3xl font-bold">Одежда</h2>
-            <Link to="/katalog/kiyim" className="flex items-center">
+            <h2 className="text-3xl font-bold">Обувь</h2>
+            <Link to="/katalog/krasofka" className="flex items-center">
               <p className="mr-2 text-base">больше товаров</p>
               <img src={next} alt="next" />
             </Link>
           </div>
+
           <div className="flex flex-col items-center sm:items-stretch">
           <Swiper
     slidesPerView={4}
@@ -116,7 +119,7 @@ const Kiyimlar = () => {
 
                     <Link to={`/product/${e.id}`} className="flex flex-col justify-between">
                         <div className="flex flex-col items-center mb-3">
-                            <img className="h-64" src={e.img} alt={e.title} />
+                            <img src={e.img} alt={e.title} />
                         </div>
                         <div className="mb-1 flex flex-col items-start justify-between">
                             <p className="text-xl font-semibold">{e.title}</p>
@@ -136,6 +139,7 @@ const Kiyimlar = () => {
     }
     <div className="swiper-pagination" style={{ marginTop: '30px' }}></div> {/* Pagination uchun joy */}
         </Swiper>
+
           </div>
         </div>
       </section>
@@ -143,4 +147,4 @@ const Kiyimlar = () => {
   );
 };
 
-export default Kiyimlar;
+export default OyoqKiyimlar;
