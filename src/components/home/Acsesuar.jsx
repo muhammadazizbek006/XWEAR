@@ -59,7 +59,7 @@ const Acsesuar = () => {
             }}
             navigation={true}
             autoplay={{
-              delay: 1500,
+              delay: 2500,
               disableOnInteraction: false,
             }}
             modules={[Pagination, Navigation, Autoplay]}
