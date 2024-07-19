@@ -221,9 +221,9 @@ const Katalog = () => {
           <div className="mr-5">
             <button
               onClick={openDrawerLeft}
-              className="w-80 h-16 block md:hidden border-2 rounded-md flex items-center justify-between px-2 mb-5 border-[#E6E7EB]"
+              className=" w-72 sm:w-80 h-16 block md:hidden border-2 rounded-md flex items-center justify-between px-2 mb-5 border-[#E6E7EB]"
             >
-              <p className="text-xl font-extrabold">Открыть Фильтры</p>
+              <p className="text-xl  font-bold sm:font-extrabold">Открыть Фильтры</p>
               <img src={vector} alt="btn filter" />
             </button>
 
@@ -341,14 +341,15 @@ const Katalog = () => {
                         <img className="h-64" src={e.img} alt={e.title} />
                       </div>
                       <div className="mb-1">
-                        <p className="text-xl font-semibold ">{e.title}</p>
+                        <p className=" md:text-base lg:text-xl font-semibold ">{e.title}</p>
                          <p className="text-base"><span className="text-xl font-semibold">категория: </span>{e.kategoria}</p>
                       </div>
                     </Link>
                   {/* shop btn va kategoria */}
-                  <div className="flex justify-between">
-                        <p  className="text-base"> <span className="text-base font-semibold">расходы: </span>от {e.narxi} ₽ </p>
-                      <button onClick={() => mahsulotniWishlistgaQoshish(e)} className="bg-black px-8 py-2 rounded-md">
+                  <div className="flex md:flex-col xl:flex-row lg:flex-row  justify-between">
+                        <p  className="text-base mb-2"> <span className="text-base font-semibold">расходы: </span>от {e.narxi} ₽ </p>
+                      <button onClick={() => mahsulotniWishlistgaQoshish(e)} className="bg-black flex justify-between items-center px-8 py-2 rounded-md">
+                        <p className="text-white hidden md:inline-block lg:hidden xl:hidden ">Добавить</p>
                         <img src={shop} alt="" />
                       </button>
                     </div>

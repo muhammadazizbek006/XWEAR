@@ -67,7 +67,7 @@ const Header = () => {
           {/* )} */}
         </div>
         {/* right */}
-        <div className="flex items-center space-x-4 lg:space-x-8">
+        <div className="flex items-center space-x-8">
 
           <Link className="w-5 relative" to='/yoqtrilganlar'>
             <img src={like} alt="reyting" />
