@@ -7,7 +7,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 // import required modules
-import { Autoplay, Navigation } from 'swiper/modules';
+import { Autoplay,  } from 'swiper/modules';
 
 // data
 import catalog from '../../data/data';
@@ -24,8 +24,8 @@ const Hero = () => {
               delay: 2500,
               disableOnInteraction: false,
             }}
-            navigation={true}
-            modules={[Autoplay, Navigation]}
+          
+            modules={[Autoplay, ]}
             className="mySwiper"
           >
             {
@@ -36,11 +36,11 @@ const Hero = () => {
                     className=' md:h-[500px] xl:h-[631px] rounded-lg'
                     key={e.id}
                   >
-                    {/* left */}
-                    <div className=' max-w-96 lg:max-w-[571px] pt-24 pl-24 text-start space-y-5 rounded-md'>
+                  
+                    <div className=' max-w-96 lg:max-w-[671px] pt-24 pl-24 text-start space-y-5 rounded-md'>
                       <h2 className=' md:text-3xl lg:text-4xl xl:text-5xl font-black mb-5'>{e.title}</h2>
                       <h3 className='text-xl  inline-block mb-5'>{e.sharx}</h3>
-                      <Link className='bg-black text-white py-3 xl:py-6 px-8 rounded-md inline-block'>Перейти в каталог</Link>
+                      <Link to="/katalog/kiyim" className='bg-black text-white py-3 xl:py-6 px-8 rounded-md inline-block'>Перейти в каталог</Link>
                     </div>
                   </SwiperSlide>
                 );

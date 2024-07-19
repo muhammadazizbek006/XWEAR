@@ -106,7 +106,7 @@ const dispatch = useDispatch()
     {
         KatalogMahsulotlari.map((e) => {
             return (
-                <SwiperSlide key={e.id} className="relative px-4 py-3 swiper-slide  rounded-lg shadow-md bg-white" style={{  width: '318px' }}>
+                <SwiperSlide key={e.id} className="relative px-4 py-3 swiper-slide  rounded-lg shadow-md bg-white " style={{  width: '318px' }}>
                     {/* like */}
                     <button
                         className="absolute right-3"
