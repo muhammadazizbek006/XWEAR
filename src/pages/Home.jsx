@@ -1,5 +1,5 @@
 import React from 'react'
-// import Hero from   '../components/home/Hero'
+import Hero from   '../components/home/Hero'
 import OyoqKiyimlar from '../components/home/OyoqKiyimlar'
 // import Turotial from '../components/home/Turotial'
 import Kiyimlar from '../components/home/Kiyimlar'
@@ -9,7 +9,7 @@ import NashBlock from '../components/home/NashBlock'
 const Home = () => {
   return (
     <>
-      {/* <Hero/> */}
+      <Hero/>
       <OyoqKiyimlar/>
       {/* <Turotial/> */}
       <Kiyimlar/>
