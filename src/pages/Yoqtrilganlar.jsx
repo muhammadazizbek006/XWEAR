@@ -3,8 +3,11 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import like2 from '../img/like2.svg' // reyting rasmi uchun import
 import { productliked } from '../store/slice/productsWishlistDataSlice';
+import { addProductToWishlist } from '../store/slice/productsWishlistDataSlice';
 import shop from '../img/shop.svg'
+
 const Yoqtrilganlar = () => {
+
   const dispatch = useDispatch();
   const productliked = useSelector(
     (store) => store.likemaxsulotlar.data
@@ -19,6 +22,12 @@ const Yoqtrilganlar = () => {
   const handleDelete = (id) => {
     dispatch(deleteUserOfferLinkData(id));
   };
+    // maxsulotlarni korzinkaga qo'shish
+
+
+    const mahsulotniWishlistgaQoshish = (product) => {
+      dispatch(addProductToWishlist(product));
+    };
 
   return (
     <>
@@ -46,7 +55,7 @@ const Yoqtrilganlar = () => {
                      {/* shop btn va kategoria */}
                      <div className="flex justify-between">
                         <p  className="text-base"> <span className="text-base font-semibold">расходы: </span>от {product.narxi} ₽ </p>
-                      <button className="bg-black px-8 py-2 rounded-md hover:bg-green-500 duration-300">
+                        <button onClick={() => mahsulotniWishlistgaQoshish(e)} className="bg-black px-8 py-2 rounded-md">
                         <img src={shop} alt="" />
                       </button>
                     </div>        

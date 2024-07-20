@@ -37,10 +37,10 @@ const Hero = () => {
                     key={e.id}
                   >
                   
-                    <div className=' max-w-96 lg:max-w-[671px] pt-24 pl-24 text-start space-y-5 rounded-md'>
+                    <div className=' max-w-96 lg:max-w-[671px] pb-12 md:pb-1 pt-24 pl-3 md:pl-24 text-start space-y-5 rounded-md'>
                       <h2 className=' md:text-3xl lg:text-4xl xl:text-5xl font-black mb-5'>{e.title}</h2>
-                      <h3 className='text-xl  inline-block mb-5'>{e.sharx}</h3>
-                      <Link to="/katalog/kiyim" className='bg-black text-white py-3 xl:py-6 px-8 rounded-md inline-block'>Перейти в каталог</Link>
+                      <h3 className=' text-sm md:text-xl  inline-block mb-5'>{e.sharx}</h3>
+                      <Link to="/katalog/kiyim" className='bg-black  text-white py-3 xl:py-6 px-8 rounded-md inline-block'>Перейти в каталог</Link>
                     </div>
                   </SwiperSlide>
                 );
