@@ -14,7 +14,8 @@ import like from '../img/like.svg'
 import shop from "../img/headshop.svg";
 import linkmenyu from "../img/linkmenyu.svg";
 
-  // like snacbar
+// like snacbar
+
 import { addProductToWishlist } from "../store/slice/productsWishlistDataSlice";
 import { useSelector } from "react-redux";
 
@@ -92,6 +93,7 @@ const Header = () => {
           <Link to='/'>
             <img onClick={closeDrawerLeft} className='w-10' src={logo} alt="logo" />
           </Link>
+          
           <button
             className="right-0"
             variant="text"
@@ -119,7 +121,7 @@ const Header = () => {
         <div className='flex flex-col space-y-6 text-sm font-bold'>
           <Link to='/' onClick={closeDrawerLeft}>Главная</Link>
           {catalog.links.map((e) => (
-            <Link  className='' key={e.id} to={e.URL} onClick={closeDrawerLeft}>
+            <Link  className="" key={e.id} to={e.URL} onClick={closeDrawerLeft}>
               {e.link}
             </Link>
           ))}
