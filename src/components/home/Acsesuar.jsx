@@ -87,7 +87,7 @@ const Acsesuar = () => {
             {KatalogMahsulotlari.map((e) => (
               <SwiperSlide
                 key={e.id}
-                className="relative px-4 py-3 swiper-slide rounded-lg shadow-md bg-white"
+                className="relative px-4 py-3 swiper-slide rounded-lg"
                 style={{ width: "318px" }}
               >
                 <button
