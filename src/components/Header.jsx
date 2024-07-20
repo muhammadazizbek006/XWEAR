@@ -92,7 +92,7 @@ const Header = () => {
           <Link to='/'>
             <img onClick={closeDrawerLeft} className='w-10' src={logo} alt="logo" />
           </Link>
-          <IconButton
+          <button
             className="right-0"
             variant="text"
             color="blue-gray"
@@ -112,7 +112,7 @@ const Header = () => {
                 d="M6 18L18 6M6 6l12 12"
               />
             </svg>
-          </IconButton>
+          </button>
 
         </div>
 
