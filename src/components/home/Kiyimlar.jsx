@@ -76,7 +76,7 @@ const Kiyimlar = () => {
         delay: 2500,
         disableOnInteraction: false
     }}
-    modules={[Pagination, Navigation, Autoplay]}
+    modules={[Pagination, Navigation, a]}
     breakpoints={{
       // Ekran o'lchamlari bo'yicha slaydlarni ko'rsatish uchun breakpoints
       100: {
