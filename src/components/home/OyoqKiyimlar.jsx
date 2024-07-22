@@ -10,7 +10,7 @@ import 'swiper/css/pagination';
 
 
 // import required modules
-import { Pagination,  Autoplay } from 'swiper/modules';
+import { Pagination} from 'swiper/modules';
 import { Link } from "react-router-dom";
 // img
 import next from "../../img/next.svg";
@@ -99,7 +99,7 @@ const dispatch = useDispatch()
         delay: 2500,
         disableOnInteraction: false
     }}
-    modules={[Pagination,  Autoplay]}
+    modules={[Pagination]}
     breakpoints={{
       // Ekran o'lchamlari bo'yicha slaydlarni ko'rsatish uchun breakpoints
       100: {
