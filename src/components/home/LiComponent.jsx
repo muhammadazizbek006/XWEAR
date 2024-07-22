@@ -1,69 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import  { useRef } from 'react';
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
+import React from 'react'
 
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-// import required modules
-import { Pagination, Navigation } from 'swiper/modules';
-// img
-import next from "../../img/next.svg";
-import like2 from "../../img/like2.svg";
-import like3 from "../../img/like3.svg";
-import shop from "../../img/shop.svg";
-import { useDispatch } from "react-redux";
-import { addProductToLike } from "../../store/slice/laykSlice";
-import { data } from "../../data/data";
-import { addProductToWishlist } from "../../store/slice/productsWishlistDataSlice";
-
-// data
-
-const Kiyimlar = () => {
-  const [KatalogMahsulotlari, setKatalogMahsulotlari] = useState([]);
-  useEffect(() => {
-    const filteredProducts = data
-      .filter((product) => {
-        return product.type === "kiyim";
-      })
-
-
-    setKatalogMahsulotlari(filteredProducts ? filteredProducts : []);
-  }, []);
-
-  // like btn va qo'shish
-  const dispatch = useDispatch();
-  const [likedProducts, setLikedProducts] = useState({});
-  const toggleLike = (product) => {
-    const updatedLikedProducts = {
-      ...likedProducts,
-      [product.id]: !likedProducts[product.id],
-    };
-    setLikedProducts(updatedLikedProducts);
-    dispatch(addProductToLike(product));
-  };
-
-  // maxsulotlarni korzinkaga qo'shish
-
-  const mahsulotniWishlistgaQoshish = (product) => {
-    dispatch(addProductToWishlist(product));
-  };
+const LiComponent = () => {
   return (
     <>
-      <section className="pt-12  ">
-        <div className="containerb ">
-          {/* top */}
-          <div className="flex flex-col sm:flex-row items-center justify-between mb-10">
-            <h2 className="text-3xl font-bold">Одежда</h2>
-            <Link to="/katalog/kiyim" className="flex items-center">
-              <p className="mr-2 text-base">больше товаров</p>
-              <img src={next} alt="next" />
-            </Link>
-          </div>
-          <div className="flex flex-col items-center sm:items-stretch">
-          <Swiper
+                  <Swiper
     slidesPerView={4}
     spaceBetween={30}
     pagination={{
@@ -136,11 +76,8 @@ const Kiyimlar = () => {
     }
     <div className="swiper-pagination" style={{ marginTop: '30px' }}></div> {/* Pagination uchun joy */}
         </Swiper>
-          </div>
-        </div>
-      </section>
     </>
-  );
-};
+  )
+}
 
-export default Kiyimlar;
+export default LiComponent
