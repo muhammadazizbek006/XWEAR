@@ -6,6 +6,7 @@ import Kiyimlar from '../components/home/Kiyimlar'
 import Acsesuar from '../components/home/Acsesuar'
 import Raschitat from '../components/home/Raschitat'
 import NashBlock from '../components/home/NashBlock'
+import Sharxlar from '../components/home/Sharxlar'
 const Home = () => {
   return (
     <>
@@ -14,6 +15,7 @@ const Home = () => {
       {/* <Turotial/> */}
       <Kiyimlar/>
       <Acsesuar/>
+      <Sharxlar/>
       <Raschitat/>
       <NashBlock/>
     </>

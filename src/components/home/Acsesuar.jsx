@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import  { useRef } from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation} from "swiper/modules";
+import { Pagination} from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -9,6 +10,8 @@ import next from "../../img/next.svg";
 import like2 from "../../img/like2.svg";
 import like3 from "../../img/like3.svg";
 import shop from "../../img/shop.svg";
+import left from '../../img/hero/cartleft.svg';
+import right from '../../img/hero/cartright.svg';
 import { useDispatch } from "react-redux";
 import { addProductToLike } from "../../store/slice/laykSlice";
 import { data } from "../../data/data";
@@ -38,7 +41,19 @@ const Acsesuar = () => {
   const mahsulotniWishlistgaQoshish = (product) => {
     dispatch(addProductToWishlist(product));
   };
+      // swiper
+      const swiperRef = useRef(null);
+  const handlePrev = () => {
+    if (swiperRef.current) {
+      swiperRef.current.swiper.slidePrev();
+    }
+  };
 
+  const handleNext = () => {
+    if (swiperRef.current) {
+      swiperRef.current.swiper.slideNext();
+    }
+  };
   return (
     <section className="pt-12 mb-20">
       <div className="containerb">
@@ -49,20 +64,19 @@ const Acsesuar = () => {
             <img src={next} alt="next" />
           </Link>
         </div>
-        <div className="flex flex-col items-center sm:items-stretch">
+        <div className="flex flex-col items-center sm:items-stretch relative">
           <Swiper
-            slidesPerView={4}
-            spaceBetween={30}
-            pagination={{
-              clickable: true,
-              dynamicBullets: true,
-            }}
-            navigation={true}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-            }}
-            modules={[Pagination, Navigation]}
+                      ref={swiperRef}
+                      slidesPerView={4}
+                      spaceBetween={30}
+                      pagination={{
+                          clickable: true,
+                          el: '.swiper-pagination',
+                          dynamicBullets: true
+                      }}
+                    
+                  
+                    modules={[Pagination]}
             breakpoints={{
               100: {
                 slidesPerView: 1,
@@ -124,6 +138,15 @@ const Acsesuar = () => {
             ))}
             <div className="swiper-pagination" style={{ marginTop: "30px" }}></div>
           </Swiper>
+          <div className="flex items-center">
+    <button className='w-14 md:w-[67px] absolute top-[470px] left-[650px] z-50' onClick={handlePrev}>
+      <img src={left} alt="Previous" />
+    </button>
+      <div className="swiper-pagination" style={{ marginTop: '10px' }}></div> {/* Pagination uchun joy */}
+      <button className='w-14 md:w-[67px] absolute top-[470px] right-[650px] z-50' onClick={handleNext}>
+         <img src={right} alt="Next" />
+       </button>
+    </div>
         </div>
       </div>
     </section>

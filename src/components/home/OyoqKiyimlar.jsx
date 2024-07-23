@@ -84,7 +84,7 @@ const dispatch = useDispatch()
             </Link>
           </div>
 
-          <div className="flex flex-col items-center sm:items-stretch">
+          <div className="flex flex-col items-center sm:items-stretch relative">
           <Swiper
           ref={swiperRef}
     slidesPerView={4}
@@ -119,7 +119,7 @@ const dispatch = useDispatch()
           spaceBetween: 30
       }
   }}
-    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 "
     style={{ paddingBottom: '60px' }} // Pagination uchun 30px pastda joylashtirish
 >
     {
@@ -157,16 +157,16 @@ const dispatch = useDispatch()
             );
         })
     }
+        </Swiper>
     <div className="flex items-center">
     <button className='w-14 md:w-[67px] absolute top-[470px] left-[650px] z-50' onClick={handlePrev}>
       <img src={left} alt="Previous" />
     </button>
-      <div className="swiper-pagination" style={{ marginTop: '30px' }}></div> {/* Pagination uchun joy */}
+      <div className="swiper-pagination" style={{ marginTop: '10px' }}></div> {/* Pagination uchun joy */}
       <button className='w-14 md:w-[67px] absolute top-[470px] right-[650px] z-50' onClick={handleNext}>
          <img src={right} alt="Next" />
        </button>
     </div>
-        </Swiper>
 
           </div>
         </div>

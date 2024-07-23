@@ -8,12 +8,14 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 // import required modules
-import { Pagination, Navigation } from 'swiper/modules';
+import { Pagination } from 'swiper/modules';
 // img
 import next from "../../img/next.svg";
 import like2 from "../../img/like2.svg";
 import like3 from "../../img/like3.svg";
 import shop from "../../img/shop.svg";
+import left from '../../img/hero/cartleft.svg';
+import right from '../../img/hero/cartright.svg';
 import { useDispatch } from "react-redux";
 import { addProductToLike } from "../../store/slice/laykSlice";
 import { data } from "../../data/data";
@@ -50,6 +52,19 @@ const Kiyimlar = () => {
   const mahsulotniWishlistgaQoshish = (product) => {
     dispatch(addProductToWishlist(product));
   };
+      // swiper
+      const swiperRef = useRef(null);
+  const handlePrev = () => {
+    if (swiperRef.current) {
+      swiperRef.current.swiper.slidePrev();
+    }
+  };
+
+  const handleNext = () => {
+    if (swiperRef.current) {
+      swiperRef.current.swiper.slideNext();
+    }
+  };
   return (
     <>
       <section className="pt-12  ">
@@ -62,8 +77,9 @@ const Kiyimlar = () => {
               <img src={next} alt="next" />
             </Link>
           </div>
-          <div className="flex flex-col items-center sm:items-stretch">
+          <div className="flex flex-col items-center sm:items-stretch relative">
           <Swiper
+          ref={swiperRef}
     slidesPerView={4}
     spaceBetween={30}
     pagination={{
@@ -71,12 +87,9 @@ const Kiyimlar = () => {
         el: '.swiper-pagination',
         dynamicBullets: true
     }}
-    navigation={true}
-    autoplay={{
-        delay: 2500,
-        disableOnInteraction: false
-    }}
-    modules={[Pagination, Navigation,]}
+  
+
+  modules={[Pagination]}
     breakpoints={{
       // Ekran o'lchamlari bo'yicha slaydlarni ko'rsatish uchun breakpoints
       100: {
@@ -134,8 +147,17 @@ const Kiyimlar = () => {
             );
         })
     }
-    <div className="swiper-pagination" style={{ marginTop: '30px' }}></div> {/* Pagination uchun joy */}
         </Swiper>
+        <div className="flex items-center">
+    <button className='w-14 md:w-[67px] absolute top-[470px] left-[650px] z-50' onClick={handlePrev}>
+      <img src={left} alt="Previous" />
+    </button>
+      <div className="swiper-pagination" style={{ marginTop: '10px' }}></div> {/* Pagination uchun joy */}
+      <button className='w-14 md:w-[67px] absolute top-[470px] right-[650px] z-50' onClick={handleNext}>
+         <img src={right} alt="Next" />
+       </button>
+    </div>
+
           </div>
         </div>
       </section>

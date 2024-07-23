@@ -28,7 +28,7 @@ const Raschitat = () => {
                             <p className='text-white text-sm  xl:text-base font-medium xl:font-semibold'>Подробная, пошаговая статья о том, как установить приложение Poizon</p>
                         </div>
                     </div>
-                    <Link className='flex items-center bg-black w-64 py-6 pl-6 rounded-md'>
+                    <Link to='/chegirmadagioyoqkiyimlar' className='flex items-center bg-black w-64 py-6 pl-6 rounded-md'>
                         <p className='text-white font-extrabold mr-6 '>Рассчитать стоимость</p>
                         <img src={nextwhite} alt='next' />
                     </Link>

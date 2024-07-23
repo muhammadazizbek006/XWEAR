@@ -28,7 +28,7 @@ const App = () => {
         <Route path="/yoqtrilganlar" element={<Yoqtrilganlar/>}/>
         <Route path="/korzinka" element={<Korzinka />} />
         <Route path="/kontackt" element={<Kontackt />} />
-        <Route path="/sotibolish" element={<SotibOlish/>}/>
+        <Route path="/sotibolish" element={<SotibOlish/>}/>zzz
         <Route path="*" element={<PageNotFound/>}/>
       </Route>
     )

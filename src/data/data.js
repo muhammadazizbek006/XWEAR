@@ -53,7 +53,27 @@ import nash2 from '../img/nashblock/nash2.png';
 import nash3 from '../img/nashblock/nash3.png';
 import nash4 from '../img/nashblock/nash1.png';
 
-
+// sharxlar
+export  const sharxlar = [
+  {
+    id: 1,
+    author: 'Ali',
+    rating: 5,
+    comment: 'Bu mahsulot juda ajoyib!',
+  },
+  {
+    id: 2,
+    author: 'Vali',
+    rating: 4,
+    comment: 'Yaxshi mahsulot, lekin narxi biroz qimmat.',
+  },
+  {
+    id: 3,
+    author: 'Gulnora',
+    rating: 3,
+    comment: 'Oʻrtacha sifat, lekin xizmat yaxshi.',
+  },
+];
 
 // Data
 const catalog = {
@@ -682,3 +702,5 @@ export const kontackt = [
     malumot:`Наши соц.сети:`,
   },
 ]
+
+
