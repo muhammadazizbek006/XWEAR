@@ -25,6 +25,10 @@ const Aksiya = () => {
     }
   };
 
+  const handleSlideClick = (url) => {
+    window.location.href = url;
+  };
+
   return (
     <section className="py-8 bg-gray-100 relative">
       <div className="container mx-auto">
@@ -41,10 +45,14 @@ const Aksiya = () => {
           className="mySwiper"
         >
           {aksiyalar.map((e) => (
-            
-            <SwiperSlide url={e.URL}  key={e.id} className="relative bg-cover bg-center rounded-lg shadow-lg overflow-hidden" style={{ backgroundImage: `url(${e.img})`}}>
+            <SwiperSlide 
+              key={e.id} 
+              className="relative bg-cover bg-center rounded-lg shadow-lg overflow-hidden" 
+              style={{ backgroundImage: `url(${e.img})` }}
+              onClick={() => handleSlideClick(e.URL)}
+            >
               <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                
+                {/* Add content here if needed */}
               </div>
               <div className="w-full overflow-hidden rounded-lg">
                 <img className="w-full h-96 object-cover" src={e.img} alt={e.title} />
