@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import  { useRef } from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination} from "swiper/modules";
+import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import "swiper/css/navigation";
 import next from "../../img/next.svg";
 import like2 from "../../img/like2.svg";
 import like3 from "../../img/like3.svg";
@@ -23,9 +21,7 @@ const Acsesuar = () => {
   const [likedProducts, setLikedProducts] = useState({});
 
   useEffect(() => {
-    const filteredProducts = data
-      .filter((product) => product.type === "acsesuar")
-
+    const filteredProducts = data.filter((product) => product.type === "acsesuar");
     setKatalogMahsulotlari(filteredProducts || []);
   }, []);
 
@@ -41,8 +37,9 @@ const Acsesuar = () => {
   const mahsulotniWishlistgaQoshish = (product) => {
     dispatch(addProductToWishlist(product));
   };
-      // swiper
-      const swiperRef = useRef(null);
+
+  // swiper
+  const swiperRef = useRef(null);
   const handlePrev = () => {
     if (swiperRef.current) {
       swiperRef.current.swiper.slidePrev();
@@ -54,30 +51,28 @@ const Acsesuar = () => {
       swiperRef.current.swiper.slideNext();
     }
   };
+
   return (
     <section className="pt-12 mb-20">
       <div className="containerb">
         <div className="flex flex-col sm:flex-row items-center justify-between mb-10">
           <h2 className="text-3xl font-bold">Аксессуары</h2>
           <Link to="/katalog/acsesuar" className="flex items-center">
-          
             <p className="mr-2 text-base">больше товаров</p>
             <img src={next} alt="next" />
           </Link>
         </div>
         <div className="flex flex-col items-center sm:items-stretch relative">
           <Swiper
-                      ref={swiperRef}
-                      slidesPerView={4}
-                      spaceBetween={30}
-                      pagination={{
-                          clickable: true,
-                          el: '.swiper-pagination',
-                          dynamicBullets: true
-                      }}
-                    
-                  
-                    modules={[Pagination]}
+            ref={swiperRef}
+            slidesPerView={4}
+            spaceBetween={30}
+            pagination={{
+              clickable: true,
+              el: '.swiper-pagination',
+              dynamicBullets: true
+            }}
+            modules={[Pagination]}
             breakpoints={{
               100: {
                 slidesPerView: 1,
@@ -137,17 +132,16 @@ const Acsesuar = () => {
                 </div>
               </SwiperSlide>
             ))}
-            
-          <div className="flex items-center">
-    <button className='w-14 md:w-[67px] absolute top-[470px] left-[650px] z-50' onClick={handlePrev}>
-      <img src={left} alt="Previous" />
-    </button>
-      <div className="swiper-pagination" style={{ marginTop: '10px' }}></div> {/* Pagination uchun joy */}
-      <button className='w-14 md:w-[67px] absolute top-[470px] right-[650px] z-50' onClick={handleNext}>
-         <img src={right} alt="Next" />
-       </button>
-    </div>
+            <div className="swiper-pagination" style={{ marginTop: "30px" }}></div>
           </Swiper>
+          <div className="flex justify-center items-center  mt-4">
+            <button className='w-14 md:w-[67px]' onClick={handlePrev}>
+              <img src={left} alt="Previous" />
+            </button>
+            <button className='w-14 md:w-[67px]' onClick={handleNext}>
+              <img src={right} alt="Next" />
+            </button>
+          </div>
         </div>
       </div>
     </section>
