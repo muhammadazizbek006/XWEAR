@@ -24,5 +24,8 @@
 
 
 
+  .prev-slide, .next-slide {
+    background-color: none;
+  }
   
 

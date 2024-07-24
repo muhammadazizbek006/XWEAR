@@ -31,7 +31,7 @@ const Aksiya = () => {
 
   return (
     <section className="py-8 bg-gray-100 relative">
-      <div className="container mx-auto">
+      <div className="containerb relative">
         <Swiper
           ref={swiperRef}
           modules={[Navigation, Pagination]}
@@ -62,17 +62,17 @@ const Aksiya = () => {
           <div className="swiper-pagination" style={{ marginTop: "10px" }}></div>
         </Swiper>
         <button
-          className="prev-slide absolute top-1/2 transform -translate-y-1/2 -left-[-131px] z-40"
-          onClick={handlePrev}
-        >
-          <img src={left} alt="Previous" />
-        </button>
-        <button
-          className="next-slide absolute top-1/2 transform -translate-y-1/2 -right-[-131px] z-40"
-          onClick={handleNext}
-        >
-          <img src={right} alt="Next" />
-        </button>
+            className="absolute top-1/2 transform -translate-y-1/2 left-[-20px] z-10"
+            onClick={handlePrev}
+          >
+            <img src={left} alt="Previous" />
+          </button>
+          <button
+            className="absolute top-1/2 transform -translate-y-1/2 right-[-20px] z-10"
+            onClick={handleNext}
+          >
+            <img src={right} alt="Next" />
+          </button>
       </div>
     </section>
   );
