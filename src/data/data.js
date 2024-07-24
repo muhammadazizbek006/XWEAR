@@ -62,17 +62,20 @@ export const aksiyalar  = [
   {
     id:1,
     img:aksiya1,
-    title:`shoshiling aksiya muddati cheklangan`
+    title:`shoshiling aksiya muddati cheklangan`,
+    URL:'/aksiyaproduct'
   },
   {
     id:2,
     img:aksiya2,
-    title:`shoshiling aksiya muddati cheklangan`
+    title:`shoshiling aksiya muddati cheklangan`,
+    URL:'/aksiyaproduct'
   },
   {
     id:3,
     img:aksiya3,
-    title:`shoshiling aksiya muddati cheklangan`
+    title:`shoshiling aksiya muddati cheklangan`,
+    URL:'/aksiyaproduct'
   },
 ]
 // sharxlar

@@ -41,7 +41,8 @@ const Aksiya = () => {
           className="mySwiper"
         >
           {aksiyalar.map((e) => (
-            <SwiperSlide key={e.id} className="relative bg-cover bg-center rounded-lg shadow-lg overflow-hidden" style={{ backgroundImage: `url(${e.img})`}}>
+            
+            <SwiperSlide url={e.URL}  key={e.id} className="relative bg-cover bg-center rounded-lg shadow-lg overflow-hidden" style={{ backgroundImage: `url(${e.img})`}}>
               <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
                 
               </div>

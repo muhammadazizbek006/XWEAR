@@ -16,6 +16,7 @@ import Infarmatsiya from "./pages/Infarmatsiya";
 import Yoqtrilganlar from './pages/Yoqtrilganlar'
 import SotibOlish from "./pages/SotibOlish";
 import PageNotFound from "./pages/PageNotFound";
+import AksiyaProduct from "./pages/AksiyaProduct";
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -28,7 +29,8 @@ const App = () => {
         <Route path="/yoqtrilganlar" element={<Yoqtrilganlar/>}/>
         <Route path="/korzinka" element={<Korzinka />} />
         <Route path="/kontackt" element={<Kontackt />} />
-        <Route path="/sotibolish" element={<SotibOlish/>}/>zzz
+        <Route path="/sotibolish" element={<SotibOlish/>}/>
+        <Route path='/aksiyaproduct' element={<AksiyaProduct/>}/>
         <Route path="*" element={<PageNotFound/>}/>
       </Route>
     )
