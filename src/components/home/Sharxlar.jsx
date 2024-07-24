@@ -24,9 +24,9 @@ const sharxlar = [
     },
   ];
     return (
-    <div className="sharxlar">
+    <div className="sharxlar containerb">
     <h2 className="text-2xl font-bold mb-4">Sharxlar</h2>
-    <ul className='grid grid-cols-4'>
+    <ul className='grid grid-cols-4 gap-x-5'>
     {sharxlar.map((review) => (
       <li key={review.id} className="sharx p-4 mb-4 border rounded shadow">
         <h3 className="text-xl font-semibold">{review.author}</h3>

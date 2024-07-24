@@ -15,7 +15,7 @@ const Home = () => {
       {/* <Turotial/> */}
       <Kiyimlar/>
       <Acsesuar/>
-      <Sharxlar/>
+      {/* <Sharxlar/> */}
       <Raschitat/>
       <NashBlock/>
     </>

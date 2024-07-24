@@ -62,7 +62,7 @@ const Acsesuar = () => {
             <img src={next} alt="next" />
           </Link>
         </div>
-        <div className="flex flex-col items-center sm:items-stretch relative">
+        <div className="relative">
           <Swiper
             ref={swiperRef}
             slidesPerView={4}
@@ -134,14 +134,18 @@ const Acsesuar = () => {
             ))}
             <div className="swiper-pagination" style={{ marginTop: "30px" }}></div>
           </Swiper>
-          <div className="flex justify-center items-center  mt-4">
-            <button className='w-14 md:w-[67px]' onClick={handlePrev}>
-              <img src={left} alt="Previous" />
-            </button>
-            <button className='w-14 md:w-[67px]' onClick={handleNext}>
-              <img src={right} alt="Next" />
-            </button>
-          </div>
+          <button
+            className="absolute top-1/2 transform -translate-y-1/2 left-[-20px] z-10"
+            onClick={handlePrev}
+          >
+            <img src={left} alt="Previous" />
+          </button>
+          <button
+            className="absolute top-1/2 transform -translate-y-1/2 right-[-20px] z-10"
+            onClick={handleNext}
+          >
+            <img src={right} alt="Next" />
+          </button>
         </div>
       </div>
     </section>
