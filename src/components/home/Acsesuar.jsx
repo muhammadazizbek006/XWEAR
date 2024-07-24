@@ -137,8 +137,7 @@ const Acsesuar = () => {
                 </div>
               </SwiperSlide>
             ))}
-            <div className="swiper-pagination" style={{ marginTop: "30px" }}></div>
-          </Swiper>
+            
           <div className="flex items-center">
     <button className='w-14 md:w-[67px] absolute top-[470px] left-[650px] z-50' onClick={handlePrev}>
       <img src={left} alt="Previous" />
@@ -148,6 +147,7 @@ const Acsesuar = () => {
          <img src={right} alt="Next" />
        </button>
     </div>
+          </Swiper>
         </div>
       </div>
     </section>

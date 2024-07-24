@@ -125,7 +125,7 @@ const dispatch = useDispatch()
     {
         KatalogMahsulotlari.map((e) => {
             return (
-                <SwiperSlide key={e.id} className="relative px-4 py-3 swiper-slide  rounded-lg  " style={{  width: '318px' }}>
+                <SwiperSlide key={e.id} className=" px-4 py-3 swiper-slide  rounded-lg relative  " style={{  width: '318px' }}>
                     {/* like */}
                     <button
                         className="absolute right-3"
@@ -157,7 +157,6 @@ const dispatch = useDispatch()
             );
         })
     }
-        </Swiper>
     <div className="flex items-center">
     <button className='w-14 md:w-[67px] absolute top-[470px] left-[650px] z-50' onClick={handlePrev}>
       <img src={left} alt="Previous" />
@@ -167,6 +166,7 @@ const dispatch = useDispatch()
          <img src={right} alt="Next" />
        </button>
     </div>
+        </Swiper>
 
           </div>
         </div>
