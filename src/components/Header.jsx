@@ -21,13 +21,13 @@ import { useSelector } from "react-redux";
 
 const Header = () => {
 
-  const [openLeft, setOpenLeft] = React.useState(false);
+  const [openRight, setOpenRight] = React.useState(false);
 
-  const openDrawerLeft = () => setOpenLeft(true);
-  const closeDrawerLeft = () => setOpenLeft(false);
+  const openDrawerRight = () => setOpenRight(true);
+  const closeDrawerRight = () => setOpenRight(false);
 
   const Closedraw = () => {
-    setOpenLeft(false)
+    setOpenRight(false)
   }
   const productliked = useSelector(
     (store) => store.likemaxsulotlar.data
@@ -45,9 +45,7 @@ const Header = () => {
             <img src={logo} alt="logo" />
           </Link>
 
-          <button onClick={openDrawerLeft} className="inline-block sm:hidden">
-            <img src={linkmenyu} alt="menyu" />
-          </button>
+
         </div>
 
         {/* center */}
@@ -69,7 +67,9 @@ const Header = () => {
         </div>
         {/* right */}
         <div className="flex items-center space-x-8">
-
+        <button onClick={openDrawerRight} className="inline-block sm:hidden">
+            <img src={linkmenyu} alt="menyu" />
+          </button>
           <Link className="w-5 relative" to='/yoqtrilganlar'>
             <img src={like} alt="reyting" />
             <span className="bg-white absolute  px-2 -top-2 -right-4 rounded-full">{productliked.length}</span>
@@ -82,16 +82,16 @@ const Header = () => {
         </div>
       </div>
       <Drawer
-        placement="left"
-        open={openLeft}
-        onClose={closeDrawerLeft}
-        className="fixed top-0 left-0 h-full w-full z-50 p-5 bg-black text-white"
+        placement="right"
+        open={openRight}
+        onClose={closeDrawerRight}
+        className="fixed top-0 Right-0 h-full w-full z-50 p-5 bg-black text-white"
         overlayProps={{ className: "bg-black bg-opacity-0" }}
         transition={{ duration: 0.3 }}
       >
         <div className="mb-6 flex items-center justify-between  ">
           <Link to='/'>
-            <img onClick={closeDrawerLeft} className='w-10' src={logo} alt="logo" />
+            <img onClick={closeDrawerRight} className='w-10' src={logo} alt="logo" />
           </Link>
           
           <button
@@ -119,9 +119,9 @@ const Header = () => {
         </div>
 
         <div className='flex flex-col space-y-6 text-sm font-bold'>
-          <Link to='/' onClick={closeDrawerLeft}>Главная</Link>
+          <Link to='/' onClick={closeDrawerRight}>Главная</Link>
           {catalog.links.map((e) => (
-            <Link  className="" key={e.id} to={e.URL} onClick={closeDrawerLeft}>
+            <Link  className="" key={e.id} to={e.URL} onClick={closeDrawerRight}>
               {e.link}
             </Link>
           ))}
