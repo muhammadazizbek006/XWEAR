@@ -142,7 +142,7 @@ const SotibOlish = () => {
                     <div className="flex justify-between flex-col lg:items-center lg:flex-row space-y-3 lg:space-y-0 mb-6">
                       <div className="flex flex-col">
                         <label className="text-sm font-medium text-labelcolor mb-1" htmlFor="">
-                          Комментарий к заказу
+                        ваше мнение о нас
                         </label>
                         <textarea
                           onChange={handleMessage}

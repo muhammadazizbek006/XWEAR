@@ -7,11 +7,13 @@ import Acsesuar from '../components/home/Acsesuar'
 import Raschitat from '../components/home/Raschitat'
 import NashBlock from '../components/home/NashBlock'
 import Sharxlar from '../components/home/Sharxlar'
+import Aksiya from '../components/home/Aksiya'
 const Home = () => {
   return (
     <>
       <Hero/>
       <OyoqKiyimlar/>
+      <Aksiya/>
       {/* <Turotial/> */}
       <Kiyimlar/>
       <Acsesuar/>

@@ -53,6 +53,28 @@ import nash2 from '../img/nashblock/nash2.png';
 import nash3 from '../img/nashblock/nash3.png';
 import nash4 from '../img/nashblock/nash1.png';
 
+// mega aksiya
+import aksiya1 from '../img/aksiya/aksiya1.jpg'
+import aksiya2 from '../img/aksiya/aksiya2.jpg'
+import aksiya3 from '../img/aksiya/aksiya3.jpg'
+
+export const aksiyalar  = [
+  {
+    id:1,
+    img:aksiya1,
+    title:`shoshiling aksiya muddati cheklangan`
+  },
+  {
+    id:2,
+    img:aksiya2,
+    title:`shoshiling aksiya muddati cheklangan`
+  },
+  {
+    id:3,
+    img:aksiya3,
+    title:`shoshiling aksiya muddati cheklangan`
+  },
+]
 // sharxlar
 export  const sharxlar = [
   {
