@@ -231,6 +231,8 @@ export const data = [
     razmer: ["40", "41", "42", "43", "44", "45", "46"],
     rang: "Белый",
     kategoria: "Кроссовки",
+    chegirma: 25, // chegirma foizi
+    aksiyaNarxi: 1125 // chegirma qo'shilgan narx
   },
   {
     id: 2,
@@ -264,6 +266,8 @@ export const data = [
     razmer: ["40", "41", "42", "43", "44", "45", "46"],
     rang: ["Зеленый"],
     kategoria: "Кроссовки",
+    chegirma: 35, // chegirma foizi
+    aksiyaNarxi: 3125 // chegirma qo'shilgan narx
   },
   {
     id: 5,
@@ -297,6 +301,8 @@ export const data = [
     razmer: ["40", "41", "42", "43", "44", "45", "46"],
     rang: ["Оранжевый"],
     kategoria: "Classic",
+    chegirma: 15, // chegirma foizi
+    aksiyaNarxi: 6125 // chegirma qo'shilgan narx
   },
   {
     id: 8,
@@ -341,6 +347,8 @@ export const data = [
     razmer: ["40", "42", "43", "44", "45", "46"],
     rang: ["Бордовый"],
     kategoria: "Кроссовки",
+    chegirma: 65, // chegirma foizi
+    aksiyaNarxi: 1125 // chegirma qo'shilgan narx
   },
   {
     id: 12,
@@ -385,6 +393,8 @@ export const data = [
     razmer: ["33", "34", "35", "36", "37", "38", "39"],
     rang: ["Кремовый"],
     kategoria: "Кроссовки",
+    chegirma: 25, // chegirma foizi
+    aksiyaNarxi: 1025 // chegirma qo'shilgan narx
   },
   {
     id: 16,
@@ -407,6 +417,8 @@ export const data = [
     razmer: ["38", "39", "40", "41", "42", "43", "44"],
     rang: ["Кремовый"],
     kategoria: "Кроссовки",
+    chegirma: 32, // chegirma foizi
+    aksiyaNarxi: 1145 // chegirma qo'shilgan narx
   },
   {
     id: 18,
