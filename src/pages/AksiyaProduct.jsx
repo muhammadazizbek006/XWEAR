@@ -56,6 +56,7 @@ const AksiyaProduct = () => {
           </div>
         </div>
         {/* aksiya product */}
+        <h2 className="text-2xl font-bold mb-12">Товары со скидкой</h2>
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-12">
           {discountedProducts.map((e) => (
             <li key={e.id} className="relative px-4 py-3 swiper-slide rounded-lg">
