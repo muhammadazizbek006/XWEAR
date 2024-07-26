@@ -68,7 +68,7 @@ const Aksiya = () => {
             <img src={left} alt="Previous" />
           </button>
           <button
-            className="absolute top-1/2 transform -translate-y-1/2 right-[-20px] z-10"
+            className="absolute top-1/2 transform -translate-y-1/2 -right-3  md:right-[-20px] z-10"
             onClick={handleNext}
           >
             <img src={right} alt="Next" />
