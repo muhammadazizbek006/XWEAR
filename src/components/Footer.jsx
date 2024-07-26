@@ -23,20 +23,6 @@ const Footer = () => {
             <img src={xwear} alt="" />
           </div>
           
-          {/* Информация */}
-           <div className='text-white'>
-            <div className=' flex flex-col space-y-2 mb-14'>
-               <h3 className='text-base font-black  '>Информация</h3>
-
-               <Link to='/kontackt'  className='text-base'>Контакты</Link>
-               <Link  className='text-base'>Доставка</Link>
-
-               <Link to='/faq'  className='text-base' >FAQ</Link>
-
-            </div>
-
-          </div>
-
         {/* Контакты */}
           <div className='text-white'>
             <div className=' flex flex-col space-y-2 mb-14'>
@@ -65,6 +51,21 @@ const Footer = () => {
             </div>
 
           </div>
+          
+          {/* Информация */}
+           <div className='text-white'>
+            <div className=' flex flex-col space-y-2 mb-14'>
+               <h3 className='text-base font-black  '>Информация</h3>
+
+               <Link to='/kontackt'  className='text-base'>Контакты</Link>
+               <Link  className='text-base'>Доставка</Link>
+
+               <Link to='/faq'  className='text-base' >FAQ</Link>
+
+            </div>
+
+          </div>
+
         </div>
       </section>
     </>
