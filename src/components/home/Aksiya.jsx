@@ -54,7 +54,7 @@ const Aksiya = () => {
               <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
                 {/* Add content here if needed */}
               </div>
-              <div className="w-full overflow-hidden rounded-lg">
+              <div className=" w-full overflow-hidden rounded-lg">
                 <img className="w-full h-96 object-cover" src={e.img} alt={e.title} />
               </div>
             </SwiperSlide>
