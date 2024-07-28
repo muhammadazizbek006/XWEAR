@@ -29,7 +29,7 @@ const Kontackt = () => {
     setMessage(event.target.value);
   };
 
-  const handleSubmitInput = (event) => {
+  const handleSubmitInput = (event) =>  {
     event.preventDefault();
     // setNameSend("");
     // setEmailSend("");
