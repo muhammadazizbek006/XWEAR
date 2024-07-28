@@ -32,7 +32,7 @@ const Hero = () => {
 
   return (
     <>
-      <section className='pt-12'>
+      <section className='pt-12 '>
         <div className="containerb">
           <Swiper
             ref={swiperRef}
@@ -50,7 +50,7 @@ const Hero = () => {
                 return (
                   <SwiperSlide
                     style={{ backgroundImage: `url(${e.img})`, backgroundSize: 'cover' }}
-                    className='md:h-[500px] xl:h-[631px] rounded-lg'
+                    className='md:h-[540px] lg:h-[561px]  xl:h-[631px] rounded-lg'
                     key={e.id}
                   >
                     <div className='max-w-96 lg:max-w-[671px] pb-12 md:pb-1 pt-24 pl-3 md:pl-24 text-start space-y-5 rounded-md'>
