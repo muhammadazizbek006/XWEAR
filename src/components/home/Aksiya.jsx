@@ -62,16 +62,16 @@ const Aksiya = () => {
           <div className="swiper-pagination" style={{ marginTop: "10px" }}></div>
         </Swiper>
         <button
-            className="absolute top-[130px] transform -translate-y-1/2 left-[-54px] z-10"
+            className="absolute top-1/2 transform -translate-y-1/2 left-[-20px] z-10"
             onClick={handlePrev}
           >
-            <img  className="h-36"src={left} alt="Previous" />
+            <img src={left} alt="Previous" />
           </button>
           <button
-            className="absolute h-20 top-[130px] transform -translate-y-1/2   right-[-54px] z-10"
+            className="absolute top-1/2 transform -translate-y-1/2 -right-3  md:right-[-20px] z-10"
             onClick={handleNext}
           >
-            <img className="h-36" src={right} alt="Next" />
+            <img src={right} alt="Next" />
           </button>
       </div>
     </section>
