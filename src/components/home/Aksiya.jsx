@@ -48,32 +48,34 @@ const Aksiya = () => {
             <SwiperSlide 
               key={e.id} 
               className="relative bg-cover bg-center rounded-lg shadow-lg overflow-hidden" 
-              // style={{ backgroundImage: `url(${e.img})` }}
               onClick={() => handleSlideClick(e.URL)}
             >
               <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
                 {/* Add content here if needed */}
               </div>
-              <div className=" w-full overflow-hidden rounded-lg">
-                <img className=" md:w-[1300px] lg:w-full h-80 lg:h-96 lg:object-cover" src={e.img} alt={e.title} />
+              <div className="w-full overflow-hidden rounded-lg">
+                <img className="md:w-[1300px] lg:w-full h-80 lg:h-96 lg:object-cover" src={e.img} alt={e.title} />
               </div>
             </SwiperSlide>
           ))}
           <div className="swiper-pagination" style={{ marginTop: "10px" }}></div>
         </Swiper>
+       
+
         <button
-            className="absolute top-1/2 transform -translate-y-1/2 left-[-20px] z-10"
+            className="absolute top-[170px] transform -translate-y-1/2 left-2 z-10 md:left-[-20px] w-10 h-10  bg-white rounded-full shadow-lg md:w-auto md:h-auto"
             onClick={handlePrev}
           >
             <img src={left} alt="Previous" />
-          </button>
-          <button
-            className="absolute top-1/2 transform -translate-y-1/2 -right-3  md:right-[-20px] z-10"
+        </button>
+        <button
+            className="absolute top-[170px] transform -translate-y-1/2 right-2 z-10 md:right-[-20px] w-10 h-10 bg-white rounded-full shadow-lg md:w-auto md:h-auto"
             onClick={handleNext}
           >
             <img src={right} alt="Next" />
-          </button>
-      </div>
+        </button>
+        </div>
+
     </section>
   );
 };
